@@ -69,7 +69,7 @@ p { margin: 0; }
 .nav a:hover, .nav a[aria-current="page"] { color: var(--hero-ink); }
 .site-head .btn { padding: 11px 18px; font-size: 14px; }
 .menu-btn { display: none; background: none; border: 0; color: var(--hero-ink); font: 600 14px var(--body); cursor: pointer; padding: 8px; }
-.mobile-nav { display: grid; gap: 4px; padding-bottom: 16px; }
+.site-head .wrap.mobile-nav { display: grid; gap: 4px; padding-block: 0 16px; }
 .mobile-nav a { color: var(--hero-ink); text-decoration: none; padding: 10px 0; border-top: 1px solid color-mix(in srgb, var(--hero-ink) 14%, transparent); font-size: 17px; }
 @media (max-width: 860px) { .nav, .site-head .head-cta { display: none; } .menu-btn { display: block; } }
 
