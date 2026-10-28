@@ -1,0 +1,1066 @@
+[
+    {
+        "slug": "apparel-boxes",
+        "seoTitle": "Custom Apparel Boxes with Logo | Clothing Packaging",
+        "seoDesc": "Make every order feel special with custom apparel boxes for tees, socks, swimwear and ties. Printed with your logo from 100 units, plus a free 3D mockup.",
+        "rule": "/underwear|bra|swim|sock|scarf|hat|tie|belt|cloth|pantyhose|apparel/",
+        "profile": {
+            "for": [
+                "shirts and t-shirts",
+                "underwear, socks and swimwear",
+                "scarves, ties and belts",
+                "hats and accessories"
+            ],
+            "buyers": "clothing brands, boutiques and subscription boxes",
+            "style": "mailer box, two-piece box or tuck end box",
+            "material": "E-flute corrugated, kraft or SBS paperboard",
+            "finish": "matte with printing inside for the unboxing",
+            "tip": "Add tissue paper and a sticker seal; it costs little and makes a plain mailer feel premium."
+        }
+    },
+    {
+        "slug": "auto-part-boxes",
+        "seoTitle": "Custom Auto Parts Boxes | Strong Printed Packaging",
+        "seoDesc": "Heavy-duty custom auto parts boxes that keep brake pads, filters and spares safe in transit. Any size, printed with your logo, from just 100 units.",
+        "rule": null,
+        "profile": {
+            "for": [
+                "retail products",
+                "e-commerce orders",
+                "gift and promo packs",
+                "product launches"
+            ],
+            "buyers": "small brands, retailers and growing businesses",
+            "style": "tuck end, mailer or two-piece box",
+            "material": "16–18pt SBS, kraft or corrugated board",
+            "finish": "matte or gloss, foil and spot UV",
+            "tip": "Send us one sample of the product or its exact size; it is the fastest way to a box that fits on the first proof."
+        }
+    },
+    {
+        "slug": "bakery-boxes",
+        "seoTitle": "Custom Bakery Boxes with Logo | Cake & Cupcake Boxes",
+        "seoDesc": "Cake, cupcake, cookie and donut boxes that keep bakes fresh and look good enough to post. Food-safe, printed with your logo, from 100 units. Free US shipping.",
+        "rule": "/cookie|pastry|bakery|twist-top/",
+        "profile": {
+            "for": [
+                "cookies and brownies",
+                "pastries and croissants",
+                "cake pops and treats",
+                "bakery gift assortments"
+            ],
+            "buyers": "bakeries, cafes and gift shops",
+            "style": "window box, tuck-top or twist-top box",
+            "material": "16–18pt food-grade SBS or kraft paperboard",
+            "finish": "food-safe inks, matte or gloss, clear window",
+            "tip": "A window sells baked goods; place it where the best-looking side of the product sits."
+        }
+    },
+    {
+        "slug": "bottle-boxes",
+        "seoTitle": "Custom Bottle Boxes | Wine, Oil & Beverage Packaging",
+        "seoDesc": "Sturdy custom bottle boxes for wine, oils, sauces and drinks, with inserts that stop rattling. Printed with your brand from 100 units, free design help.",
+        "rule": null,
+        "profile": {
+            "for": [
+                "retail products",
+                "e-commerce orders",
+                "gift and promo packs",
+                "product launches"
+            ],
+            "buyers": "small brands, retailers and growing businesses",
+            "style": "tuck end, mailer or two-piece box",
+            "material": "16–18pt SBS, kraft or corrugated board",
+            "finish": "matte or gloss, foil and spot UV",
+            "tip": "Send us one sample of the product or its exact size; it is the fastest way to a box that fits on the first proof."
+        }
+    },
+    {
+        "slug": "candle-boxes",
+        "seoTitle": "Custom Candle Boxes with Logo | Luxury Candle Packaging",
+        "seoDesc": "Jar, pillar, taper and wax melt boxes that protect glass and look premium on the shelf. Custom candle boxes from 100 units with a free 3D mockup.",
+        "rule": "/candle|wax-melt|votive|taper|pillar/",
+        "profile": {
+            "for": [
+                "jar and tin candles",
+                "pillar, taper and votive candles",
+                "wax melts",
+                "candle gift sets"
+            ],
+            "buyers": "candle makers and home-fragrance brands",
+            "style": "tuck end, two-piece or box with an insert",
+            "material": "18–24pt SBS, kraft or rigid chipboard",
+            "finish": "soft-touch, foil and embossing",
+            "tip": "Glass jars need an insert or corrugated board if you ship them; ask us for a drop-safe spec."
+        }
+    },
+    {
+        "slug": "cardboard-boxes",
+        "seoTitle": "Custom Cardboard Boxes | Printed Wholesale Packaging",
+        "seoDesc": "Custom cardboard boxes in any size, from pillow and sleeve boxes to cosmetic cartons. Printed with your logo, low 100-unit minimum, free US shipping.",
+        "rule": null,
+        "profile": {
+            "for": [
+                "retail products",
+                "e-commerce orders",
+                "gift and promo packs",
+                "product launches"
+            ],
+            "buyers": "small brands, retailers and growing businesses",
+            "style": "tuck end, mailer or two-piece box",
+            "material": "16–18pt SBS, kraft or corrugated board",
+            "finish": "matte or gloss, foil and spot UV",
+            "tip": "Send us one sample of the product or its exact size; it is the fastest way to a box that fits on the first proof."
+        }
+    },
+    {
+        "slug": "cbd-boxes",
+        "seoTitle": "Custom CBD Boxes | Printed CBD Packaging Wholesale",
+        "seoDesc": "CBD oil, tincture, gummy and cream boxes printed with your brand and room for compliance info. Order from 100 units with free design and a 3D mockup.",
+        "rule": "/cbd|hemp|marijuana|cannabis/",
+        "profile": {
+            "for": [
+                "tinctures and oils",
+                "creams, balms and soaps",
+                "gummies and edibles",
+                "pre-rolls and flower"
+            ],
+            "buyers": "CBD, hemp and cannabis brands",
+            "style": "tuck end, sleeve or display box",
+            "material": "16–18pt SBS or kraft paperboard",
+            "finish": "matte or soft-touch with foil and spot UV",
+            "tip": "Keep a clear panel for the compliance text and a QR code to your certificate of analysis."
+        }
+    },
+    {
+        "slug": "cereal-boxes",
+        "seoTitle": "Custom Cereal Boxes | Food-Grade Printed Packaging",
+        "seoDesc": "Food-grade custom cereal boxes in full size, mini and granola styles, printed in bold color that stands out on the shelf. From 100 units, free US shipping.",
+        "rule": "/cereal|granola|corn-flakes/",
+        "profile": {
+            "for": [
+                "breakfast cereal",
+                "granola and muesli",
+                "oats and corn flakes",
+                "single-serve and mini packs"
+            ],
+            "buyers": "cereal makers, health-food brands and private labels",
+            "style": "straight tuck end carton with an inner bag",
+            "material": "16–18pt SBS or recycled board",
+            "finish": "bright CMYK print with gloss or matte coating",
+            "tip": "Cereal is sold on the front panel; keep the logo and product shot in the top third where shoppers look first."
+        }
+    },
+    {
+        "slug": "chocolate-boxes",
+        "seoTitle": "Custom Chocolate Boxes | Luxury Candy & Bar Packaging",
+        "seoDesc": "Chocolate bar, bonbon, truffle and gift boxes with food-safe inserts and a luxury finish. Custom printed from 100 units, with a free 3D mockup first.",
+        "rule": "/chocolate|bonbon/",
+        "profile": {
+            "for": [
+                "chocolate bars",
+                "truffles and bonbons",
+                "chocolate bombs",
+                "holiday and corporate gift sets"
+            ],
+            "buyers": "chocolatiers, confectioners and gift brands",
+            "style": "sleeve, two-piece rigid box or box with a cavity insert",
+            "material": "18pt SBS, or rigid chipboard for luxury sets",
+            "finish": "soft-touch, foil and embossing",
+            "tip": "Use a cavity insert so truffles don't touch; it protects the finish and looks better when the lid comes off."
+        }
+    },
+    {
+        "slug": "christmas-boxes",
+        "seoTitle": "Custom Christmas Boxes | Printed Holiday Gift Packaging",
+        "seoDesc": "Festive custom Christmas boxes for gifts, treats, cupcakes and Christmas Eve boxes. Printed with your design from 100 units. Order early for the holidays.",
+        "rule": "/gift|heart|birthday|christmas|favor|round-gift|circular|premium|personalized|pyramid/",
+        "profile": {
+            "for": [
+                "holiday and birthday gifts",
+                "corporate and client gifts",
+                "party and wedding favors",
+                "curated gift sets"
+            ],
+            "buyers": "gift brands, retailers and corporate buyers",
+            "style": "two-piece lid box, magnetic box or shaped box",
+            "material": "rigid chipboard or 18–24pt SBS paperboard",
+            "finish": "foil, embossing, soft-touch and ribbon",
+            "tip": "Order seasonal gift boxes at least 4–6 weeks before the holiday so you have time for proof and delivery."
+        }
+    },
+    {
+        "slug": "cigarette-boxes",
+        "seoTitle": "Custom Cigarette Boxes | Printed Cigarette Packaging",
+        "seoDesc": "Custom cigarette, e-cig and lighter boxes made from sturdy card with crisp, full-color printing. Blank or branded, from 100 units, with free design help.",
+        "rule": "/cigarette|lighter/",
+        "profile": {
+            "for": [
+                "cigarettes and cigarillos",
+                "e-cigarette devices",
+                "lighters",
+                "promotional and blank packs"
+            ],
+            "buyers": "tobacco brands, distributors and smoke shops",
+            "style": "flip-top or slide (sleeve and tray) pack",
+            "material": "14–18pt SBS paperboard",
+            "finish": "gloss or matte lamination with foil and embossing",
+            "tip": "Plan the health warning area first; it has a fixed size in most markets and decides how much room your branding gets."
+        }
+    },
+    {
+        "slug": "coffee-packaging",
+        "seoTitle": "Custom Coffee Packaging | Printed Coffee Bags & Boxes",
+        "seoDesc": "Keep beans fresh and your brand front and center with custom coffee bags and boxes. Printed from 100 units with free design and free US shipping.",
+        "rule": "/coffee|tea-box/",
+        "profile": {
+            "for": [
+                "coffee bags and pods",
+                "loose-leaf tea and tea bags",
+                "tins and jars",
+                "sampler and gift sets"
+            ],
+            "buyers": "roasters, tea brands and cafes",
+            "style": "tuck end box or two-piece box",
+            "material": "18pt SBS or kraft paperboard",
+            "finish": "matte or kraft look with foil logo",
+            "tip": "Pair the box with a valve bag or foil inner pouch; the box sells it, the inner pack keeps it fresh."
+        }
+    },
+    {
+        "slug": "custom-corrugated-boxes",
+        "seoTitle": "Custom Corrugated Boxes | Printed Shipping Boxes",
+        "seoDesc": "Tough custom corrugated boxes in E, B and F flute for shipping, e-commerce and retail. Any size, printed inside and out, from 100 units. Free US shipping.",
+        "rule": null,
+        "profile": {
+            "for": [
+                "retail products",
+                "e-commerce orders",
+                "gift and promo packs",
+                "product launches"
+            ],
+            "buyers": "small brands, retailers and growing businesses",
+            "style": "tuck end, mailer or two-piece box",
+            "material": "16–18pt SBS, kraft or corrugated board",
+            "finish": "matte or gloss, foil and spot UV",
+            "tip": "Send us one sample of the product or its exact size; it is the fastest way to a box that fits on the first proof."
+        }
+    },
+    {
+        "slug": "cosmetic-boxes",
+        "seoTitle": "Custom Cosmetic Boxes with Logo | Makeup Packaging",
+        "seoDesc": "Lipstick, mascara, perfume, cream and nail polish boxes that match your brand. Custom cosmetic packaging from 100 units, with foil and spot UV options.",
+        "rule": "/eyeshadow|makeup|foundation|cosmetic/",
+        "profile": {
+            "for": [
+                "eyeshadow palettes and compacts",
+                "foundation bottles",
+                "makeup kits and sets",
+                "retail counter displays"
+            ],
+            "buyers": "cosmetic brands and beauty retailers",
+            "style": "tuck end, sleeve or magnetic rigid box",
+            "material": "16–18pt SBS, or rigid chipboard for kits",
+            "finish": "soft-touch, foil, embossing and spot UV",
+            "tip": "Match the box to the product finish: soft-touch for matte products, gloss and foil for shimmer lines."
+        }
+    },
+    {
+        "slug": "cosmetic-jars",
+        "seoTitle": "Custom Cosmetic Jars | Branded Jar Packaging",
+        "seoDesc": "Custom cosmetic jars and matching boxes for creams, balms and scrubs, finished with your brand. Talk to us about sizes and printing from 100 units.",
+        "rule": "/eyeshadow|makeup|foundation|cosmetic/",
+        "profile": {
+            "for": [
+                "eyeshadow palettes and compacts",
+                "foundation bottles",
+                "makeup kits and sets",
+                "retail counter displays"
+            ],
+            "buyers": "cosmetic brands and beauty retailers",
+            "style": "tuck end, sleeve or magnetic rigid box",
+            "material": "16–18pt SBS, or rigid chipboard for kits",
+            "finish": "soft-touch, foil, embossing and spot UV",
+            "tip": "Match the box to the product finish: soft-touch for matte products, gloss and foil for shimmer lines."
+        }
+    },
+    {
+        "slug": "custom-mylar-bags",
+        "seoTitle": "Custom Mylar Bags | Smell-Proof Printed Pouches",
+        "seoDesc": "Smell-proof custom mylar bags with zip locks, windows and matte or glossy finishes. Printed with your logo from 100 units, ideal for food and CBD brands.",
+        "rule": "/mylar|ziplock/",
+        "profile": {
+            "for": [
+                "cannabis flower and edibles",
+                "coffee, tea and snacks",
+                "supplements and powders",
+                "bath salts and samples"
+            ],
+            "buyers": "food, CBD and supplement brands",
+            "style": "stand-up pouch or flat bag with a zip lock",
+            "material": "metallized, clear or kraft-laminated film",
+            "finish": "matte, gloss or holographic, optional window",
+            "tip": "Add a tear notch and resealable zipper if the product is used over several days."
+        }
+    },
+    {
+        "slug": "custom-tote-bags",
+        "seoTitle": "Custom Tote Bags with Logo | Wholesale Printed Totes",
+        "seoDesc": "Reusable custom tote bags that carry your logo long after the sale. Great for retail, events and giveaways. Printed from 100 units, free design help.",
+        "rule": "/bag|poly/",
+        "profile": {
+            "for": [
+                "retail purchases",
+                "clothing and accessories",
+                "gifts and events",
+                "shipping soft goods"
+            ],
+            "buyers": "retailers, boutiques and event brands",
+            "style": "paper or poly bag with handles or a seal strip",
+            "material": "kraft or coated paper, or poly film",
+            "finish": "one-color to full-color print",
+            "tip": "Pick handle style by weight: twisted paper for light items, die-cut or rope handles for heavier gifts."
+        }
+    },
+    {
+        "slug": "display-boxes",
+        "seoTitle": "Custom Display Boxes | Counter & Retail Display Packaging",
+        "seoDesc": "Counter display boxes that turn small products into impulse buys. Custom printed for cosmetics, pre-rolls and more, from 100 units with a free 3D mockup.",
+        "rule": "/display/",
+        "profile": {
+            "for": [
+                "counter and checkout displays",
+                "small items sold individually",
+                "new product launches",
+                "trade-show stands"
+            ],
+            "buyers": "brands selling through stores and pharmacies",
+            "style": "counter display box with a tear-away or pop-up header",
+            "material": "18–24pt SBS or E-flute corrugated",
+            "finish": "gloss or matte with a printed header card",
+            "tip": "Design the header card to be read from two meters away: logo, product and one benefit, nothing more."
+        }
+    },
+    {
+        "slug": "electronic-boxes",
+        "seoTitle": "Custom Electronics Boxes | Protective Printed Packaging",
+        "seoDesc": "Protective custom electronics boxes with inserts for phones, chargers, earbuds and gadgets. Printed with your brand from 100 units, free US shipping.",
+        "rule": null,
+        "profile": {
+            "for": [
+                "retail products",
+                "e-commerce orders",
+                "gift and promo packs",
+                "product launches"
+            ],
+            "buyers": "small brands, retailers and growing businesses",
+            "style": "tuck end, mailer or two-piece box",
+            "material": "16–18pt SBS, kraft or corrugated board",
+            "finish": "matte or gloss, foil and spot UV",
+            "tip": "Send us one sample of the product or its exact size; it is the fastest way to a box that fits on the first proof."
+        }
+    },
+    {
+        "slug": "favor-boxes",
+        "seoTitle": "Custom Favor Boxes | Party & Wedding Favor Packaging",
+        "seoDesc": "Cute custom favor boxes for weddings, birthdays and baby showers, printed with names, dates or your logo. Small runs from 100 units with free design.",
+        "rule": "/gift|heart|birthday|christmas|favor|round-gift|circular|premium|personalized|pyramid/",
+        "profile": {
+            "for": [
+                "holiday and birthday gifts",
+                "corporate and client gifts",
+                "party and wedding favors",
+                "curated gift sets"
+            ],
+            "buyers": "gift brands, retailers and corporate buyers",
+            "style": "two-piece lid box, magnetic box or shaped box",
+            "material": "rigid chipboard or 18–24pt SBS paperboard",
+            "finish": "foil, embossing, soft-touch and ribbon",
+            "tip": "Order seasonal gift boxes at least 4–6 weeks before the holiday so you have time for proof and delivery."
+        }
+    },
+    {
+        "slug": "food-boxes",
+        "seoTitle": "Custom Food Boxes | Printed Takeout & Food Packaging",
+        "seoDesc": "Burger, fry, noodle, sushi and takeout boxes that are food-safe and printed with your logo. Custom food packaging from 100 units, with free US shipping.",
+        "rule": "/burger|hot-dog|fry|taco|sushi|noodle|takeout|sandwich|spaghetti|shrimp|popcorn|snack|food/",
+        "profile": {
+            "for": [
+                "burgers, hot dogs and fries",
+                "tacos, sushi and noodles",
+                "sandwiches and wraps",
+                "snacks and popcorn"
+            ],
+            "buyers": "restaurants, food trucks and cafes",
+            "style": "fold-up clamshell, tray or takeout box",
+            "material": "food-grade SBS, kraft or E-flute corrugated",
+            "finish": "food-safe inks, grease-resistant coating",
+            "tip": "For hot, greasy food, ask for a grease-resistant coating and vents so it doesn't go soggy before delivery."
+        }
+    },
+    {
+        "slug": "gable-boxes",
+        "seoTitle": "Custom Gable Boxes | Handle Boxes with Your Logo",
+        "seoDesc": "Easy-carry custom gable boxes with handles, in kraft or full color, with optional windows. Great for treats, gifts and kits. From 100 units, free design.",
+        "rule": "/gable|mushroom/",
+        "profile": {
+            "for": [
+                "food and treats on the go",
+                "party and gift favors",
+                "grow kits",
+                "retail take-home items"
+            ],
+            "buyers": "bakeries, gift shops and kit brands",
+            "style": "gable box with a built-in carry handle",
+            "material": "18pt SBS or kraft paperboard",
+            "finish": "matte or kraft look, optional window",
+            "tip": "The handle carries the weight; for heavy items ask for a thicker board or a lock-bottom base."
+        }
+    },
+    {
+        "slug": "gift-boxes",
+        "seoTitle": "Custom Gift Boxes with Logo | Luxury Gift Packaging",
+        "seoDesc": "Magnetic, two-piece, round and heart-shaped gift boxes that make the unboxing part of the gift. Custom printed from 100 units with a free 3D mockup.",
+        "rule": "/gift|heart|birthday|christmas|favor|round-gift|circular|premium|personalized|pyramid/",
+        "profile": {
+            "for": [
+                "holiday and birthday gifts",
+                "corporate and client gifts",
+                "party and wedding favors",
+                "curated gift sets"
+            ],
+            "buyers": "gift brands, retailers and corporate buyers",
+            "style": "two-piece lid box, magnetic box or shaped box",
+            "material": "rigid chipboard or 18–24pt SBS paperboard",
+            "finish": "foil, embossing, soft-touch and ribbon",
+            "tip": "Order seasonal gift boxes at least 4–6 weeks before the holiday so you have time for proof and delivery."
+        }
+    },
+    {
+        "slug": "hang-tags",
+        "seoTitle": "Custom Hang Tags | Printed Clothing & Product Tags",
+        "seoDesc": "Custom hang tags for clothing, candles and gifts in kraft or premium card, with strings or eyelets. Printed with your logo from 100 units, fast turnaround.",
+        "rule": "/hang-tag|clothing-tag|kraft-tag|custom-hang|door-hanger/",
+        "profile": {
+            "for": [
+                "clothing and accessories",
+                "gift and retail products",
+                "price and care information",
+                "door-to-door promotions"
+            ],
+            "buyers": "apparel brands, boutiques and local service businesses",
+            "style": "die-cut tag with a punched hole, string or safety pin",
+            "material": "16–32pt cardstock or natural kraft board",
+            "finish": "matte, soft-touch or foil logo, with rounded corners",
+            "tip": "Thicker 24pt+ stock feels premium on clothing; add a second-side print for care instructions or a QR code."
+        }
+    },
+    {
+        "slug": "hardware-boxes",
+        "seoTitle": "Custom Hardware Boxes | Tool & Parts Packaging",
+        "seoDesc": "Strong custom hardware boxes for tools, screws, fittings and spare parts, in any size you need. Printed with your brand from 100 units, free design help.",
+        "rule": null,
+        "profile": {
+            "for": [
+                "retail products",
+                "e-commerce orders",
+                "gift and promo packs",
+                "product launches"
+            ],
+            "buyers": "small brands, retailers and growing businesses",
+            "style": "tuck end, mailer or two-piece box",
+            "material": "16–18pt SBS, kraft or corrugated board",
+            "finish": "matte or gloss, foil and spot UV",
+            "tip": "Send us one sample of the product or its exact size; it is the fastest way to a box that fits on the first proof."
+        }
+    },
+    {
+        "slug": "health-boxes",
+        "seoTitle": "Custom Health Boxes | Wellness & Personal Care Packaging",
+        "seoDesc": "Custom boxes for essential oils, beard oil, supplements, gloves and bandages. Clean, clear printing for health brands, from 100 units, free US shipping.",
+        "rule": null,
+        "profile": {
+            "for": [
+                "retail products",
+                "e-commerce orders",
+                "gift and promo packs",
+                "product launches"
+            ],
+            "buyers": "small brands, retailers and growing businesses",
+            "style": "tuck end, mailer or two-piece box",
+            "material": "16–18pt SBS, kraft or corrugated board",
+            "finish": "matte or gloss, foil and spot UV",
+            "tip": "Send us one sample of the product or its exact size; it is the fastest way to a box that fits on the first proof."
+        }
+    },
+    {
+        "slug": "hemp-boxes",
+        "seoTitle": "Custom Hemp Boxes | Printed Hemp Product Packaging",
+        "seoDesc": "Custom hemp boxes for oils, pre-rolls, gifts and displays, in kraft or full color. Printed with your brand from 100 units, with a free 3D mockup first.",
+        "rule": "/cbd|hemp|marijuana|cannabis/",
+        "profile": {
+            "for": [
+                "tinctures and oils",
+                "creams, balms and soaps",
+                "gummies and edibles",
+                "pre-rolls and flower"
+            ],
+            "buyers": "CBD, hemp and cannabis brands",
+            "style": "tuck end, sleeve or display box",
+            "material": "16–18pt SBS or kraft paperboard",
+            "finish": "matte or soft-touch with foil and spot UV",
+            "tip": "Keep a clear panel for the compliance text and a QR code to your certificate of analysis."
+        }
+    },
+    {
+        "slug": "holiday-boxes",
+        "seoTitle": "Custom Holiday Boxes | Seasonal Gift Packaging",
+        "seoDesc": "Custom holiday boxes for Christmas, Valentine's, Easter and every season in between. Printed with your design from 100 units. Plan ahead for peak dates.",
+        "rule": null,
+        "profile": {
+            "for": [
+                "retail products",
+                "e-commerce orders",
+                "gift and promo packs",
+                "product launches"
+            ],
+            "buyers": "small brands, retailers and growing businesses",
+            "style": "tuck end, mailer or two-piece box",
+            "material": "16–18pt SBS, kraft or corrugated board",
+            "finish": "matte or gloss, foil and spot UV",
+            "tip": "Send us one sample of the product or its exact size; it is the fastest way to a box that fits on the first proof."
+        }
+    },
+    {
+        "slug": "jewelry-boxes",
+        "seoTitle": "Custom Jewelry Boxes with Logo | Ring & Necklace Boxes",
+        "seoDesc": "Ring, earring, necklace and bracelet boxes with velvet or foam inserts and a luxury finish. Custom jewelry boxes from 100 units with a free 3D mockup.",
+        "rule": "/ring|earring|necklace|pendant|bracelet|jewel|cufflink|velvet|pandasew/",
+        "profile": {
+            "for": [
+                "rings and earrings",
+                "necklaces and pendants",
+                "bracelets and watches",
+                "jewelry subscriptions and gift sets"
+            ],
+            "buyers": "jewelers, boutiques and online jewelry brands",
+            "style": "two-piece, drawer or hinged box with a foam or velvet insert",
+            "material": "rigid chipboard, kraft or SBS paperboard",
+            "finish": "soft-touch, foil logo and embossing",
+            "tip": "A slit foam or velvet insert keeps the piece centered; it is the first thing the customer sees."
+        }
+    },
+    {
+        "slug": "kraft-boxes",
+        "seoTitle": "Custom Kraft Boxes | Eco-Friendly Printed Packaging",
+        "seoDesc": "Natural kraft boxes that feel earthy and look premium with a simple one-color logo. Custom sizes and styles from 100 units, recyclable, free US shipping.",
+        "rule": "/kraft/",
+        "profile": {
+            "for": [
+                "eco-friendly product lines",
+                "handmade and natural goods",
+                "food and retail items",
+                "gift and favor packs"
+            ],
+            "buyers": "brands that want a natural, recyclable look",
+            "style": "tuck end, mailer or two-piece box",
+            "material": "brown or white kraft paperboard",
+            "finish": "one or two-color print, water-based inks",
+            "tip": "Dark colors print best on brown kraft; for bright colors, ask for white ink underneath."
+        }
+    },
+    {
+        "slug": "labels-stickers",
+        "seoTitle": "Custom Labels & Stickers | Vinyl, Paper & Holographic",
+        "seoDesc": "Custom labels and stickers in paper, vinyl and holographic finishes for jars, candles, bags and boxes. Printed sharp and durable, from small runs up.",
+        "rule": "/sticker|label/",
+        "profile": {
+            "for": [
+                "jars and bottles",
+                "mailer boxes and bags",
+                "candles and cosmetics",
+                "seals, giveaways and laptops"
+            ],
+            "buyers": "small brands, makers and e-commerce shops",
+            "style": "kiss-cut sheets, rolls or die-cut singles",
+            "material": "paper, white or clear vinyl, holographic or kraft stock",
+            "finish": "gloss or matte laminate for water and scuff resistance",
+            "tip": "Measure the flat area of your container, not the full height, and keep text 1/8 inch inside the cut line so nothing gets trimmed."
+        }
+    },
+    {
+        "slug": "mailer-boxes",
+        "seoTitle": "Custom Mailer Boxes | Printed Shipping Boxes with Logo",
+        "seoDesc": "Custom mailer boxes that protect every order and make unboxing worth sharing. Printed inside and out, any size, from 100 units with free US shipping.",
+        "rule": "/shipping|mailer/",
+        "profile": {
+            "for": [
+                "e-commerce orders",
+                "subscription boxes",
+                "fragile and heavy items",
+                "PR and influencer kits"
+            ],
+            "buyers": "online stores and subscription brands",
+            "style": "roll-end tuck front mailer or shipping box",
+            "material": "E or B flute corrugated",
+            "finish": "printed outside and inside",
+            "tip": "Print inside the lid; it costs little more and is what customers film when they unbox."
+        }
+    },
+    {
+        "slug": "custom-packaging-insights-boxes-design-and-materials",
+        "seoTitle": "Packaging Insights | Custom Box Design & Material Tips",
+        "seoDesc": "Practical guides on custom box design, materials, finishes and printing, written by our packaging team to help growing brands choose the right packaging.",
+        "rule": null,
+        "profile": {
+            "for": [
+                "retail products",
+                "e-commerce orders",
+                "gift and promo packs",
+                "product launches"
+            ],
+            "buyers": "small brands, retailers and growing businesses",
+            "style": "tuck end, mailer or two-piece box",
+            "material": "16–18pt SBS, kraft or corrugated board",
+            "finish": "matte or gloss, foil and spot UV",
+            "tip": "Send us one sample of the product or its exact size; it is the fastest way to a box that fits on the first proof."
+        }
+    },
+    {
+        "slug": "custom-paper-bags",
+        "seoTitle": "Custom Paper Bags with Logo | Printed Kraft Bags",
+        "seoDesc": "Custom paper bags in kraft or white, with twisted or flat handles, printed with your logo. Perfect for retail, food and gifts, from 100 units, free design.",
+        "rule": "/bag|poly/",
+        "profile": {
+            "for": [
+                "retail purchases",
+                "clothing and accessories",
+                "gifts and events",
+                "shipping soft goods"
+            ],
+            "buyers": "retailers, boutiques and event brands",
+            "style": "paper or poly bag with handles or a seal strip",
+            "material": "kraft or coated paper, or poly film",
+            "finish": "one-color to full-color print",
+            "tip": "Pick handle style by weight: twisted paper for light items, die-cut or rope handles for heavier gifts."
+        }
+    },
+    {
+        "slug": "custom-pharma-boxes",
+        "seoTitle": "Custom Pharma Boxes | Printed Medicine Packaging",
+        "seoDesc": "Clear, professional custom pharma boxes for medicines, sanitizers and healthcare products, with space for dosage info. From 100 units, free US shipping.",
+        "rule": "/medicine|sanitizer|bandage|glove|condom|pharma/",
+        "profile": {
+            "for": [
+                "medicine bottles and blisters",
+                "sanitizers",
+                "bandages and first-aid items",
+                "gloves and personal-care products"
+            ],
+            "buyers": "pharma, health and personal-care brands",
+            "style": "straight or reverse tuck end box",
+            "material": "14–18pt SBS paperboard",
+            "finish": "matte or gloss with clear, readable type",
+            "tip": "Plan the regulatory text first (dosage, lot number, barcode) and fit the branding around it."
+        }
+    },
+    {
+        "slug": "pillow-boxes",
+        "seoTitle": "Custom Pillow Boxes | Printed Gift & Favor Boxes",
+        "seoDesc": "Curvy custom pillow boxes for small gifts, jewelry, soaps and favors, with or without handles. Printed with your logo from 100 units, with free design.",
+        "rule": "/pillow/",
+        "profile": {
+            "for": [
+                "small gifts and favors",
+                "jewelry and accessories",
+                "gift cards and soaps",
+                "candies and treats"
+            ],
+            "buyers": "gift shops, event planners and boutiques",
+            "style": "curved pillow box, with or without a handle",
+            "material": "14–18pt SBS or kraft paperboard",
+            "finish": "gloss, matte or foil, optional window",
+            "tip": "Pillow boxes ship flat and fold in seconds; they are one of the cheapest ways to make a small item look like a gift."
+        }
+    },
+    {
+        "slug": "pizza-boxes",
+        "seoTitle": "Custom Pizza Boxes with Logo | Printed Pizza Packaging",
+        "seoDesc": "Grease-resistant custom pizza boxes in square, round and slice styles, printed with your logo. Keep pizzas hot and your brand seen. From 100 units.",
+        "rule": "/pizza/",
+        "profile": {
+            "for": [
+                "whole pizzas (8 to 18 inch)",
+                "pizza slices",
+                "flatbreads and calzones",
+                "delivery and takeout orders"
+            ],
+            "buyers": "pizzerias, restaurants and food chains",
+            "style": "corrugated roll-end mailer, with or without a window",
+            "material": "E or F flute corrugated with a food-safe lining",
+            "finish": "food-safe inks, grease-resistant inside",
+            "tip": "Vent holes keep the crust crisp; ask us to add them to the side panels."
+        }
+    },
+    {
+        "slug": "custom-poly-bags",
+        "seoTitle": "Custom Poly Bags | Printed Pouches & Mailer Bags",
+        "seoDesc": "Light, tough custom poly bags and pouches for apparel, snacks and e-commerce orders. Printed with your brand from 100 units, with free design support.",
+        "rule": "/bag|poly/",
+        "profile": {
+            "for": [
+                "retail purchases",
+                "clothing and accessories",
+                "gifts and events",
+                "shipping soft goods"
+            ],
+            "buyers": "retailers, boutiques and event brands",
+            "style": "paper or poly bag with handles or a seal strip",
+            "material": "kraft or coated paper, or poly film",
+            "finish": "one-color to full-color print",
+            "tip": "Pick handle style by weight: twisted paper for light items, die-cut or rope handles for heavier gifts."
+        }
+    },
+    {
+        "slug": "pre-roll-boxes",
+        "seoTitle": "Custom Pre Roll Boxes | Printed Joint Packaging",
+        "seoDesc": "Custom pre roll boxes for single joints, multi-packs, cones and counter displays, with room for compliance details. From 100 units, free 3D mockup.",
+        "rule": "/pre-roll|pre-rolled|joint|cone/",
+        "profile": {
+            "for": [
+                "single pre-rolls",
+                "multi-packs of 3–7 joints",
+                "pre-roll tubes",
+                "cones and rolling accessories"
+            ],
+            "buyers": "cannabis brands, dispensaries and hemp companies",
+            "style": "sleeve-and-tray or tuck end box with a tube insert",
+            "material": "18pt SBS or kraft paperboard",
+            "finish": "matte or soft-touch with foil or spot UV on the logo",
+            "tip": "Check your state's labeling rules before artwork is final; we leave a clear panel for the warning, batch and THC information."
+        }
+    },
+    {
+        "slug": "product-boxes",
+        "seoTitle": "Custom Product Boxes | Printed Retail Packaging",
+        "seoDesc": "Custom product boxes, bags and pouches built around what you sell. Pick the style, size and finish, and we print it with your logo from just 100 units.",
+        "rule": null,
+        "profile": {
+            "for": [
+                "retail products",
+                "e-commerce orders",
+                "gift and promo packs",
+                "product launches"
+            ],
+            "buyers": "small brands, retailers and growing businesses",
+            "style": "tuck end, mailer or two-piece box",
+            "material": "16–18pt SBS, kraft or corrugated board",
+            "finish": "matte or gloss, foil and spot UV",
+            "tip": "Send us one sample of the product or its exact size; it is the fastest way to a box that fits on the first proof."
+        }
+    },
+    {
+        "slug": "retail-boxes",
+        "seoTitle": "Custom Retail Boxes | Printed Boxes for Store Shelves",
+        "seoDesc": "Custom retail boxes that grab attention on busy shelves, from tuck boxes to gable and pillow styles. Printed with your brand from 100 units, free design.",
+        "rule": null,
+        "profile": {
+            "for": [
+                "retail products",
+                "e-commerce orders",
+                "gift and promo packs",
+                "product launches"
+            ],
+            "buyers": "small brands, retailers and growing businesses",
+            "style": "tuck end, mailer or two-piece box",
+            "material": "16–18pt SBS, kraft or corrugated board",
+            "finish": "matte or gloss, foil and spot UV",
+            "tip": "Send us one sample of the product or its exact size; it is the fastest way to a box that fits on the first proof."
+        }
+    },
+    {
+        "slug": "rigid-boxes",
+        "seoTitle": "Custom Rigid Boxes | Luxury Two-Piece & Magnetic Boxes",
+        "seoDesc": "Premium rigid boxes with magnetic lids, two-piece construction and foil or embossed logos. The luxury unboxing your brand deserves, from 100 units.",
+        "rule": null,
+        "profile": {
+            "for": [
+                "retail products",
+                "e-commerce orders",
+                "gift and promo packs",
+                "product launches"
+            ],
+            "buyers": "small brands, retailers and growing businesses",
+            "style": "tuck end, mailer or two-piece box",
+            "material": "16–18pt SBS, kraft or corrugated board",
+            "finish": "matte or gloss, foil and spot UV",
+            "tip": "Send us one sample of the product or its exact size; it is the fastest way to a box that fits on the first proof."
+        }
+    },
+    {
+        "slug": "round-boxes",
+        "seoTitle": "Custom Round Boxes | Printed Cylinder Packaging",
+        "seoDesc": "Eye-catching custom round and cylinder boxes for candles, tea, cosmetics and gifts. Printed with your design from 100 units, with a free 3D mockup.",
+        "rule": null,
+        "profile": {
+            "for": [
+                "retail products",
+                "e-commerce orders",
+                "gift and promo packs",
+                "product launches"
+            ],
+            "buyers": "small brands, retailers and growing businesses",
+            "style": "tuck end, mailer or two-piece box",
+            "material": "16–18pt SBS, kraft or corrugated board",
+            "finish": "matte or gloss, foil and spot UV",
+            "tip": "Send us one sample of the product or its exact size; it is the fastest way to a box that fits on the first proof."
+        }
+    },
+    {
+        "slug": "shipping-boxes",
+        "seoTitle": "Custom Shipping Boxes with Logo | Printed Mailers",
+        "seoDesc": "Strong custom shipping boxes in any size, printed with your logo to turn every delivery into brand exposure. From 100 units with free US shipping.",
+        "rule": "/shipping|mailer/",
+        "profile": {
+            "for": [
+                "e-commerce orders",
+                "subscription boxes",
+                "fragile and heavy items",
+                "PR and influencer kits"
+            ],
+            "buyers": "online stores and subscription brands",
+            "style": "roll-end tuck front mailer or shipping box",
+            "material": "E or B flute corrugated",
+            "finish": "printed outside and inside",
+            "tip": "Print inside the lid; it costs little more and is what customers film when they unbox."
+        }
+    },
+    {
+        "slug": "soap-boxes",
+        "seoTitle": "Custom Soap Boxes | Printed Soap & Bath Bomb Packaging",
+        "seoDesc": "Custom soap boxes, sleeves and bath bomb boxes in kraft or full color, with window cut-outs to show off your bars. From 100 units, free design help.",
+        "rule": "/soap|bath-bomb/",
+        "profile": {
+            "for": [
+                "soap bars",
+                "bath bombs",
+                "shampoo bars",
+                "spa and gift sets"
+            ],
+            "buyers": "soap makers and bath and body brands",
+            "style": "tuck end, sleeve or window box",
+            "material": "16–18pt kraft or SBS paperboard",
+            "finish": "kraft look or matte with a die-cut window",
+            "tip": "Handmade soap breathes; a window or vent lets the scent reach shoppers and keeps the bar dry."
+        }
+    },
+    {
+        "slug": "sports-boxes",
+        "seoTitle": "Custom Sports Boxes | Printed Sports Gear Packaging",
+        "seoDesc": "Custom boxes for golf balls, tennis balls, footballs, basketballs and shoes, printed in your team or brand colors. From 100 units, free US shipping.",
+        "rule": "/tennis|golf|football|basketball|sport/",
+        "profile": {
+            "for": [
+                "golf and tennis balls",
+                "footballs and basketballs",
+                "sports accessories",
+                "team and event merchandise"
+            ],
+            "buyers": "sports brands, clubs and event organizers",
+            "style": "tuck end, display or corrugated box",
+            "material": "18pt SBS or E-flute corrugated",
+            "finish": "gloss or matte with bold team colors",
+            "tip": "Balls are heavy for their size; use corrugated board for anything over a 3-pack."
+        }
+    },
+    {
+        "slug": "spouted-pouches",
+        "seoTitle": "Custom Spouted Pouches | Printed Liquid Packaging",
+        "seoDesc": "Leak-resistant custom spouted pouches for drinks, sauces, baby food and refills. Printed with your brand in full color. Ask us about sizes and caps.",
+        "rule": null,
+        "profile": {
+            "for": [
+                "retail products",
+                "e-commerce orders",
+                "gift and promo packs",
+                "product launches"
+            ],
+            "buyers": "small brands, retailers and growing businesses",
+            "style": "tuck end, mailer or two-piece box",
+            "material": "16–18pt SBS, kraft or corrugated board",
+            "finish": "matte or gloss, foil and spot UV",
+            "tip": "Send us one sample of the product or its exact size; it is the fastest way to a box that fits on the first proof."
+        }
+    },
+    {
+        "slug": "stationary-boxes",
+        "seoTitle": "Custom Stationery Boxes | Pen, Pencil & Book Packaging",
+        "seoDesc": "Custom stationery boxes for pens, pencils, markers, staples and books, plus folders and mailing envelopes. Printed with your logo from 100 units.",
+        "rule": null,
+        "profile": {
+            "for": [
+                "retail products",
+                "e-commerce orders",
+                "gift and promo packs",
+                "product launches"
+            ],
+            "buyers": "small brands, retailers and growing businesses",
+            "style": "tuck end, mailer or two-piece box",
+            "material": "16–18pt SBS, kraft or corrugated board",
+            "finish": "matte or gloss, foil and spot UV",
+            "tip": "Send us one sample of the product or its exact size; it is the fastest way to a box that fits on the first proof."
+        }
+    },
+    {
+        "slug": "tea-packaging",
+        "seoTitle": "Custom Tea Packaging | Printed Tea Boxes & Pouches",
+        "seoDesc": "Custom tea boxes, tins and pouches that keep leaves fresh and look beautiful on the shelf. Printed with your brand from 100 units, free design help.",
+        "rule": null,
+        "profile": {
+            "for": [
+                "retail products",
+                "e-commerce orders",
+                "gift and promo packs",
+                "product launches"
+            ],
+            "buyers": "small brands, retailers and growing businesses",
+            "style": "tuck end, mailer or two-piece box",
+            "material": "16–18pt SBS, kraft or corrugated board",
+            "finish": "matte or gloss, foil and spot UV",
+            "tip": "Send us one sample of the product or its exact size; it is the fastest way to a box that fits on the first proof."
+        }
+    },
+    {
+        "slug": "custom-tin-packaging",
+        "seoTitle": "Custom Tin Packaging | Printed Metal Tins Wholesale",
+        "seoDesc": "Durable custom tins for tea, candy, candles and cosmetics, printed with your logo and finished to feel premium. Wholesale pricing with free design help.",
+        "rule": null,
+        "profile": {
+            "for": [
+                "retail products",
+                "e-commerce orders",
+                "gift and promo packs",
+                "product launches"
+            ],
+            "buyers": "small brands, retailers and growing businesses",
+            "style": "tuck end, mailer or two-piece box",
+            "material": "16–18pt SBS, kraft or corrugated board",
+            "finish": "matte or gloss, foil and spot UV",
+            "tip": "Send us one sample of the product or its exact size; it is the fastest way to a box that fits on the first proof."
+        }
+    },
+    {
+        "slug": "trays-sleeves",
+        "seoTitle": "Custom Trays & Sleeves | Printed Box Sleeve Packaging",
+        "seoDesc": "Custom sleeves and trays that slide together for a clean, premium reveal. Ideal for soap, chocolate and gifts. Printed with your logo from 100 units.",
+        "rule": null,
+        "profile": {
+            "for": [
+                "retail products",
+                "e-commerce orders",
+                "gift and promo packs",
+                "product launches"
+            ],
+            "buyers": "small brands, retailers and growing businesses",
+            "style": "tuck end, mailer or two-piece box",
+            "material": "16–18pt SBS, kraft or corrugated board",
+            "finish": "matte or gloss, foil and spot UV",
+            "tip": "Send us one sample of the product or its exact size; it is the fastest way to a box that fits on the first proof."
+        }
+    },
+    {
+        "slug": "tube-packaging",
+        "seoTitle": "Custom Tube Packaging | Printed Cardboard Tubes",
+        "seoDesc": "Custom cardboard tubes for tea, cosmetics, candles, apparel and posters, with a smooth premium finish. Printed with your design from 100 units.",
+        "rule": null,
+        "profile": {
+            "for": [
+                "retail products",
+                "e-commerce orders",
+                "gift and promo packs",
+                "product launches"
+            ],
+            "buyers": "small brands, retailers and growing businesses",
+            "style": "tuck end, mailer or two-piece box",
+            "material": "16–18pt SBS, kraft or corrugated board",
+            "finish": "matte or gloss, foil and spot UV",
+            "tip": "Send us one sample of the product or its exact size; it is the fastest way to a box that fits on the first proof."
+        }
+    },
+    {
+        "slug": "tuck-boxes",
+        "seoTitle": "Custom Tuck Boxes | Tuck End Boxes with Your Logo",
+        "seoDesc": "Custom tuck end boxes, the go-to retail carton for cosmetics, supplements and small products. Printed with your logo from 100 units, free 3D mockup.",
+        "rule": null,
+        "profile": {
+            "for": [
+                "retail products",
+                "e-commerce orders",
+                "gift and promo packs",
+                "product launches"
+            ],
+            "buyers": "small brands, retailers and growing businesses",
+            "style": "tuck end, mailer or two-piece box",
+            "material": "16–18pt SBS, kraft or corrugated board",
+            "finish": "matte or gloss, foil and spot UV",
+            "tip": "Send us one sample of the product or its exact size; it is the fastest way to a box that fits on the first proof."
+        }
+    },
+    {
+        "slug": "vape-boxes",
+        "seoTitle": "Custom Vape Boxes | Printed Vape Cartridge Packaging",
+        "seoDesc": "Custom vape boxes for cartridges, pens and devices, with inserts that hold hardware in place. Printed with your brand from 100 units, free design help.",
+        "rule": "/vape|cartridge|e-cigarette/",
+        "profile": {
+            "for": [
+                "510 vape cartridges (0.5 ml and 1 ml)",
+                "disposable vape pens",
+                "pod systems and batteries",
+                "starter kits and multi-packs"
+            ],
+            "buyers": "vape brands, cannabis companies and smoke shops",
+            "style": "tuck end box or sleeve with a die-cut insert",
+            "material": "16–18pt SBS paperboard with a paperboard or foam insert",
+            "finish": "soft-touch or matte with spot UV, foil or holographic accents",
+            "tip": "Send us the cartridge or pen dimensions with the mouthpiece on, so the insert holds it tight without rattling."
+        }
+    },
+    {
+        "slug": "window-packaging-boxes",
+        "seoTitle": "Custom Window Boxes | Die-Cut Window Packaging",
+        "seoDesc": "Let your product sell itself with custom window boxes. Any shape of die-cut window, clear film, printed with your logo from 100 units, free US shipping.",
+        "rule": null,
+        "profile": {
+            "for": [
+                "retail products",
+                "e-commerce orders",
+                "gift and promo packs",
+                "product launches"
+            ],
+            "buyers": "small brands, retailers and growing businesses",
+            "style": "tuck end, mailer or two-piece box",
+            "material": "16–18pt SBS, kraft or corrugated board",
+            "finish": "matte or gloss, foil and spot UV",
+            "tip": "Send us one sample of the product or its exact size; it is the fastest way to a box that fits on the first proof."
+        }
+    },
+    {
+        "slug": "wrapping-paper",
+        "seoTitle": "Custom Wrapping Paper | Printed Branded Gift Wrap",
+        "seoDesc": "Custom printed wrapping paper and tissue with your logo or pattern, perfect for gifts, soaps and retail orders. A small touch that makes a big impression.",
+        "rule": null,
+        "profile": {
+            "for": [
+                "retail products",
+                "e-commerce orders",
+                "gift and promo packs",
+                "product launches"
+            ],
+            "buyers": "small brands, retailers and growing businesses",
+            "style": "tuck end, mailer or two-piece box",
+            "material": "16–18pt SBS, kraft or corrugated board",
+            "finish": "matte or gloss, foil and spot UV",
+            "tip": "Send us one sample of the product or its exact size; it is the fastest way to a box that fits on the first proof."
+        }
+    }
+]
