@@ -3,7 +3,7 @@ import { categories } from "@/data/categories";
 import { regions } from "@/data/regions";
 import { site } from "@/lib/site";
 import { QuoteForm } from "./QuoteForm";
-import { SampleForm } from "./SampleForm";
+import { MockupForm } from "./MockupForm";
 
 export function JsonLd({ data }: { data: object }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, "\\u003c") }} />;
@@ -149,74 +149,23 @@ export function RegionsBand() {
   );
 }
 
-/** What goes in the free sample kit (as proposed in the sample kit plan; update once confirmed). */
-export const kitItems = [
-  { swatch: "sbs", name: "White card (SBS)", note: "Smooth board for cosmetic, retail and tuck boxes" },
-  { swatch: "kraft", name: "Natural kraft", note: "Brown, eco look for food, candles and soap" },
-  { swatch: "flute", name: "Corrugated E-flute", note: "Strong shipping board for mailers" },
-  { swatch: "rigid", name: "Rigid greyboard", note: "Thick, wrapped board for luxury boxes" },
-  { swatch: "matte", name: "Matte", note: "Soft, no-shine surface" },
-  { swatch: "gloss", name: "Gloss", note: "Shiny finish with bright colours" },
-  { swatch: "soft", name: "Soft-touch", note: "A velvet feel in the hand" },
-  { swatch: "foil", name: "Gold & silver foil", note: "Metallic logo stamping" },
-  { swatch: "uv", name: "Spot UV", note: "Raised gloss on a matte base" },
-  { swatch: "emboss", name: "Emboss & deboss", note: "Raised and pressed-in logos" },
-  { swatch: "mailer", name: "Mini mailer box", note: "See how a printed mailer folds and closes" },
-  { swatch: "tuck", name: "Mini tuck box", note: "Retail tuck style with inside print" },
-  { swatch: "pouch", name: "Mylar pouch", note: "Stand-up zip pouch" },
-  { swatch: "labels", name: "Label sheet", note: "Gloss, matte, clear and kraft stickers" },
-  { swatch: "colour", name: "Colour card", note: "Standard CMYK print next to exact Pantone" },
-] as const;
-
-export function KitContents() {
+export function MockupBand() {
   return (
-    <section className="block band" id="kit">
-      <div className="wrap">
-        <div className="head">
-          <div>
-            <p className="eyebrow">What&apos;s in the kit</p>
-            <h2>{kitItems.length} pieces you can hold.</h2>
-          </div>
-          <p>Four boards, six finishes, two mini boxes, a pouch, a label sheet and a colour card, posted in a printed Musa mailer.</p>
-        </div>
-        <ul className="kit" data-reveal-group>
-          {kitItems.map((k) => (
-            <li key={k.name}>
-              <span className={`sw sw-${k.swatch}`} aria-hidden="true" />
-              <b>{k.name}</b>
-              <span>{k.note}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  );
-}
-
-export function SamplesBand() {
-  return (
-    <section className="block band samples" id="samples">
+    <section className="block band samples" id="mockup">
       <div className="wrap">
         <div className="card">
           <div>
-            <p className="eyebrow">Free sample kit</p>
-            <h2 style={{ marginTop: 10 }}>Feel the board before you order.</h2>
-            <p>Get a kit of our most popular boards and finishes posted to you, so you can choose with confidence.</p>
+            <p className="eyebrow">Free 3D mockup</p>
+            <h2 style={{ marginTop: 10 }}>See your box before you pay a thing.</h2>
+            <p>Send us your logo and our designers will put it on the box you have in mind, as a 3D mockup you can share with your team.</p>
             <ul className="kit-mini">
-              <li>4 boards</li>
-              <li>6 finishes</li>
-              <li>2 mini boxes</li>
-              <li>Pouch &amp; labels</li>
-              <li>Colour card</li>
+              <li>No payment</li>
+              <li>No account</li>
+              <li>Your own logo</li>
             </ul>
-            <p style={{ marginTop: 12 }}>
-              <Link href="/samples#kit" style={{ color: "var(--plum)", fontWeight: 600 }}>
-                See everything in the kit →
-              </Link>
-            </p>
           </div>
           <div>
-            <SampleForm />
+            <MockupForm />
           </div>
         </div>
       </div>

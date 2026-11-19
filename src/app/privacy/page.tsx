@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "How Musa Packaging collects and uses the details you send through our quote and sample forms.",
+  description: "How Musa Packaging collects and uses the details you send through our quote and mockup forms.",
   alternates: { canonical: "/privacy" },
   robots: { index: false },
 };
@@ -18,7 +18,7 @@ export default function PrivacyPage() {
         <div className="wrap prose">
           <h2>What we collect</h2>
           <p>
-            When you request a quote or a sample kit we collect the details you type into the form: your name, email address, country and
+            When you request a quote or a mockup we collect the details you type into the form: your name, email address, country and
             the packaging details you describe.
           </p>
           <h2>How we use it</h2>

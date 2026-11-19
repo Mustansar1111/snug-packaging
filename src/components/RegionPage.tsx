@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CategoryGrid } from "@/components/CategoryCard";
-import { Faq, Process, QuoteSection, SamplesBand } from "@/components/sections";
+import { Faq, Process, QuoteSection, MockupBand } from "@/components/sections";
 import type { Region } from "@/data/regions";
 import { featuredCategories, site } from "@/lib/site";
 
@@ -46,7 +46,7 @@ export function RegionPage({ region }: { region: Region }) {
       </section>
       <Process />
       <QuoteSection defaultCountry={region.countries[0]} defaultUnits={mm ? "mm" : "in"} />
-      <SamplesBand />
+      <MockupBand />
       <Faq items={faqs} />
     </>
   );

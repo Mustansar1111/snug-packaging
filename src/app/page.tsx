@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CategoryGrid } from "@/components/CategoryCard";
 import { FoldingBox } from "@/components/FoldingBox";
-import { Faq, Marquee, Process, QuoteSection, RegionsBand, SamplesBand } from "@/components/sections";
+import { Faq, Marquee, Process, QuoteSection, RegionsBand, MockupBand } from "@/components/sections";
 import { categories } from "@/data/categories";
 import { featuredCategories, generalFaqs, site } from "@/lib/site";
 
@@ -25,8 +25,8 @@ export default function Home() {
               <Link className="btn btn-apricot" href="/quote">
                 Get a free quote <span aria-hidden="true">→</span>
               </Link>
-              <Link className="btn btn-ghost" href="/samples">
-                Order a sample kit
+              <Link className="btn btn-ghost" href="/free-mockup">
+                Get a free 3D mockup
               </Link>
             </div>
             <div className="facts">
@@ -62,7 +62,7 @@ export default function Home() {
       <Process />
       <QuoteSection />
       <RegionsBand />
-      <SamplesBand />
+      <MockupBand />
       <Faq items={generalFaqs} />
     </>
   );

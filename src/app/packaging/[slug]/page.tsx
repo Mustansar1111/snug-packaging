@@ -43,8 +43,8 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
               <a className="btn btn-apricot" href="#quote">
                 Get a free quote <span aria-hidden="true">→</span>
               </a>
-              <Link className="btn btn-ghost" href="/samples">
-                Order a sample kit
+              <Link className="btn btn-ghost" href="/free-mockup">
+                Get a free 3D mockup
               </Link>
             </div>
           </div>

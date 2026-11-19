@@ -37,7 +37,7 @@ export function Footer() {
             <h4>Company</h4>
             <ul>
               <li><Link href="/how-it-works">How it works</Link></li>
-              <li><Link href="/samples">Free samples</Link></li>
+              <li><Link href="/free-mockup">Free 3D mockup</Link></li>
               <li><Link href="/about">About</Link></li>
               <li><Link href="/contact">Contact</Link></li>
               <li><Link href="/privacy">Privacy</Link></li>

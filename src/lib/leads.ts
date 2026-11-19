@@ -1,4 +1,4 @@
-export type LeadKind = "quote" | "sample" | "contact";
+export type LeadKind = "quote" | "mockup" | "contact";
 
 export type Lead = {
   kind: LeadKind;
@@ -22,7 +22,7 @@ export function validateLead(input: unknown): { lead?: Lead; error?: string } {
   const data = input as Record<string, unknown>;
   const str = (k: string, max = 200) => (typeof data[k] === "string" ? (data[k] as string).trim().slice(0, max) : undefined);
   const kind = str("kind") as LeadKind | undefined;
-  if (!kind || !["quote", "sample", "contact"].includes(kind)) return { error: "Unknown form." };
+  if (!kind || !["quote", "mockup", "contact"].includes(kind)) return { error: "Unknown form." };
   const email = str("email", 160);
   if (!email || !EMAIL.test(email)) return { error: "Add a valid email address so we can reply." };
   const units = str("units");
