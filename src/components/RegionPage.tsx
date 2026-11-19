@@ -9,7 +9,7 @@ export function RegionPage({ region }: { region: Region }) {
   const faqs = [
     { q: `Do you deliver to ${region.name}?`, a: `Yes. We deliver to addresses across ${region.name}, and your quote includes delivery to your door.` },
     { q: `Can I get my quote in ${region.currency}?`, a: `Yes. Choose your country in the quote form and we'll price your order in ${region.currency}.` },
-    { q: `Can I give my sizes in ${mm ? "millimetres" : "inches"}?`, a: "Yes. The quote form takes inches or millimetres, and your proof shows the size in the unit you use." },
+    { q: `Can I give my sizes in ${mm ? "millimetres" : "inches"}?`, a: "Yes. The quote form takes inches, centimetres or millimetres, and your proof shows the size in the unit you use." },
     { q: "What is the minimum order?", a: `You can order from ${site.moq} units for most styles.` },
   ];
   return (

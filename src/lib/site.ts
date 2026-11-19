@@ -56,7 +56,7 @@ export function categoryFaqs(cat: Category) {
     },
     {
       q: "Can you make them to my exact size?",
-      a: "Yes. Every order is made to your inside dimensions, in inches or millimetres. If you're unsure, send us your product and we'll measure it for you.",
+      a: "Yes. Every order is made to your inside dimensions, in inches, centimetres or millimetres. If you're unsure, send us your product and we'll measure it for you.",
     },
   ];
 }

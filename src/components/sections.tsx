@@ -94,7 +94,7 @@ export function QuoteSection({
 }: {
   defaultStyle?: string;
   defaultCountry?: string;
-  defaultUnits?: "in" | "mm";
+  defaultUnits?: "in" | "cm" | "mm";
   title?: string;
 }) {
   return (
@@ -109,7 +109,7 @@ export function QuoteSection({
           <div className="why">
             <div><b>MOQ</b><span>Start from {site.moq} units</span></div>
             <div><b>Proof</b><span>Free digital proof and 3D mockup</span></div>
-            <div><b>Units</b><span>Inches or millimetres, whichever you use</span></div>
+            <div><b>Units</b><span>Inches, cm or mm, whichever you use</span></div>
             <div><b>Design</b><span>Free design help if you don&apos;t have artwork</span></div>
           </div>
         </div>

@@ -5,6 +5,10 @@ import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { allCountries } from "@/data/regions";
 
+type Unit = "in" | "cm" | "mm";
+/** Millimetres in one of each unit. */
+const MM_PER: Record<Unit, number> = { in: 25.4, cm: 10, mm: 1 };
+
 const QUANTITIES = ["100", "250", "500", "1,000", "2,500+"];
 const FINISHES = ["Matte", "Gloss", "Soft-touch", "Foil", "Emboss", "Not sure"];
 
@@ -12,7 +16,7 @@ type Props = {
   styles: string[];
   defaultStyle?: string;
   defaultCountry?: string;
-  defaultUnits?: "in" | "mm";
+  defaultUnits?: Unit;
 };
 
 function Chips({ options, value, onChange, label }: { options: string[]; value: string; onChange: (v: string) => void; label: string }) {
@@ -34,8 +38,9 @@ export function QuoteForm({ styles, defaultStyle, defaultCountry = "United State
   const [step, setStep] = useState(1);
   const [style, setStyle] = useState(defaultStyle ?? styles[0]);
   const [quantity, setQuantity] = useState("500");
-  const [units, setUnits] = useState<"in" | "mm">(defaultUnits);
+  const [units, setUnits] = useState<Unit>(defaultUnits);
   const [dims, setDims] = useState({ l: "", w: "", h: "" });
+  const typedMm = useRef<Partial<Record<"l" | "w" | "h", number>>>({});
   const [finish, setFinish] = useState("Matte");
   const [name, setName] = useState("");
   const [country, setCountry] = useState(defaultCountry);
@@ -52,14 +57,16 @@ export function QuoteForm({ styles, defaultStyle, defaultCountry = "United State
     }
   }
 
-  function switchUnits(u: "in" | "mm") {
+  function switchUnits(u: Unit) {
     if (u === units) return;
-    const convert = (v: string) => {
-      const n = parseFloat(v);
-      if (Number.isNaN(n)) return v;
-      return u === "mm" ? String(Math.round(n * 25.4)) : (n / 25.4).toFixed(2).replace(/\.?0+$/, "");
+    // Convert from the size as typed, so switching back and forth never drifts.
+    const convert = (k: "l" | "w" | "h") => {
+      const mm = typedMm.current[k];
+      if (mm === undefined) return dims[k];
+      const v = mm / MM_PER[u];
+      return u === "mm" ? String(Math.round(v)) : v.toFixed(u === "cm" ? 1 : 2).replace(/\.?0+$/, "");
     };
-    setDims((d) => ({ l: convert(d.l), w: convert(d.w), h: convert(d.h) }));
+    setDims({ l: convert("l"), w: convert("w"), h: convert("h") });
     setUnits(u);
   }
 
@@ -132,7 +139,7 @@ export function QuoteForm({ styles, defaultStyle, defaultCountry = "United State
           <div className="sublabel">
             <span className="lbl">Inside dimensions (optional)</span>
             <div className="units" role="group" aria-label="Units">
-              {(["in", "mm"] as const).map((u) => (
+              {(["in", "cm", "mm"] as const).map((u) => (
                 <button key={u} type="button" aria-pressed={units === u} onClick={() => switchUnits(u)}>
                   {u}
                 </button>
@@ -148,7 +155,11 @@ export function QuoteForm({ styles, defaultStyle, defaultCountry = "United State
                 placeholder={{ l: "Length", w: "Width", h: "Height" }[k]}
                 aria-label={{ l: "Length", w: "Width", h: "Height" }[k]}
                 value={dims[k]}
-                onChange={(e) => setDims((d) => ({ ...d, [k]: e.target.value }))}
+                onChange={(e) => {
+                  const n = parseFloat(e.target.value);
+                  typedMm.current[k] = Number.isNaN(n) ? undefined : n * MM_PER[units];
+                  setDims((d) => ({ ...d, [k]: e.target.value }));
+                }}
               />
             ))}
           </div>

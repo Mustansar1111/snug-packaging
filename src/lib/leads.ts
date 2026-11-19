@@ -8,7 +8,7 @@ export type Lead = {
   style?: string;
   quantity?: string;
   dimensions?: string;
-  units?: "in" | "mm";
+  units?: "in" | "cm" | "mm";
   finish?: string;
   message?: string;
   /** Page the lead was sent from, so you can see which pages bring business. */
@@ -35,7 +35,7 @@ export function validateLead(input: unknown): { lead?: Lead; error?: string } {
       style: str("style", 120),
       quantity: str("quantity", 40),
       dimensions: str("dimensions", 80),
-      units: units === "mm" ? "mm" : units === "in" ? "in" : undefined,
+      units: units === "in" || units === "cm" || units === "mm" ? units : undefined,
       finish: str("finish", 80),
       message: str("message", 2000),
       page: str("page", 200),

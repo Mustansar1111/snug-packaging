@@ -68,7 +68,7 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
                 <tr><th scope="row">Finishes</th><td>{cat.finish}</td></tr>
                 <tr><th scope="row">Minimum order</th><td>{site.moq} units</td></tr>
                 <tr><th scope="row">Production</th><td>{site.turnaround} after proof approval</td></tr>
-                <tr><th scope="row">Sizes</th><td>Made to your inside dimensions, in inches or millimetres</td></tr>
+                <tr><th scope="row">Sizes</th><td>Made to your inside dimensions, in inches, centimetres or millimetres</td></tr>
               </tbody>
             </table>
             <h3 style={{ fontSize: 22, marginTop: 36 }}>Brands use them for</h3>
