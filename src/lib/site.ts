@@ -1,5 +1,6 @@
 import { categories, featuredSlugs } from "@/data/categories";
 import type { Category, CategoryGroup } from "@/data/types";
+import { quoteReply, quoteReplyDays, quoteReplyShort } from "./promise";
 
 export const site = {
   name: "Musa Packaging",
@@ -9,9 +10,36 @@ export const site = {
   // TODO: replace with Musa's own contact details before launch.
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@musapackaging.com",
   phone: process.env.NEXT_PUBLIC_CONTACT_PHONE ?? "",
+  // WhatsApp number in international format, digits only (e.g. 15551234567). Leave empty to hide the WhatsApp links.
+  whatsapp: (process.env.NEXT_PUBLIC_WHATSAPP ?? "").replace(/\D/g, ""),
   moq: 100,
   turnaround: "10–12 business days",
+  quoteReply,
+  quoteReplyDays,
+  quoteReplyShort,
 };
+
+/** Placeholder proof (logos, reviews, stories) shows only when this is on, so a launch can never show made-up proof by accident. */
+export const showPlaceholders = process.env.NEXT_PUBLIC_SHOW_PLACEHOLDERS === "true";
+
+export const industrySlugs = ["cosmetic-boxes", "candle-boxes", "apparel-boxes", "food-boxes", "coffee-packaging", "cbd-boxes", "jewellery-boxes", "bakery-boxes"];
+
+export function industryCategories(): Category[] {
+  return industrySlugs.map((s) => getCategory(s)).filter((c): c is Category => Boolean(c));
+}
+
+export const materials: { key: string; label: string; blurb: string; test: RegExp }[] = [
+  { key: "corrugated", label: "Corrugated", blurb: "Fluted board that protects products in the post.", test: /corrugated|flute/i },
+  { key: "rigid", label: "Rigid board", blurb: "Thick greyboard wrapped in printed paper, for a luxury feel.", test: /rigid|greyboard|chipboard/i },
+  { key: "kraft", label: "Kraft", blurb: "Natural brown board with an eco look.", test: /kraft/i },
+  { key: "card", label: "SBS card", blurb: "Smooth white card that prints sharp, bright colour.", test: /SBS|cardstock|24pt card/i },
+  { key: "film", label: "Film, paper & tin", blurb: "Pouches, bags, labels and tins.", test: /film|laminate|vinyl|tinplate|coated paper|uncoated/i },
+];
+
+export function materialCategories(key: string): Category[] {
+  const m = materials.find((x) => x.key === key);
+  return m ? categories.filter((c) => m.test.test(c.material)) : [];
+}
 
 export const groups: { key: CategoryGroup; label: string; blurb: string }[] = [
   { key: "styles", label: "Box styles", blurb: "Pick the shape first: mailers, rigid boxes, tuck boxes and more." },

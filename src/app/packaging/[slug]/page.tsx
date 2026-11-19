@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Reviews } from "@/components/proof";
 import { notFound } from "next/navigation";
 import { CategoryGrid } from "@/components/CategoryCard";
 import { PackIcon } from "@/components/PackIcon";
@@ -95,6 +96,7 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
       </section>
 
       <Process />
+      <Reviews />
       <Faq items={faqs} title={`${cat.name} questions`} />
 
       <section className="block band" style={{ paddingTop: 0 }}>

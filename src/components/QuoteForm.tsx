@@ -4,6 +4,8 @@ import { useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { allCountries } from "@/data/regions";
+import { boxSketch } from "@/lib/boxSketch";
+import { quoteReply, quoteReplyDays } from "@/lib/promise";
 
 type Unit = "in" | "cm" | "mm";
 /** Millimetres in one of each unit. */
@@ -18,6 +20,34 @@ type Props = {
   defaultCountry?: string;
   defaultUnits?: Unit;
 };
+
+/** Live drawing of the box, redrawn as the sizes change. Uses a typical mailer shape until all three sizes are filled in. */
+function BoxPreview({ dims, units }: { dims: { l: string; w: string; h: string }; units: Unit }) {
+  const n = [dims.l, dims.w, dims.h].map((v) => parseFloat(v));
+  const ok = n.every((v) => v > 0);
+  const [l, w, h] = ok ? n : [9, 6, 3.5];
+  // Keep very flat or very tall boxes readable.
+  const max = Math.max(l, w, h);
+  const clamp = (v: number) => Math.max(v, max / 12);
+  const b = boxSketch(clamp(l), clamp(w), clamp(h));
+  return (
+    <figure className={ok ? "box-preview" : "box-preview idle"} aria-label={ok ? `Box drawing, ${l} by ${w} by ${h} ${units}` : "Box drawing"}>
+      <svg viewBox={b.viewBox} role="img" aria-hidden="true">
+        <polygon className="f-top" points={b.top} />
+        <polygon className="f-right" points={b.right} />
+        <polygon className="f-front" points={b.front} />
+        {ok && (
+          <>
+            <text x={b.lPos[0] - 6} y={b.lPos[1] + 18} textAnchor="end">L {l}</text>
+            <text x={b.wPos[0] + 6} y={b.wPos[1] + 18}>W {w}</text>
+            <text x={b.hPos[0] - 8} y={b.hPos[1] + 4} textAnchor="end">H {h}</text>
+          </>
+        )}
+      </svg>
+      <figcaption>{ok ? `${l} × ${w} × ${h} ${units}, inside size` : "Add your sizes to see your box"}</figcaption>
+    </figure>
+  );
+}
 
 function Chips({ options, value, onChange, label }: { options: string[]; value: string; onChange: (v: string) => void; label: string }) {
   return (
@@ -146,6 +176,7 @@ export function QuoteForm({ styles, defaultStyle, defaultCountry = "United State
               ))}
             </div>
           </div>
+          <BoxPreview dims={dims} units={units} />
           <div className="row">
             {(["l", "w", "h"] as const).map((k) => (
               <input
@@ -199,12 +230,16 @@ export function QuoteForm({ styles, defaultStyle, defaultCountry = "United State
           <label htmlFor="q-hp">Company website</label>
           <input id="q-hp" name="company_website" tabIndex={-1} autoComplete="off" />
         </div>
+        <p className="next-step">
+          <b>What happens next:</b> a packaging specialist emails your price and options {quoteReply}, {quoteReplyDays}. Then we send a free
+          proof before anything is printed.
+        </p>
         {error && <p className="err" role="alert">{error}</p>}
       </div>
 
       <div className="pane done" data-step="4" hidden={step !== 4} aria-live="polite">
         <h3>Thanks, your request is in.</h3>
-        <p>A packaging specialist will email you a price and options shortly. Check your spam folder if nothing arrives.</p>
+        <p>A packaging specialist will email you a price and options {quoteReply}, {quoteReplyDays}. Check your spam folder if nothing arrives.</p>
       </div>
 
       {step < 4 && (

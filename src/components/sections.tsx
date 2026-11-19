@@ -107,6 +107,7 @@ export function QuoteSection({
             No account and no payment. Tell us what you need and a packaging specialist will reply with a price and options.
           </p>
           <div className="why">
+            <div><b>Reply</b><span>Your price by email {site.quoteReply}, {site.quoteReplyDays}</span></div>
             <div><b>MOQ</b><span>Start from {site.moq} units</span></div>
             <div><b>Proof</b><span>Free digital proof and 3D mockup</span></div>
             <div><b>Units</b><span>Inches, cm or mm, whichever you use</span></div>

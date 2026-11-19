@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { featuredCategories, site } from "@/lib/site";
 import { regions } from "@/data/regions";
+import { CtaBand } from "./proof";
 
 export function Footer() {
   return (
     <>
+      <CtaBand />
       <footer className="site-foot band">
         <div className="wrap">
           <div>
@@ -37,6 +39,7 @@ export function Footer() {
             <h4>Company</h4>
             <ul>
               <li><Link href="/how-it-works">How it works</Link></li>
+              <li><Link href="/artwork-guide">Artwork guide</Link></li>
               <li><Link href="/free-mockup">Free 3D mockup</Link></li>
               <li><Link href="/about">About</Link></li>
               <li><Link href="/contact">Contact</Link></li>
