@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
-import { QuoteSection, SamplesBand } from "@/components/sections";
+import { KitContents, QuoteSection, SamplesBand } from "@/components/sections";
 
 export const metadata: Metadata = {
   title: "Free Packaging Sample Kit",
@@ -14,8 +14,9 @@ export default function SamplesPage() {
       <PageHero
         crumb="Free samples"
         title="Feel the quality before you order."
-        lede="Our sample kit includes our most popular boards and finishes, from kraft and corrugated to soft-touch and foil, so you can choose with confidence."
+        lede="Our free kit holds 15 pieces: our four main boards, six finishes, two mini boxes, a pouch, a label sheet and a colour card, so you can choose with confidence."
       />
+      <KitContents />
       <SamplesBand />
       <QuoteSection title="Already know what you need?" />
     </>
