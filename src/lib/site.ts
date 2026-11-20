@@ -7,11 +7,16 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://snugpackaging.com",
   description:
     "Custom printed boxes, bags and labels from 100 units, for brands in the USA, UK, Australia and Europe. Free design help and a digital proof before we print.",
-  // TODO: replace with Snug's own contact details before launch.
+  legalName: "Snug Packaging",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "sales@snugpackaging.com",
-  phone: process.env.NEXT_PUBLIC_CONTACT_PHONE ?? "",
-  // WhatsApp number in international format, digits only (e.g. 15551234567). Leave empty to hide the WhatsApp links.
-  whatsapp: (process.env.NEXT_PUBLIC_WHATSAPP ?? "").replace(/\D/g, ""),
+  phone: process.env.NEXT_PUBLIC_CONTACT_PHONE ?? "+1 (786) 885-8250",
+  // WhatsApp number in international format, digits only. Empty hides the WhatsApp links.
+  whatsapp: (process.env.NEXT_PUBLIC_WHATSAPP ?? "17868858250").replace(/\D/g, ""),
+  offices: [
+    // TODO: confirm the UK postcode (BD8 1RN or BD7 1RN).
+    { country: "United Kingdom", code: "GB", street: "91 Grantham Road", city: "Bradford", region: "", postcode: "BD8 1RN" },
+    { country: "United States", code: "US", street: "178 NY-59 Ste 301", city: "Airmont", region: "NY", postcode: "10952" },
+  ],
   moq: 100,
   turnaround: "10–12 business days",
   quoteReply,
@@ -96,3 +101,9 @@ export const generalFaqs = [
   { q: "Do you ship to the UK, Australia and Europe?", a: "Yes. We deliver to the USA, UK, Australia and across Europe, and your quote includes delivery to your address." },
   { q: "Why don't you show prices?", a: "Every order is made to your size, material, finish and quantity, so a fixed price list would never match. A quote is free and gives you an exact figure." },
 ];
+
+export const telHref = (phone: string) => `tel:${phone.replace(/[^\d+]/g, "")}`;
+export const whatsappHref = (text?: string) =>
+  `https://wa.me/${site.whatsapp}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
+export const officeLines = (o: (typeof site.offices)[number]) =>
+  [o.street, o.region ? `${o.city}, ${o.region} ${o.postcode}` : `${o.city} ${o.postcode}`, o.country];

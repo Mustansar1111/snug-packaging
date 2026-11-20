@@ -358,6 +358,21 @@ section.block { padding-block: 88px; }
   footer.site-foot .wrap { grid-template-columns: 1fr 1fr; }
 }
 
+/* contact details, offices, WhatsApp */
+.foot-addr { display: grid; gap: 2px; font-style: normal; margin-top: 14px; font-size: 13px; }
+.foot-addr b { color: var(--hero-ink); font-weight: 600; }
+footer.site-foot p a { text-decoration: none; }
+footer.site-foot p a:hover { color: var(--hero-ink); }
+.offices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.office { display: grid; gap: 6px; align-content: start; font-style: normal; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; font-size: 16px; }
+.office .eyebrow { margin-bottom: 6px; }
+.office a { color: var(--plum); font-weight: 600; text-decoration: none; }
+.prose a { color: var(--plum); font-weight: 600; }
+.wa-float { position: fixed; right: max(18px, env(safe-area-inset-right, 0px)); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 40; width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; background: #25d366; color: #fff; box-shadow: 0 8px 24px rgb(0 0 0 / .25); transition: transform .2s ease; }
+.wa-float:hover { transform: scale(1.06); }
+@media (max-width: 860px) { .offices { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .wa-float { bottom: calc(84px + env(safe-area-inset-bottom, 0px)); width: 50px; height: 50px; } }
+
 /* faq */
 .faq { display: grid; border-top: 1px solid var(--line); max-width: 860px; }
 .faq details { border-bottom: 1px solid var(--line); padding-block: 20px; }

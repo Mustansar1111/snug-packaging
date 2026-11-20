@@ -3,7 +3,7 @@ import { CategoryGrid } from "@/components/CategoryCard";
 import { Tabs } from "@/components/Tabs";
 import { categories } from "@/data/categories";
 import { logos, reviews, stories } from "@/data/proof";
-import { featuredCategories, industryCategories, materialCategories, materials, showPlaceholders, site } from "@/lib/site";
+import { featuredCategories, industryCategories, materialCategories, materials, showPlaceholders, site, telHref, whatsappHref } from "@/lib/site";
 
 const visible = <T extends { placeholder: boolean }>(items: T[]) => items.filter((i) => !i.placeholder || showPlaceholders);
 
@@ -244,12 +244,12 @@ export function CtaBand() {
             Get a free quote <span aria-hidden="true">→</span>
           </Link>
           {site.whatsapp && (
-            <a className="btn btn-ghost" href={`https://wa.me/${site.whatsapp}`} rel="noopener">
+            <a className="btn btn-ghost" href={whatsappHref()} rel="noopener">
               Chat on WhatsApp
             </a>
           )}
           {site.phone && (
-            <a className="btn btn-ghost" href={`tel:${site.phone.replace(/[^\d+]/g, "")}`}>
+            <a className="btn btn-ghost" href={telHref(site.phone)}>
               {site.phone}
             </a>
           )}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
-import { site } from "@/lib/site";
+import Link from "next/link";
+import { officeLines, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Terms of Sale",
@@ -14,9 +15,18 @@ export default function TermsPage() {
     <>
       <PageHero crumb="Terms" title="Terms of sale" />
       <section className="block band">
-        {/* TODO: placeholder terms. Have them reviewed by a lawyer before launch, and add Snug's legal company name and address. */}
+        {/* TODO: have these terms reviewed by a lawyer before launch. */}
         <div className="wrap prose">
-          <p>[Placeholder: legal company name and registered address]</p>
+          <p>
+            These terms apply to quotes and orders from {site.legalName}. Our offices are at{" "}
+            {site.offices.map((o, i) => (
+              <span key={o.code}>
+                {i > 0 && " and "}
+                {officeLines(o).join(", ")}
+              </span>
+            ))}
+            .
+          </p>
           <h2>Quotes</h2>
           <p>A quote is free and doesn&apos;t commit you to anything. Each quote shows how long its price is valid. Prices depend on the size, material, finish and quantity you give us; if any of these change, we send a new quote.</p>
           <h2>Proofs and approval</h2>
@@ -30,7 +40,7 @@ export default function TermsPage() {
           <h2>Production and delivery</h2>
           <p>Production takes {site.turnaround} after proof approval and payment. Delivery times are estimates.</p>
           <h2>Problems with your order</h2>
-          <p>If your order arrives damaged or doesn&apos;t match the approved proof, email {site.email} with photos as soon as you can, and we&apos;ll work with you to put it right. [Placeholder: add Snug&apos;s reprint and refund policy.]</p>
+          <p>If your order arrives damaged or doesn&apos;t match the approved proof, email {site.email} with photos and we&apos;ll put it right. Our <Link href="/refund-policy">refund policy</Link> explains how.</p>
           <h2>Your artwork</h2>
           <p>You confirm that you have the right to use the artwork, logos and text you send us. You keep all rights to your artwork.</p>
           <h2>Contact</h2>

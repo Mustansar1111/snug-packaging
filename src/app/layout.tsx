@@ -45,6 +45,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             url: site.url,
             email: site.email,
             ...(site.phone ? { telephone: site.phone } : {}),
+            legalName: site.legalName,
+            address: site.offices.map((o) => ({
+              "@type": "PostalAddress",
+              streetAddress: o.street,
+              addressLocality: o.city,
+              ...(o.region ? { addressRegion: o.region } : {}),
+              postalCode: o.postcode,
+              addressCountry: o.code,
+            })),
             areaServed: ["US", "GB", "AU", "EU"],
           }}
         />

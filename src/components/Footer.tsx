@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { featuredCategories, site } from "@/lib/site";
+import { featuredCategories, site, telHref, whatsappHref } from "@/lib/site";
 import { industries } from "@/data/industries";
 import { regions } from "@/data/regions";
 import { CtaBand } from "./proof";
+import { Offices, WhatsAppButton } from "./Offices";
 
 export function Footer() {
   return (
@@ -18,8 +19,18 @@ export function Footer() {
             <p style={{ marginTop: 14, maxWidth: "28em" }}>
               Custom printed boxes, bags and labels for brands in the USA, UK, Australia and Europe.
             </p>
-            <p style={{ marginTop: 14 }}>{site.email}</p>
-            {site.phone && <p>{site.phone}</p>}
+            <p style={{ marginTop: 14 }}>
+              <a href={`mailto:${site.email}`}>{site.email}</a>
+              <br />
+              {site.phone && <a href={telHref(site.phone)}>{site.phone}</a>}
+              {site.whatsapp && (
+                <>
+                  {" · "}
+                  <a href={whatsappHref()} rel="noopener">WhatsApp</a>
+                </>
+              )}
+            </p>
+            <Offices />
           </div>
           <div>
             <h4>Packaging</h4>
@@ -72,10 +83,11 @@ export function Footer() {
             </ul>
           </div>
           <p className="legal">
-            © Snug Packaging · <Link href="/privacy">Privacy</Link> · <Link href="/terms">Terms</Link> · <Link href="/cookies">Cookies</Link>
+            © Snug Packaging · <Link href="/privacy">Privacy</Link> · <Link href="/terms">Terms</Link> · <Link href="/refund-policy">Refunds</Link> · <Link href="/cookies">Cookies</Link>
           </p>
         </div>
       </footer>
+      <WhatsAppButton />
       <div className="mbar">
         <Link className="btn btn-apricot" href="/quote">
           Get a free quote
