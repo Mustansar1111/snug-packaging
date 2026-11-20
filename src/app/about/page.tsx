@@ -4,8 +4,8 @@ import { QuoteSection } from "@/components/sections";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About Musa Packaging",
-  description: "Musa Packaging makes custom printed boxes, bags and labels for growing brands in the USA, UK, Australia and Europe, from 100 units.",
+  title: "About Snug Packaging",
+  description: "Snug Packaging makes custom printed boxes, bags and labels for growing brands in the USA, UK, Australia and Europe, from 100 units.",
   alternates: { canonical: "/about" },
 };
 
@@ -15,9 +15,9 @@ export default function AboutPage() {
       <PageHero crumb="About" title="Packaging for brands that care how things arrive." />
       <section className="block band">
         <div className="wrap prose">
-          {/* TODO: replace with Musa's own story before launch. */}
+          {/* TODO: replace with Snug's own story before launch. */}
           <p>
-            Musa Packaging makes custom printed boxes, bags and labels for growing brands. We work with makers, online shops and established
+            Snug Packaging makes custom printed boxes, bags and labels for growing brands. We work with makers, online shops and established
             names in the USA, the UK, Australia and across Europe.
           </p>
           <p>

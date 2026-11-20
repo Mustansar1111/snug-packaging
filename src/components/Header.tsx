@@ -21,8 +21,8 @@ export function Header() {
   return (
     <header className="site-head band">
       <div className="wrap">
-        <Link className="logo" href="/" aria-label="Musa Packaging home">
-          <b>musa</b>
+        <Link className="logo" href="/" aria-label="Snug Packaging home">
+          <b>snug</b>
           <span>packaging</span>
         </Link>
         <nav className="nav" aria-label="Main">

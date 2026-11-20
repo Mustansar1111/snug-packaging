@@ -12,7 +12,7 @@ export function Footer() {
         <div className="wrap">
           <div>
             <Link className="logo" href="/">
-              <b>musa</b>
+              <b>snug</b>
               <span>packaging</span>
             </Link>
             <p style={{ marginTop: 14, maxWidth: "28em" }}>
@@ -60,7 +60,7 @@ export function Footer() {
           <div>
             <h4>Company</h4>
             <ul>
-              <li><Link href="/about">About Musa</Link></li>
+              <li><Link href="/about">About Snug</Link></li>
               <li><Link href="/contact">Contact</Link></li>
               <li><Link href="/free-mockup">Free 3D mockup</Link></li>
               <li><Link href="/shipping">Shipping</Link></li>
@@ -72,7 +72,7 @@ export function Footer() {
             </ul>
           </div>
           <p className="legal">
-            © Musa Packaging · <Link href="/privacy">Privacy</Link> · <Link href="/terms">Terms</Link> · <Link href="/cookies">Cookies</Link>
+            © Snug Packaging · <Link href="/privacy">Privacy</Link> · <Link href="/terms">Terms</Link> · <Link href="/cookies">Cookies</Link>
           </p>
         </div>
       </footer>

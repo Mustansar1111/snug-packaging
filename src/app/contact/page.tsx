@@ -4,8 +4,8 @@ import { QuoteSection } from "@/components/sections";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact Musa Packaging",
-  description: "Contact Musa Packaging about custom boxes, bags and labels. Send a quote request or email our packaging specialists.",
+  title: "Contact Snug Packaging",
+  description: "Contact Snug Packaging about custom boxes, bags and labels. Send a quote request or email our packaging specialists.",
   alternates: { canonical: "/contact" },
 };
 

@@ -49,7 +49,7 @@ export function validateLead(input: unknown): { lead?: Lead; error?: string } {
  */
 export async function deliverLead(lead: Lead): Promise<boolean> {
   const url = process.env.LEAD_WEBHOOK_URL;
-  const payload = { ...lead, receivedAt: new Date().toISOString(), site: "musapackaging.com" };
+  const payload = { ...lead, receivedAt: new Date().toISOString(), site: "snugpackaging.com" };
   if (!url) {
     console.info("[lead]", JSON.stringify(payload));
     return true;

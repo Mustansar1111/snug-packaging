@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "How Musa Packaging collects and uses the details you send through our quote and mockup forms.",
+  description: "How Snug Packaging collects and uses the details you send through our quote and mockup forms.",
   alternates: { canonical: "/privacy" },
   robots: { index: false },
 };

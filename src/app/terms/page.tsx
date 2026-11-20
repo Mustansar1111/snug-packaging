@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Terms of Sale",
-  description: "The terms that apply when you request a quote or order custom packaging from Musa Packaging.",
+  description: "The terms that apply when you request a quote or order custom packaging from Snug Packaging.",
   alternates: { canonical: "/terms" },
   robots: { index: false },
 };
@@ -14,7 +14,7 @@ export default function TermsPage() {
     <>
       <PageHero crumb="Terms" title="Terms of sale" />
       <section className="block band">
-        {/* TODO: placeholder terms. Have them reviewed by a lawyer before launch, and add Musa's legal company name and address. */}
+        {/* TODO: placeholder terms. Have them reviewed by a lawyer before launch, and add Snug's legal company name and address. */}
         <div className="wrap prose">
           <p>[Placeholder: legal company name and registered address]</p>
           <h2>Quotes</h2>
@@ -30,7 +30,7 @@ export default function TermsPage() {
           <h2>Production and delivery</h2>
           <p>Production takes {site.turnaround} after proof approval and payment. Delivery times are estimates.</p>
           <h2>Problems with your order</h2>
-          <p>If your order arrives damaged or doesn&apos;t match the approved proof, email {site.email} with photos as soon as you can, and we&apos;ll work with you to put it right. [Placeholder: add Musa&apos;s reprint and refund policy.]</p>
+          <p>If your order arrives damaged or doesn&apos;t match the approved proof, email {site.email} with photos as soon as you can, and we&apos;ll work with you to put it right. [Placeholder: add Snug&apos;s reprint and refund policy.]</p>
           <h2>Your artwork</h2>
           <p>You confirm that you have the right to use the artwork, logos and text you send us. You keep all rights to your artwork.</p>
           <h2>Contact</h2>

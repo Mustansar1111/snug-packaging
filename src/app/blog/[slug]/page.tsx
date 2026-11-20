@@ -36,7 +36,7 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
           <h1 style={{ maxWidth: "18em" }}>{post.title}</h1>
           <p className="lede">{post.description}</p>
           <p className="post-byline">
-            Musa Packaging · <time dateTime={post.date}>{new Date(`${post.date}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" })}</time> · {post.readMins} min read
+            Snug Packaging · <time dateTime={post.date}>{new Date(`${post.date}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" })}</time> · {post.readMins} min read
           </p>
         </div>
       </section>

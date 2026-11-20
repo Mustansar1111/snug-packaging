@@ -3,12 +3,13 @@ import type { Category, CategoryGroup } from "@/data/types";
 import { quoteReply, quoteReplyDays, quoteReplyShort } from "./promise";
 
 export const site = {
-  name: "Musa Packaging",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://musapackaging.com",
+  name: "Snug Packaging",
+  // TODO: snugpackaging.com is a placeholder until the domain is bought.
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://snugpackaging.com",
   description:
     "Custom printed boxes, bags and labels from 100 units, for brands in the USA, UK, Australia and Europe. Free design help and a digital proof before we print.",
-  // TODO: replace with Musa's own contact details before launch.
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@musapackaging.com",
+  // TODO: replace with Snug's own contact details before launch.
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@snugpackaging.com",
   phone: process.env.NEXT_PUBLIC_CONTACT_PHONE ?? "",
   // WhatsApp number in international format, digits only (e.g. 15551234567). Leave empty to hide the WhatsApp links.
   whatsapp: (process.env.NEXT_PUBLIC_WHATSAPP ?? "").replace(/\D/g, ""),

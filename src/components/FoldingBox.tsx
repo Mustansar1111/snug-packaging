@@ -5,7 +5,7 @@ import gsap from "gsap";
 
 const SPEC = "Mailer box · 9 × 6 × 3.5 in · E-flute";
 
-/** Hero animation: a flat dieline folds itself into a printed Musa mailer box. */
+/** Hero animation: a flat dieline folds itself into a printed Snug mailer box. */
 export function FoldingBox() {
   const stage = useRef<HTMLDivElement>(null);
   const [label, setLabel] = useState(SPEC);
@@ -68,13 +68,13 @@ export function FoldingBox() {
         <div className="spin">
           <div className="bottom">
             <div className="face front">
-              <div className="print">musa</div>
+              <div className="print">snug</div>
             </div>
             <div className="face back">
               <div className="face lid">
                 <div className="print">
                   <div>
-                    musa<small>YOUR BRAND HERE</small>
+                    snug<small>YOUR BRAND HERE</small>
                   </div>
                 </div>
               </div>

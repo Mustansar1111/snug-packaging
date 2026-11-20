@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Cookie Policy",
-  description: "How the Musa Packaging website uses cookies.",
+  description: "How the Snug Packaging website uses cookies.",
   alternates: { canonical: "/cookies" },
   robots: { index: false },
 };

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FoldingBox } from "@/components/FoldingBox";
-import { Finishes, Reviews, ShopTabs, Stories, TrustBar, WhyMusa } from "@/components/proof";
+import { Finishes, Reviews, ShopTabs, Stories, TrustBar, WhySnug } from "@/components/proof";
 import { Faq, Marquee, Process, QuoteSection, RegionsBand, MockupBand } from "@/components/sections";
 import { generalFaqs, site } from "@/lib/site";
 
@@ -42,7 +42,7 @@ export default function Home() {
       <Marquee />
 
       <ShopTabs />
-      <WhyMusa />
+      <WhySnug />
       <Process />
       <Stories />
       <Finishes />

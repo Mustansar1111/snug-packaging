@@ -91,7 +91,7 @@ export function FactTiles() {
   );
 }
 
-export function WhyMusa() {
+export function WhySnug() {
   const rows = [
     ["Minimum order", "Often 500 or more", `From ${site.moq} units`],
     ["3D mockup", "Paid, or only after you order", "Free, before you order"],
@@ -102,21 +102,21 @@ export function WhyMusa() {
     ["Delivery", "One country", "USA, UK, Australia and Europe"],
   ];
   return (
-    <section className="block band why-musa" id="why">
+    <section className="block band why-snug" id="why">
       <div className="wrap">
         <div className="head">
           <div>
-            <p className="eyebrow">Why Musa</p>
+            <p className="eyebrow">Why Snug</p>
             <h2>Small runs, free proofs, fast answers.</h2>
           </div>
           <p>What you usually get from a packaging supplier, and what you get from us.</p>
         </div>
         <FactTiles />
-        <div className="compare" role="table" aria-label="Typical supplier compared with Musa">
+        <div className="compare" role="table" aria-label="Typical supplier compared with Snug">
           <div role="row" className="compare-head">
             <span role="columnheader" />
             <span role="columnheader">Typical supplier</span>
-            <span role="columnheader">Musa</span>
+            <span role="columnheader">Snug</span>
           </div>
           {rows.map(([k, them, us]) => (
             <div role="row" key={k}>

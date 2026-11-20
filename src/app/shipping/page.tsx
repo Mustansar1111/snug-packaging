@@ -4,7 +4,7 @@ import { QuoteSection, RegionsBand } from "@/components/sections";
 
 export const metadata: Metadata = {
   title: "Packaging Delivery to the USA, UK, Australia and Europe",
-  description: "Musa Packaging delivers custom printed boxes, bags and labels to the USA, UK, Australia and across Europe. Your quote includes delivery to your door.",
+  description: "Snug Packaging delivers custom printed boxes, bags and labels to the USA, UK, Australia and across Europe. Your quote includes delivery to your door.",
   alternates: { canonical: "/shipping" },
 };
 

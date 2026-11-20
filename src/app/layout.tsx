@@ -14,8 +14,8 @@ const mono = IBM_Plex_Mono({ variable: "--font-mono", subsets: ["latin"], weight
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Custom Printed Packaging from 100 Units | Musa Packaging",
-    template: "%s | Musa Packaging",
+    default: "Custom Printed Packaging from 100 Units | Snug Packaging",
+    template: "%s | Snug Packaging",
   },
   description: site.description,
   openGraph: { siteName: site.name, type: "website", locale: "en_US" },

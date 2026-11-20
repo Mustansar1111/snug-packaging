@@ -1,7 +1,7 @@
 """Builds src/data/categories.ts from the OneClickPackaging category export.
 
 source-categories.json was exported from the OneClickPackaging theme (category slugs and the
-spec "profiles": what each box is for, material, finish). Musa reuses those facts but writes its
+spec "profiles": what each box is for, material, finish). Snug reuses those facts but writes its
 own names, slugs and copy, so the two sites never share text.
 
 Run: python3 scripts/build-categories.py
@@ -12,9 +12,9 @@ import pathlib
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = json.loads((ROOT / "scripts" / "source-categories.json").read_text())
 
-# Musa slug, name, group, icon, one-line intro written for Musa.
+# Snug slug, name, group, icon, one-line intro written for Snug.
 # Groups: styles, industries, bags, print. Order inside each group = display order.
-MUSA = {
+SNUG = {
     "mailer-boxes": ("mailer-boxes", "Mailer Boxes", "styles", "mailer", "Tough corrugated mailers printed inside and out, made for the moment a customer lifts the lid."),
     "shipping-boxes": ("shipping-boxes", "Shipping Boxes", "styles", "mailer", "Branded shipping boxes that protect orders in transit and still look good on the doorstep."),
     "custom-corrugated-boxes": ("corrugated-boxes", "Corrugated Boxes", "styles", "carton", "Strong single or double-wall corrugated boxes for heavy, fragile or bulk orders."),
@@ -110,9 +110,9 @@ def ts(value):
 rows = []
 for src in SRC:
     key = src["slug"]
-    if key not in MUSA:
+    if key not in SNUG:
         continue
-    slug, name, group, icon, intro = MUSA[key]
+    slug, name, group, icon, intro = SNUG[key]
     prof = src["profile"]
     if src["rule"] is None:
         e = EXTRA[key]
@@ -121,8 +121,8 @@ for src in SRC:
         spec = dict(uses=prof["for"], style=prof["style"], material=prof["material"], finish=prof["finish"], tip=prof["tip"])
     rows.append(dict(slug=slug, name=name, group=group, icon=icon, intro=intro, **spec))
 
-order = {k: i for i, k in enumerate(MUSA)}
-src_key = {MUSA[k][0]: k for k in MUSA}
+order = {k: i for i, k in enumerate(SNUG)}
+src_key = {SNUG[k][0]: k for k in SNUG}
 rows.sort(key=lambda r: order[src_key[r["slug"]]])
 
 lines = [

@@ -23,7 +23,7 @@ export type Category = {
   name: string;
   group: CategoryGroup;
   icon: IconKey;
-  /** One-line intro written for Musa (never copied from OneClickPackaging). */
+  /** One-line intro written for Snug (never copied from OneClickPackaging). */
   intro: string;
   /** What people pack in it. */
   uses: string[];
