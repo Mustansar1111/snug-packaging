@@ -13,8 +13,7 @@ export const site = {
   // WhatsApp number in international format, digits only. Empty hides the WhatsApp links.
   whatsapp: (process.env.NEXT_PUBLIC_WHATSAPP ?? "17868858250").replace(/\D/g, ""),
   offices: [
-    // TODO: confirm the UK postcode (BD8 1RN or BD7 1RN).
-    { country: "United Kingdom", code: "GB", street: "91 Grantham Road", city: "Bradford", region: "", postcode: "BD8 1RN" },
+    { country: "United Kingdom", code: "GB", street: "91 Grantham Road", city: "Bradford", region: "", postcode: "BD7 1RN" },
     { country: "United States", code: "US", street: "178 NY-59 Ste 301", city: "Airmont", region: "NY", postcode: "10952" },
   ],
   moq: 100,
