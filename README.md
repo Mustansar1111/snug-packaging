@@ -47,9 +47,11 @@ notification so each request lands in your inbox. Forms only work on a Netlify d
 
 ## Before launch
 
-- [ ] Set Snug's email and phone number
-- [ ] Turn on Netlify form detection and email notifications, then send a test quote
+- [x] Set Snug's email, phone, WhatsApp and office addresses
+- [x] Turn on Netlify form detection and email notifications
+- [ ] Send a test quote and a test mockup request from the live site
 - [ ] Replace the About page text and have the privacy policy reviewed (UK/EU GDPR)
 - [ ] Add real product photos per category
-- [ ] Connect snugpackaging.com in Netlify (DNS stays at Cloudflare) and submit the sitemap in Google Search Console
+- [x] Connect snugpackaging.com in Netlify (DNS stays at Cloudflare) with HTTPS
+- [ ] Submit the sitemap in Google Search Console
 - [ ] Replace example logos, reviews and stories in `src/data/proof.ts`
