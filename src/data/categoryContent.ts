@@ -6,8 +6,8 @@
  * A category without an entry here still gets the full page layout with general content.
  */
 import type { RichContent } from "./content/types";
-import { s } from "./content/types";
 import { batch1 } from "./content/batch1";
+import { productContent } from "./products";
 
 export type { StyleEntry, StyleCard, RichContent } from "./content/types";
 
@@ -16,20 +16,8 @@ export const categoryContent: Record<string, RichContent> = {
   "cosmetic-boxes": {
     lede:
       "In beauty, the box is often the first thing a customer touches. We make cosmetic boxes that feel as good as the product inside, for makeup, skincare and fragrance brands of every size. Pick a style, send your size, and we print your artwork on the board and finish that suit your line, from 100 units.",
-    styles: [
-      s("Lip gloss boxes", "Slim tuck boxes and window trays that hold tubes upright and show the shade.", "/images/styles/lip-gloss.webp"),
-      s("Lip balm boxes", "Small tuck or sleeve boxes for sticks and tins, singles or gift sets.", "/images/styles/lip-balm.webp"),
-      s("Mascara boxes", "Tall, narrow cartons with a snug insert so the wand never rattles.", "/images/styles/mascara.webp"),
-      s("Eyelash boxes", "Drawer, magnetic and window boxes that show off the lash tray.", "/images/styles/eyelash.webp"),
-      s("Eyeliner boxes", "Pencil and pen-liner cartons, single or multi-pack, with hang tabs for retail.", "/images/styles/eyeliner.webp"),
-      s("Eyeshadow and palette boxes", "Flat sleeves and lid-and-base boxes cut to the exact palette size.", "/images/styles/eyeshadow.webp"),
-      s("Cream and jar boxes", "Square cartons with an insert that keeps glass jars from moving.", "/images/styles/cream.webp"),
-      s("Perfume and cologne boxes", "Rigid and folding boxes with inserts, foil and soft-touch for a premium feel.", "/images/styles/perfume.webp"),
-      s("Lotion and serum boxes", "Tall tuck cartons for pumps, droppers and tubes, printed on all sides.", "/images/styles/lotion.webp"),
-      s("Makeup kit boxes", "Rigid or mailer-style kits with custom inserts for several products.", "/images/styles/makeup-kit.webp"),
-      s("Cosmetic display boxes", "Counter-top trays that hold and sell your products at the till.", "/images/packaging/display-boxes-sm.webp"),
-      s("Cosmetic jar packaging", "Boxes and sleeves made for jars, tins and pots of any size.", "/images/packaging/cosmetic-jars-sm.webp"),
-    ],
+    // Product pages under cosmetic-boxes are added to this list automatically.
+    styles: ["display-boxes", "cosmetic-jars"],
     features: [
       { title: "Made to your exact size", text: "Every box is cut to your product's inside dimensions, so nothing slides around and you don't pay for empty space." },
       { title: "Finishes that sell", text: "Soft-touch, foil, embossing and spot UV turn a plain carton into something people want to keep on the shelf." },
@@ -77,6 +65,6 @@ export const categoryContent: Record<string, RichContent> = {
   },
 };
 
-Object.assign(categoryContent, batch1);
+Object.assign(categoryContent, batch1, productContent);
 
 export const getRichContent = (slug: string) => categoryContent[slug] ?? null;

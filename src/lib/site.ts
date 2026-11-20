@@ -61,9 +61,13 @@ export function featuredCategories(): Category[] {
 }
 
 export function relatedCategories(cat: Category, limit = 4): Category[] {
+  // Product pages link to their parent and siblings first; parents link to their own products.
+  const family = categories.filter(
+    (c) => c.slug !== cat.slug && (c.slug === cat.parent || (cat.parent && c.parent === cat.parent) || c.parent === cat.slug),
+  );
   const sameIcon = categories.filter((c) => c.slug !== cat.slug && c.icon === cat.icon);
   const sameGroup = categories.filter((c) => c.slug !== cat.slug && c.group === cat.group && c.icon !== cat.icon);
-  return [...sameIcon, ...sameGroup].slice(0, limit);
+  return [...new Set([...family, ...sameIcon, ...sameGroup])].slice(0, limit);
 }
 
 export function joinList(items: string[]): string {

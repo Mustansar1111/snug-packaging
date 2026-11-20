@@ -54,6 +54,9 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
   const cat = getCategory(slug);
   if (!cat) notFound();
   const rich = getRichContent(cat.slug);
+  const parent = cat.parent ? getCategory(cat.parent) : undefined;
+  const children = categories.filter((c) => c.parent === cat.slug);
+  const styleList: StyleEntry[] = [...children.map((c) => c.slug).filter((s) => !rich?.styles.includes(s)), ...(rich?.styles ?? [])];
   const faqs = [...(rich?.faqs ?? []), ...categoryFaqs(cat)];
   const photo = packPhoto(cat.slug);
   const lower = cat.name.toLowerCase();
@@ -64,7 +67,13 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
         <div className="wrap">
           <div>
             <nav className="crumbs" aria-label="Breadcrumb">
-              <Link href="/">Home</Link> <span>/</span> <Link href="/packaging">Packaging</Link> <span>/</span> <span>{cat.name}</span>
+              <Link href="/">Home</Link> <span>/</span> <Link href="/packaging">Packaging</Link> <span>/</span>{" "}
+              {parent && (
+                <>
+                  <Link href={`/packaging/${parent.slug}`}>{parent.name}</Link> <span>/</span>{" "}
+                </>
+              )}
+              <span>{cat.name}</span>
             </nav>
             <h1>Custom {cat.name}</h1>
             <p className="lede">{rich?.lede ?? cat.intro}</p>
@@ -72,9 +81,9 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
               <a className="btn btn-apricot" href="#quote">
                 Get a free quote <span aria-hidden="true">→</span>
               </a>
-              {rich ? (
+              {styleList.length > 0 ? (
                 <a className="btn btn-ghost" href="#styles">
-                  Browse {rich.styles.length} styles
+                  Browse {styleList.length} {cat.parent ? "related styles" : "styles"}
                 </a>
               ) : (
                 <Link className="btn btn-ghost" href="/free-mockup">
@@ -143,18 +152,18 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
         </div>
       </section>
 
-      {rich && (
+      {styleList.length > 0 && (
         <section className="block band" id="styles">
           <div className="wrap">
             <div className="head">
               <div>
-                <p className="eyebrow">Styles</p>
-                <h2>Choose your {lower} style</h2>
+                <p className="eyebrow">{cat.parent ? "Related styles" : "Styles"}</p>
+                <h2>{cat.parent ? `Pair your ${lower} with these` : `Choose your ${lower} style`}</h2>
               </div>
               <p>Every style below is made to your size and printed with your artwork. Tap one to start your quote.</p>
             </div>
             <ul className="style-grid" data-reveal-group>
-              {resolveStyles(rich.styles).map((st) => (
+              {resolveStyles(styleList).map((st) => (
                 <li key={st.name}>
                   <Link href={st.href} className="style-card">
                     <span className={st.img ? "img" : "img icon"}>
@@ -257,7 +266,8 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
           itemListElement: [
             { "@type": "ListItem", position: 1, name: "Home", item: site.url },
             { "@type": "ListItem", position: 2, name: "Packaging", item: `${site.url}/packaging` },
-            { "@type": "ListItem", position: 3, name: cat.name, item: `${site.url}/packaging/${cat.slug}` },
+            ...(parent ? [{ "@type": "ListItem", position: 3, name: parent.name, item: `${site.url}/packaging/${parent.slug}` }] : []),
+            { "@type": "ListItem", position: parent ? 4 : 3, name: cat.name, item: `${site.url}/packaging/${cat.slug}` },
           ],
         }}
       />

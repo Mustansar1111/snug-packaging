@@ -31,4 +31,6 @@ export type Category = {
   material: string;
   finish: string;
   tip: string | null;
+  /** Broader category this product page sits under, for breadcrumbs and linking. */
+  parent?: string;
 };
