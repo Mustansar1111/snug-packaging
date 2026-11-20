@@ -9,7 +9,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/refund-policy" },
 };
 
-// TODO: confirm the time limits (7 days to report, 24 hours to cancel after approval) with the team before launch.
 export default function RefundPolicyPage() {
   return (
     <>
