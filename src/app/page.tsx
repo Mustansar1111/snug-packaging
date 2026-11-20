@@ -14,7 +14,7 @@ export default function Home() {
               Custom printed packaging · USA · UK · Australia · Europe
             </p>
             <h1>
-              Packaging that makes people <em>keep the box.</em>
+              <span className="hl">Packaging that makes</span> <span className="hl">people <em>keep the box.</em></span>
             </h1>
             <p className="lede">
               Custom mailer, rigid and retail boxes, bags and labels, printed with your artwork from just {site.moq} units. Free design help, a
