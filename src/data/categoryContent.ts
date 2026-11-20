@@ -7,6 +7,8 @@
  */
 import type { RichContent } from "./content/types";
 import { batch1 } from "./content/batch1";
+import { batch2 } from "./content/batch2";
+import { batch3 } from "./content/batch3";
 import { productContent } from "./products";
 
 export type { StyleEntry, StyleCard, RichContent } from "./content/types";
@@ -65,6 +67,6 @@ export const categoryContent: Record<string, RichContent> = {
   },
 };
 
-Object.assign(categoryContent, batch1, productContent);
+Object.assign(categoryContent, batch1, batch2, batch3, productContent);
 
 export const getRichContent = (slug: string) => categoryContent[slug] ?? null;
