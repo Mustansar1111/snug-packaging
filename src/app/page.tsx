@@ -6,7 +6,7 @@ import { generalFaqs, site } from "@/lib/site";
 
 export default function Home() {
   return (
-    <>
+    <div className="home">
       <section className="hero band">
         <div className="wrap">
           <div>
@@ -51,6 +51,6 @@ export default function Home() {
       <MockupBand />
       <Reviews />
       <Faq items={generalFaqs} />
-    </>
+    </div>
   );
 }

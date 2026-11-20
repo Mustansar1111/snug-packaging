@@ -406,3 +406,13 @@ footer.site-foot .legal { grid-column: 1 / -1; border-top: 1px solid color-mix(i
   footer.site-foot { padding-bottom: 76px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn, .cat, .reg a { transition: none; } }
+
+/* homepage: centred section headers */
+.home .head { flex-direction: column; align-items: center; text-align: center; }
+.home .head h2 { margin-inline: auto; }
+.home .head p { margin-inline: auto; }
+.home .tabs { justify-content: center; }
+.home .group-blurb { text-align: center; }
+.home .trust .wrap { justify-content: center; text-align: center; }
+.home .tab-more { text-align: center; }
+.home .faq { margin-inline: auto; }
