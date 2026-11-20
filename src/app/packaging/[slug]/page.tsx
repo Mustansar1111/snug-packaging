@@ -4,6 +4,7 @@ import { Reviews } from "@/components/proof";
 import { notFound } from "next/navigation";
 import { CategoryGrid } from "@/components/CategoryCard";
 import { PackIcon } from "@/components/PackIcon";
+import { packPhoto } from "@/lib/images";
 import { QuoteForm } from "@/components/QuoteForm";
 import { Faq, JsonLd, Process } from "@/components/sections";
 import { categories } from "@/data/categories";
@@ -29,6 +30,7 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
   const cat = getCategory(slug);
   if (!cat) notFound();
   const faqs = categoryFaqs(cat);
+  const photo = packPhoto(cat.slug);
 
   return (
     <>
@@ -49,9 +51,16 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
               </Link>
             </div>
           </div>
-          <div className="art-big" aria-hidden="true">
-            <PackIcon icon={cat.icon} />
-          </div>
+          {photo ? (
+            <div className="art-big photo">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={photo.src} alt={`Custom printed ${cat.name.toLowerCase()}`} width={1000} height={1000} fetchPriority="high" />
+            </div>
+          ) : (
+            <div className="art-big" aria-hidden="true">
+              <PackIcon icon={cat.icon} />
+            </div>
+          )}
         </div>
       </section>
 

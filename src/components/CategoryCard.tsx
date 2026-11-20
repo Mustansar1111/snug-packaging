@@ -1,12 +1,19 @@
 import Link from "next/link";
 import type { Category } from "@/data/types";
 import { PackIcon } from "./PackIcon";
+import { packPhoto } from "@/lib/images";
 
 export function CategoryCard({ cat }: { cat: Category }) {
+  const photo = packPhoto(cat.slug);
   return (
     <Link className="cat" href={`/packaging/${cat.slug}`}>
-      <div className="art">
-        <PackIcon icon={cat.icon} />
+      <div className={photo ? "art photo" : "art"}>
+        {photo ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={photo.srcSm} alt={`Custom ${cat.name.toLowerCase()}`} loading="lazy" decoding="async" width={480} height={480} />
+        ) : (
+          <PackIcon icon={cat.icon} />
+        )}
       </div>
       <h3>{cat.name}</h3>
       <p className="spec">{cat.material}</p>

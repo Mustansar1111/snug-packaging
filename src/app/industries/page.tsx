@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { QuoteSection } from "@/components/sections";
 import { industries } from "@/data/industries";
+import { industryPhotoFor } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Packaging by Industry",
@@ -20,6 +21,10 @@ export default function IndustriesPage() {
             {industries.map((i) => (
               <li key={i.slug}>
                 <Link href={`/industries/${i.slug}`}>
+                  {industryPhotoFor(i.slug) && (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img className="ind-photo" src={industryPhotoFor(i.slug)!.srcSm} alt="" loading="lazy" width={480} height={480} />
+                  )}
                   <h2>{i.name}</h2>
                   <p>{i.intro}</p>
                   <span>See {i.name.toLowerCase()} packaging →</span>

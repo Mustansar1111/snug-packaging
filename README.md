@@ -51,7 +51,7 @@ notification so each request lands in your inbox. Forms only work on a Netlify d
 - [x] Turn on Netlify form detection and email notifications
 - [ ] Send a test quote and a test mockup request from the live site
 - [ ] Replace the About page text and have the privacy policy reviewed (UK/EU GDPR)
-- [ ] Add real product photos per category
+- [x] Add real product photos per category (still missing: tube packaging, auto parts boxes, wrapping paper)
 - [x] Connect snugpackaging.com in Netlify (DNS stays at Cloudflare) with HTTPS
 - [ ] Submit the sitemap in Google Search Console
 - [ ] Replace example logos, reviews and stories in `src/data/proof.ts`
