@@ -8,9 +8,31 @@ import { packPhoto } from "@/lib/images";
 import { QuoteForm } from "@/components/QuoteForm";
 import { Faq, JsonLd, Process } from "@/components/sections";
 import { categories } from "@/data/categories";
+import type { IconKey } from "@/data/types";
 import { categoryFaqs, getCategory, joinList, relatedCategories, site } from "@/lib/site";
-import { getRichContent } from "@/data/categoryContent";
+import { getRichContent, type StyleEntry } from "@/data/categoryContent";
 import { CustomiseTabs, CategoryStats, WhyOrder } from "@/components/CategoryExtras";
+
+/** Turn a style entry into a card: a slug becomes a link to that Snug category with its photo. */
+type ResolvedStyle = { name: string; blurb: string; img: string | null; href: string; icon?: IconKey };
+
+function resolveStyles(styles: StyleEntry[]): ResolvedStyle[] {
+  return styles.flatMap((st): ResolvedStyle[] => {
+    if (typeof st !== "string") return [{ name: st.name, blurb: st.blurb, img: st.img, href: "#quote" }];
+    const c = getCategory(st);
+    if (!c) return [];
+    return [{ name: c.name, blurb: c.intro, img: packPhoto(c.slug)?.srcSm ?? null, href: `/packaging/${c.slug}`, icon: c.icon }];
+  });
+}
+
+/** Render [text](/path) inside guide copy as internal links. */
+function withLinks(text: string) {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  return parts.map((part, i) => {
+    const m = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    return m ? <Link key={i} href={m[2]}>{m[1]}</Link> : part;
+  });
+}
 
 export function generateStaticParams() {
   return categories.map((c) => ({ slug: c.slug }));
@@ -132,17 +154,21 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
               <p>Every style below is made to your size and printed with your artwork. Tap one to start your quote.</p>
             </div>
             <ul className="style-grid" data-reveal-group>
-              {rich.styles.map((st) => (
+              {resolveStyles(rich.styles).map((st) => (
                 <li key={st.name}>
-                  <a href="#quote" className="style-card">
-                    <span className="img">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={st.img} alt={st.name} loading="lazy" decoding="async" width={480} height={480} />
+                  <Link href={st.href} className="style-card">
+                    <span className={st.img ? "img" : "img icon"}>
+                      {st.img ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img src={st.img} alt={st.name} loading="lazy" decoding="async" width={480} height={480} />
+                      ) : (
+                        <PackIcon icon={st.icon ?? "carton"} />
+                      )}
                     </span>
                     <b>{st.name}</b>
                     <span className="blurb">{st.blurb}</span>
-                    <span className="go">Get a quote →</span>
-                  </a>
+                    <span className="go">{st.href === "#quote" ? "Get a quote →" : `See ${st.name.toLowerCase()} →`}</span>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -201,7 +227,7 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
                 <article key={g.h} id={`guide-${i}`} data-reveal>
                   <h3>{g.h}</h3>
                   {g.p.map((t) => (
-                    <p key={t.slice(0, 24)}>{t}</p>
+                    <p key={t.slice(0, 24)}>{withLinks(t)}</p>
                   ))}
                 </article>
               ))}

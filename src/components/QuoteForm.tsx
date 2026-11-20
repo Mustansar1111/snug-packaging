@@ -131,7 +131,9 @@ export function QuoteForm({ styles, defaultStyle, defaultCountry = "United State
   }
 
   return (
-    <form className="form" ref={formRef} onSubmit={submit} noValidate>
+    <form className="form" ref={formRef} onSubmit={submit} noValidate aria-labelledby="quote-form-title">
+      <h2 className="form-title" id="quote-form-title">Get your free quote</h2>
+      <p className="form-sub">Three quick steps. We reply with a price by email, no payment needed.</p>
       <div className="progress" aria-hidden="true">
         {[1, 2, 3].map((n) => (
           <span key={n} className={n <= Math.min(step, 3) ? "on" : ""} />

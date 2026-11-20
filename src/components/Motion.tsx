@@ -8,6 +8,14 @@ import Lenis from "lenis";
 
 gsap.registerPlugin(ScrollTrigger);
 
+let lenisInstance: Lenis | null = null;
+
+/** Scroll to an element, smoothly when Lenis is running. */
+function scrollToEl(el: HTMLElement) {
+  if (lenisInstance) lenisInstance.scrollTo(el);
+  else el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 /**
  * Site-wide motion: Lenis smooth scrolling plus scroll reveals.
  * Content is always visible at rest; reveals only nudge position, never hide text.
@@ -18,7 +26,8 @@ export function Motion() {
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const lenis = new Lenis({ lerp: 0.12 });
+    const lenis = new Lenis({ lerp: 0.12, anchors: true });
+    lenisInstance = lenis;
     lenis.on("scroll", ScrollTrigger.update);
     const tick = (time: number) => lenis.raf(time * 1000);
     gsap.ticker.add(tick);
@@ -26,6 +35,45 @@ export function Motion() {
     return () => {
       gsap.ticker.remove(tick);
       lenis.destroy();
+      lenisInstance = null;
+    };
+  }, []);
+
+  // "Get a quote" links jump to the quote form on the same page when there is one, instead of opening /quote.
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      const a = (e.target as Element | null)?.closest?.("a");
+      if (!a || !a.href) return;
+      const url = new URL(a.href, location.href);
+      if (url.origin !== location.origin || url.pathname !== "/quote" || location.pathname === "/quote") return;
+      const target = document.getElementById("quote");
+      if (!target) return;
+      // Capture phase, before Next's Link handler, so we can stop the route change.
+      e.preventDefault();
+      e.stopPropagation();
+      scrollToEl(target);
+      history.replaceState(null, "", "#quote");
+    };
+    document.addEventListener("click", onClick, true);
+    return () => document.removeEventListener("click", onClick, true);
+  }, []);
+
+  // Thin progress bar at the top that fills as you scroll.
+  useEffect(() => {
+    const bar = document.createElement("div");
+    bar.className = "scroll-progress";
+    bar.setAttribute("aria-hidden", "true");
+    document.body.appendChild(bar);
+    const update = () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      bar.style.transform = `scaleX(${max > 0 ? Math.min(1, scrollY / max) : 0})`;
+    };
+    update();
+    addEventListener("scroll", update, { passive: true });
+    return () => {
+      removeEventListener("scroll", update);
+      bar.remove();
     };
   }, []);
 
@@ -53,6 +101,22 @@ export function Motion() {
           scrollTrigger: { trigger: steps, start: "top 80%", once: true },
         });
       }
+      // Section headings rise in as they scroll into view.
+      document.querySelectorAll(".head").forEach((h) => {
+        gsap.from(h.children, {
+          y: 28,
+          duration: 0.9,
+          stagger: 0.08,
+          ease: "power3.out",
+          scrollTrigger: { trigger: h, start: "top 88%", once: true },
+        });
+      });
+      // Page titles: a soft lift on load.
+      const title = document.querySelector(".page-hero h1, .hero h1");
+      if (title) gsap.from(title, { y: 30, duration: 1, ease: "power3.out" });
+      document.querySelectorAll(".page-hero .lede, .page-hero .ctas, .hero .lede, .hero .ctas").forEach((el, i) => {
+        gsap.from(el, { y: 20, duration: 0.9, delay: 0.15 + i * 0.08, ease: "power3.out" });
+      });
       // Category hero photo: rises in, then floats gently.
       const heroPhoto = document.querySelector("[data-hero-photo]");
       if (heroPhoto) {

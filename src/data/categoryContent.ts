@@ -5,16 +5,12 @@
  * the same text on two sites hurts both in Google.
  * A category without an entry here still gets the full page layout with general content.
  */
-export type StyleCard = { name: string; blurb: string; img: string };
-export type RichContent = {
-  lede: string;
-  styles: StyleCard[];
-  features: { title: string; text: string }[];
-  guide: { h: string; p: string[] }[];
-  faqs: { q: string; a: string }[];
-};
+import type { RichContent } from "./content/types";
+import { s } from "./content/types";
+import { batch1 } from "./content/batch1";
 
-const s = (name: string, blurb: string, img: string): StyleCard => ({ name, blurb, img });
+export type { StyleEntry, StyleCard, RichContent } from "./content/types";
+
 
 export const categoryContent: Record<string, RichContent> = {
   "cosmetic-boxes": {
@@ -80,5 +76,7 @@ export const categoryContent: Record<string, RichContent> = {
     ],
   },
 };
+
+Object.assign(categoryContent, batch1);
 
 export const getRichContent = (slug: string) => categoryContent[slug] ?? null;
