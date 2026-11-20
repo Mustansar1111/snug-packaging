@@ -8,7 +8,7 @@ export const site = {
   description:
     "Custom printed boxes, bags and labels from 100 units, for brands in the USA, UK, Australia and Europe. Free design help and a digital proof before we print.",
   // TODO: replace with Snug's own contact details before launch.
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@snugpackaging.com",
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "sales@snugpackaging.com",
   phone: process.env.NEXT_PUBLIC_CONTACT_PHONE ?? "",
   // WhatsApp number in international format, digits only (e.g. 15551234567). Leave empty to hide the WhatsApp links.
   whatsapp: (process.env.NEXT_PUBLIC_WHATSAPP ?? "").replace(/\D/g, ""),
