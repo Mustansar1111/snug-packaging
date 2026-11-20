@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import { submitLead } from "@/lib/submitLead";
 
 export function MockupForm() {
   const pathname = usePathname();
@@ -17,13 +18,7 @@ export function MockupForm() {
     }
     setState("sending");
     try {
-      const res = await fetch("/api/lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ kind: "mockup", email, page: pathname }),
-      });
-      const data = await res.json();
-      if (!data.ok) throw new Error(data.error);
+      await submitLead("mockup", { email, page: pathname, company_website: "" });
       setState("done");
     } catch (err) {
       setState("error");

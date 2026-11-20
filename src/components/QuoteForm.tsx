@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { allCountries } from "@/data/regions";
 import { boxSketch } from "@/lib/boxSketch";
 import { quoteReply, quoteReplyDays } from "@/lib/promise";
+import { submitLead } from "@/lib/submitLead";
 
 type Unit = "in" | "cm" | "mm";
 /** Millimetres in one of each unit. */
@@ -108,26 +109,19 @@ export function QuoteForm({ styles, defaultStyle, defaultCountry = "United State
     setSending(true);
     const honeypot = (new FormData(e.currentTarget).get("company_website") as string) || "";
     try {
-      const res = await fetch("/api/lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          kind: "quote",
-          style,
-          quantity,
-          units,
-          dimensions: [dims.l, dims.w, dims.h].every(Boolean) ? `${dims.l} × ${dims.w} × ${dims.h} ${units}` : "",
-          finish,
-          name,
-          country,
-          email,
-          message,
-          page: pathname,
-          company_website: honeypot,
-        }),
+      await submitLead("quote", {
+        style,
+        quantity,
+        units,
+        dimensions: [dims.l, dims.w, dims.h].every(Boolean) ? `${dims.l} × ${dims.w} × ${dims.h} ${units}` : "",
+        finish,
+        name,
+        country,
+        email,
+        message,
+        page: pathname,
+        company_website: honeypot,
       });
-      const data = await res.json();
-      if (!data.ok) throw new Error(data.error);
       go(4);
     } catch (err) {
       setError(err instanceof Error && err.message ? err.message : "Something went wrong. Please try again.");

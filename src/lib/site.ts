@@ -4,7 +4,6 @@ import { quoteReply, quoteReplyDays, quoteReplyShort } from "./promise";
 
 export const site = {
   name: "Snug Packaging",
-  // TODO: snugpackaging.com is a placeholder until the domain is bought.
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://snugpackaging.com",
   description:
     "Custom printed boxes, bags and labels from 100 units, for brands in the USA, UK, Australia and Europe. Free design help and a digital proof before we print.",

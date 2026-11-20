@@ -21,8 +21,10 @@ npm run build   # production build
 | Colours and fonts (Mulberry & Apricot) | `src/app/globals.css`, `src/app/layout.tsx` |
 | Folding-box hero animation | `src/components/FoldingBox.tsx` |
 | Scroll animations and smooth scrolling | `src/components/Motion.tsx` |
-| Quote and sample forms | `src/components/QuoteForm.tsx`, `src/components/SampleForm.tsx` |
-| Form handler | `src/app/api/lead/route.ts`, `src/lib/leads.ts` |
+| Quote and mockup forms | `src/components/QuoteForm.tsx`, `src/components/MockupForm.tsx` |
+| Form sending (Netlify Forms) | `src/lib/submitLead.ts`, `public/__forms.html` |
+| Logos, reviews, stories (placeholders) | `src/data/proof.ts` |
+| Industry pages, blog posts | `src/data/industries.ts`, `src/data/posts.ts` |
 
 Category specs come from the OneClickPackaging export (`scripts/source-categories.json`), but every
 name, slug and sentence on this site is written for Snug so the two sites don't share copy.
@@ -30,17 +32,24 @@ To change a category, edit `scripts/build-categories.py` and run `python3 script
 
 ## Environment variables
 
-Copy `.env.example` to `.env.local` (or set them in Vercel):
+Copy `.env.example` to `.env.local`, and set the same values in Netlify under Site configuration → Environment variables:
 
 - `NEXT_PUBLIC_SITE_URL`: the live URL, used for canonical links and the sitemap.
 - `NEXT_PUBLIC_CONTACT_EMAIL`, `NEXT_PUBLIC_CONTACT_PHONE`: Snug's own contact details.
-- `LEAD_WEBHOOK_URL`: where quote and sample requests are sent as JSON (a HubSpot workflow,
-  Zapier, Make or Slack webhook). Without it, leads are only written to the server log.
+- `NEXT_PUBLIC_WHATSAPP`: WhatsApp number, digits only. Leave empty to hide WhatsApp links.
+- `NEXT_PUBLIC_SHOW_PLACEHOLDERS`: `true` only for previews. Keeps example logos and reviews off the live site.
+
+## Hosting (Netlify) and forms
+
+Netlify builds the site from GitHub on every push (`netlify.toml`). Quote and mockup requests go to
+Netlify Forms: turn on form detection under Site configuration → Forms, then add an email
+notification so each request lands in your inbox. Forms only work on a Netlify deploy, not in `npm run dev`.
 
 ## Before launch
 
 - [ ] Set Snug's email and phone number
-- [ ] Set `LEAD_WEBHOOK_URL` and send a test quote
+- [ ] Turn on Netlify form detection and email notifications, then send a test quote
 - [ ] Replace the About page text and have the privacy policy reviewed (UK/EU GDPR)
 - [ ] Add real product photos per category
-- [ ] Connect snugpackaging.com in Vercel and submit the sitemap in Google Search Console
+- [ ] Connect snugpackaging.com in Netlify (DNS stays at Cloudflare) and submit the sitemap in Google Search Console
+- [ ] Replace example logos, reviews and stories in `src/data/proof.ts`
