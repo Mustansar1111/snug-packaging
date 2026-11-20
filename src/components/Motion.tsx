@@ -53,6 +53,28 @@ export function Motion() {
           scrollTrigger: { trigger: steps, start: "top 80%", once: true },
         });
       }
+      // Category hero photo: rises in, then floats gently.
+      const heroPhoto = document.querySelector("[data-hero-photo]");
+      if (heroPhoto) {
+        gsap.from(heroPhoto, { y: 40, scale: 0.94, rotation: -2, duration: 1.1, ease: "power3.out" });
+        gsap.to(heroPhoto, { y: -10, duration: 3.2, ease: "sine.inOut", yoyo: true, repeat: -1, delay: 1.1 });
+        const badge = heroPhoto.querySelector(".photo-badge");
+        if (badge) gsap.from(badge, { scale: 0, duration: 0.6, ease: "back.out(2)", delay: 0.7 });
+      }
+      // Spec table rows slide in one by one.
+      document.querySelectorAll("[data-reveal-rows]").forEach((t) => {
+        gsap.from(t.querySelectorAll("tr"), {
+          x: -24,
+          duration: 0.6,
+          stagger: 0.07,
+          ease: "power2.out",
+          scrollTrigger: { trigger: t, start: "top 85%", once: true },
+        });
+      });
+      // Single blocks rise in.
+      document.querySelectorAll("[data-reveal]").forEach((el) => {
+        gsap.from(el, { y: 30, duration: 0.8, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 88%", once: true } });
+      });
       const track = document.querySelector(".track");
       if (track) gsap.to(track, { xPercent: -50, duration: 40, ease: "none", repeat: -1 });
     });

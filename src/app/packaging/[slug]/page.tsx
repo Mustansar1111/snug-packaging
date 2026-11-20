@@ -9,6 +9,8 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { Faq, JsonLd, Process } from "@/components/sections";
 import { categories } from "@/data/categories";
 import { categoryFaqs, getCategory, joinList, relatedCategories, site } from "@/lib/site";
+import { getRichContent } from "@/data/categoryContent";
+import { CustomiseTabs, CategoryStats, WhyOrder } from "@/components/CategoryExtras";
 
 export function generateStaticParams() {
   return categories.map((c) => ({ slug: c.slug }));
@@ -29,8 +31,10 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
   const { slug } = await params;
   const cat = getCategory(slug);
   if (!cat) notFound();
-  const faqs = categoryFaqs(cat);
+  const rich = getRichContent(cat.slug);
+  const faqs = [...(rich?.faqs ?? []), ...categoryFaqs(cat)];
   const photo = packPhoto(cat.slug);
+  const lower = cat.name.toLowerCase();
 
   return (
     <>
@@ -41,18 +45,25 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
               <Link href="/">Home</Link> <span>/</span> <Link href="/packaging">Packaging</Link> <span>/</span> <span>{cat.name}</span>
             </nav>
             <h1>Custom {cat.name}</h1>
-            <p className="lede">{cat.intro}</p>
+            <p className="lede">{rich?.lede ?? cat.intro}</p>
             <div className="ctas">
               <a className="btn btn-apricot" href="#quote">
                 Get a free quote <span aria-hidden="true">→</span>
               </a>
-              <Link className="btn btn-ghost" href="/free-mockup">
-                Get a free 3D mockup
-              </Link>
+              {rich ? (
+                <a className="btn btn-ghost" href="#styles">
+                  Browse {rich.styles.length} styles
+                </a>
+              ) : (
+                <Link className="btn btn-ghost" href="/free-mockup">
+                  Get a free 3D mockup
+                </Link>
+              )}
             </div>
           </div>
           {photo ? (
-            <div className="art-big photo">
+            <div className="art-big photo" data-hero-photo>
+              <span className="photo-badge">Free 3D mockup</span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={photo.src} alt={`Custom printed ${cat.name.toLowerCase()}`} width={1000} height={1000} fetchPriority="high" />
             </div>
@@ -64,14 +75,20 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
         </div>
       </section>
 
+      <CategoryStats />
+
       <section className="block band" id="quote">
         <div className="wrap detail">
           <div>
             <p className="eyebrow">At a glance</p>
             <h2 className="h2" style={{ fontSize: "clamp(28px, 3.4vw, 40px)" }}>
-              What goes into our {cat.name.toLowerCase()}
+              {cat.name} at a glance
             </h2>
-            <table className="specs" style={{ marginTop: 24 }}>
+            <p style={{ color: "var(--muted)", marginTop: 14, maxWidth: "62ch" }}>
+              Every order is made to your size and printed with your artwork, from {site.moq} units. You choose the board, print and
+              finish, we send a free 3D mockup to approve, and production takes {site.turnaround}.
+            </p>
+            <table className="specs" style={{ marginTop: 24 }} data-reveal-rows>
               <tbody>
                 <tr><th scope="row">Popular style</th><td>{cat.style}</td></tr>
                 <tr><th scope="row">Material</th><td>{cat.material}</td></tr>
@@ -104,9 +121,96 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
         </div>
       </section>
 
+      {rich && (
+        <section className="block band" id="styles">
+          <div className="wrap">
+            <div className="head">
+              <div>
+                <p className="eyebrow">Styles</p>
+                <h2>Choose your {lower} style</h2>
+              </div>
+              <p>Every style below is made to your size and printed with your artwork. Tap one to start your quote.</p>
+            </div>
+            <ul className="style-grid" data-reveal-group>
+              {rich.styles.map((st) => (
+                <li key={st.name}>
+                  <a href="#quote" className="style-card">
+                    <span className="img">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={st.img} alt={st.name} loading="lazy" decoding="async" width={480} height={480} />
+                    </span>
+                    <b>{st.name}</b>
+                    <span className="blurb">{st.blurb}</span>
+                    <span className="go">Get a quote →</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <div className="style-more">
+              <div>
+                <b>Don&apos;t see your box?</b>
+                <span>We make any size, shape and finish. Send us your idea and we&apos;ll design it for free.</span>
+              </div>
+              <Link className="btn btn-plum" href="/free-mockup">Request a free design</Link>
+            </div>
+          </div>
+        </section>
+      )}
+
+      <CustomiseTabs name={lower} />
+
+      {rich && (
+        <section className="block band" style={{ paddingTop: 0 }}>
+          <div className="wrap">
+            <div className="head">
+              <div>
+                <p className="eyebrow">Why they work</p>
+                <h2>What makes good {lower}</h2>
+              </div>
+            </div>
+            <ul className="feature-grid" data-reveal-group>
+              {rich.features.map((f, i) => (
+                <li key={f.title}>
+                  <span className="n">{String(i + 1).padStart(2, "0")}</span>
+                  <h3>{f.title}</h3>
+                  <p>{f.text}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      <WhyOrder name={lower} />
       <Process />
+
+      {rich && (
+        <section className="block band guide" id="guide">
+          <div className="wrap guide-grid">
+            <div className="guide-side">
+              <p className="eyebrow">Buyer&apos;s guide</p>
+              <h2 className="h2">How to choose {lower}</h2>
+              <nav aria-label="Guide sections">
+                {rich.guide.map((g, i) => (
+                  <a key={g.h} href={`#guide-${i}`}>{g.h}</a>
+                ))}
+              </nav>
+            </div>
+            <div className="guide-body">
+              {rich.guide.map((g, i) => (
+                <article key={g.h} id={`guide-${i}`} data-reveal>
+                  <h3>{g.h}</h3>
+                  {g.p.map((t) => (
+                    <p key={t.slice(0, 24)}>{t}</p>
+                  ))}
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
       <Reviews />
-      <Faq items={faqs} title={`${cat.name} questions`} />
+      <Faq items={faqs.slice(0, 8)} title={`${cat.name} questions`} />
 
       <section className="block band" style={{ paddingTop: 0 }}>
         <div className="wrap">
