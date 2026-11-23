@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { withLinks } from "@/lib/withLinks";
 import { notFound } from "next/navigation";
 import { CategoryGrid } from "@/components/CategoryCard";
 import { JsonLd, QuoteSection } from "@/components/sections";
@@ -16,7 +17,7 @@ export async function generateMetadata({ params }: PageProps<"/blog/[slug]">): P
   if (!post) return { robots: { index: false } };
   return {
     // Long post titles drop the brand suffix so Google doesn't cut them off.
-    title: post.title.length > 45 ? { absolute: post.title } : post.title,
+    title: post.title.length > 42 ? { absolute: post.title } : post.title,
     description: post.description,
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: { type: "article", publishedTime: post.date },
@@ -37,7 +38,7 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
           <h1 style={{ maxWidth: "18em" }}>{post.title}</h1>
           <p className="lede">{post.description}</p>
           <p className="post-byline">
-            Snug Packaging · <time dateTime={post.date}>{new Date(`${post.date}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" })}</time> · {post.readMins} min read
+            Snug Packaging · <time dateTime={post.date}>{new Date(`${post.date}T00:00:00Z`).toLocaleDateString("en-US", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" })}</time> · {post.readMins} min read
           </p>
         </div>
       </section>
@@ -46,11 +47,11 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
           {post.body.map((b, i) => (
             <div key={i} style={{ display: "grid", gap: 14 }}>
               {b.h && <h2>{b.h}</h2>}
-              {b.p?.map((t) => <p key={t}>{t}</p>)}
+              {b.p?.map((t) => <p key={t}>{withLinks(t)}</p>)}
               {b.list && (
                 <ul>
                   {b.list.map((t) => (
-                    <li key={t}>{t}</li>
+                    <li key={t}>{withLinks(t)}</li>
                   ))}
                 </ul>
               )}

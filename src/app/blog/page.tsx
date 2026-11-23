@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/blog" },
 };
 
-const fmt = (d: string) => new Date(`${d}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+const fmt = (d: string) => new Date(`${d}T00:00:00Z`).toLocaleDateString("en-US", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
 
 export default function BlogIndex() {
   return (

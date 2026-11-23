@@ -63,6 +63,9 @@ function Chips({ options, value, onChange, label }: { options: string[]; value: 
 }
 
 /** Three short steps: product and quantity, size and finish, contact details. */
+/** Netlify Forms accepts uploads up to 8 MB per submission. */
+const MAX_ARTWORK = 8 * 1024 * 1024;
+
 export function QuoteForm({ styles, defaultStyle, defaultCountry = "United States", defaultUnits = "in" }: Props) {
   const pathname = usePathname();
   const formRef = useRef<HTMLFormElement>(null);
@@ -77,6 +80,9 @@ export function QuoteForm({ styles, defaultStyle, defaultCountry = "United State
   const [country, setCountry] = useState(defaultCountry);
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [phone, setPhone] = useState("");
+  const [replyBy, setReplyBy] = useState("Email");
+  const [artwork, setArtwork] = useState<File | null>(null);
   const [error, setError] = useState("");
   const [sending, setSending] = useState(false);
 
@@ -105,6 +111,7 @@ export function QuoteForm({ styles, defaultStyle, defaultCountry = "United State
     e.preventDefault();
     if (step < 3) return go(step + 1);
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return setError("Add your email so we can send the price.");
+    if (artwork && artwork.size > MAX_ARTWORK) return setError("That file is over 8 MB. Send a smaller version, or email it to us after you submit.");
     setError("");
     setSending(true);
     const honeypot = (new FormData(e.currentTarget).get("company_website") as string) || "";
@@ -119,9 +126,11 @@ export function QuoteForm({ styles, defaultStyle, defaultCountry = "United State
         country,
         email,
         message,
+        phone,
+        reply_by: replyBy,
         page: pathname,
         company_website: honeypot,
-      });
+      }, artwork);
       go(4);
     } catch (err) {
       setError(err instanceof Error && err.message ? err.message : "Something went wrong. Please try again.");
@@ -217,6 +226,25 @@ export function QuoteForm({ styles, defaultStyle, defaultCountry = "United State
         <div className="field">
           <label htmlFor="q-email">Work email</label>
           <input id="q-email" type="email" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        </div>
+        <div className="row2">
+          <div className="field">
+            <label htmlFor="q-phone">Phone or WhatsApp (optional)</label>
+            <input id="q-phone" type="tel" autoComplete="tel" value={phone} onChange={(e) => setPhone(e.target.value)} />
+          </div>
+          <div className="field">
+            <label htmlFor="q-reply">Send my price by</label>
+            <select id="q-reply" value={replyBy} onChange={(e) => setReplyBy(e.target.value)}>
+              <option>Email</option>
+              <option>WhatsApp</option>
+              <option>Either</option>
+            </select>
+          </div>
+        </div>
+        <div className="field">
+          <label htmlFor="q-art">Upload your logo or artwork (optional)</label>
+          <input id="q-art" type="file" accept=".pdf,.ai,.eps,.svg,.png,.jpg,.jpeg" onChange={(e) => setArtwork(e.target.files?.[0] ?? null)} />
+          <span className="hint">PDF, AI, EPS, SVG, PNG or JPG, up to 8 MB.</span>
         </div>
         <div className="field">
           <label htmlFor="q-msg">Anything else? (optional)</label>

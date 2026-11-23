@@ -1,5 +1,6 @@
 import type { Category, CategoryGroup, IconKey } from "./types";
 import type { RichContent } from "./content/types";
+import { productExtras } from "./content/productExtras";
 
 /**
  * Product pages: specific boxes that sit under a broader category (their `parent`).
@@ -828,7 +829,121 @@ const products: P[] = [
       faqs: [q("Can I choose the ribbon color?", "Yes."), q("Is the ribbon attached?", "It can be attached or tied separately.")],
     },
   },
+  // ---------- Added from the keyword audit (2026-11) ----------
+  {
+    slug: "magnetic-closure-boxes", name: "Magnetic Closure Boxes", parent: "rigid-boxes", group: "styles", icon: "rigid",
+    intro: "Rigid gift boxes with a hidden magnet in the flap, so the lid shuts with a soft click every time.",
+    uses: ["PR and influencer kits", "luxury gifts", "skincare and fragrance sets", "corporate gifts"],
+    style: "one-piece rigid box with a magnetic flap lid", material: "1200–1500gsm greyboard wrapped in printed paper", finish: "soft-touch, foil, emboss and ribbon pulls",
+    tip: "Ask for a ribbon pull on the inside of the flap. It makes the first opening easier and looks great on video.",
+    rich: {
+      lede: "Magnetic closure boxes are the ones people keep. A thin magnet sits inside the front flap, so the lid closes with a satisfying click and stays shut without tape or ribbon. We make them from thick greyboard wrapped in your printed paper, to your exact size, from 100 boxes. They also ship flat on request, which saves a lot on freight.",
+      styles: ["rigid-boxes", "luxury-boxes", "drawer-boxes", "two-piece-boxes", "gift-boxes", "ribbon-boxes"],
+      features: [f("That click", "A hidden magnet holds the lid closed and gives a neat, premium feel."), f("Built to keep", "Thick rigid board that customers reuse for years."), f("Collapsible option", "Folding magnetic boxes ship flat and pop up in seconds."), f("Inserts made to fit", "Card, foam or EVA inserts hold each item in place.")],
+      guide: [
+        { h: "Fixed or collapsible?", p: ["A fixed magnetic box arrives fully built. It feels the sturdiest, but it takes up space in shipping and storage. A collapsible one folds flat and clicks together with a few small magnets, so it can cut freight costs a lot on larger orders."] },
+        { h: "Choosing the wrap and finish", p: ["Most brands pick a smooth printed paper with soft-touch lamination, then add foil or an embossed logo on the lid. Textured or linen papers look lovely with a simple one-color logo. Our [finishes guide](/blog/packaging-finishes-explained) shows what each one does."] },
+        { h: "Shipping a magnetic box", p: ["Rigid boxes are strong but not made for courier networks on their own. For online orders, pack yours inside a plain or printed [mailer box](/packaging/mailer-boxes) so it arrives without dents."] },
+      ],
+      faqs: [q("Are magnetic boxes expensive?", "They cost more than folding cartons because they are built by hand from rigid board. A collapsible style and a simple wrap keep the price down, and your quote will show both options."), q("Can the magnet be felt through the box?", "No. It is hidden inside the flap and under the wrap paper, so the outside stays smooth."), q("Can you add a ribbon or a window?", "Yes, ribbon pulls, ribbon ties and small clear windows are all possible."), q("Do collapsible magnetic boxes stay strong?", "Yes. Once assembled they feel almost the same as a fixed box, and they can be flattened again for storage.")],
+    },
+  },
+  {
+    slug: "drawer-boxes", name: "Drawer Boxes", parent: "rigid-boxes", group: "styles", icon: "rigid",
+    intro: "Sliding drawer boxes, also called sleeve and tray boxes, that open like a matchbox with a ribbon or thumb notch.",
+    uses: ["jewelry and watches", "chocolates and candles", "gift sets", "stationery and cards"],
+    style: "rigid or card tray sliding inside an outer sleeve", material: "rigid greyboard, or 18–24pt card for lighter items", finish: "foil, emboss, soft-touch and ribbon pulls",
+    tip: "Print a short message on the tray floor. It is only seen once the drawer slides out, which makes it feel like a small surprise.",
+    rich: {
+      lede: "A drawer box slides open slowly, and that little moment is why brands love it. The tray sits inside a printed sleeve and pulls out with a ribbon tab or a thumb notch. We make sliding drawer boxes in rigid board for gifts and jewelry, or in lighter card for cheaper everyday products, cut to your size from 100 boxes.",
+      styles: ["magnetic-closure-boxes", "luxury-boxes", "jewelry-boxes", "chocolate-boxes", "rigid-boxes", "trays-and-sleeves"],
+      features: [f("A slow reveal", "The tray slides out, so the product is seen bit by bit."), f("Rigid or card", "Rigid board for luxury, folding card when price matters more."), f("Ribbon or notch", "A ribbon pull or a thumb cut-out to open it."), f("Stacked drawers", "Two, three or four drawers in one box for sets and samplers.")],
+      guide: [
+        { h: "Rigid drawer box or card sleeve and tray?", p: ["Rigid drawer boxes are thick, heavy and made to keep, which suits jewelry, watches and luxury gifts. A folding [tray and sleeve](/packaging/trays-and-sleeves) in printed card looks similar, costs much less and ships flat, so it works well for soap, chocolate and stationery."] },
+        { h: "Making the drawer easy to open", p: ["A drawer that is too tight frustrates people, and one that is too loose falls out. We build in a small clearance and add a ribbon pull or a thumb notch, then check the fit on your proof before production."] },
+        { h: "Multi-drawer boxes", p: ["Stacked drawers make great advent boxes, tasting sets and sampler kits. Each drawer can be printed differently, and the outside works as one big canvas for your brand."] },
+      ],
+      faqs: [q("What is the difference between a drawer box and a sleeve box?", "They are the same idea. Some people call it a sliding box, a matchbox style or a sleeve and tray box."), q("Can you print inside the drawer?", "Yes. Many brands print a pattern or a short note on the tray floor."), q("Can I add an insert for rings or necklaces?", "Yes, foam, velvet-wrapped or card inserts cut to your pieces."), q("Do drawer boxes ship flat?", "Card versions ship flat. Rigid ones arrive built, so they take more space.")],
+    },
+  },
+  {
+    slug: "luxury-boxes", name: "Luxury Boxes", parent: "rigid-boxes", group: "styles", icon: "rigid",
+    intro: "Luxury packaging boxes in rigid board with foil, embossing and soft-touch, for products that need to feel special.",
+    uses: ["fragrance and skincare", "jewelry and watches", "premium chocolate and spirits", "VIP and launch gifts"],
+    style: "magnetic, drawer, two-piece or book-style rigid box", material: "1200–1500gsm greyboard wrapped in specialty or printed paper", finish: "hot foil, emboss, deboss, soft-touch and spot UV",
+    tip: "Two finishes are usually enough. A soft-touch wrap with one foil logo often looks more expensive than five effects at once.",
+    rich: {
+      lede: "Luxury packaging is not about adding every finish at once. It's thick board, a clean design, a good fit and one or two details done really well. We make luxury boxes in magnetic, drawer, two-piece and book styles, wrapped in printed or specialty paper and finished with foil or embossing, to your exact size from 100 boxes.",
+      styles: ["magnetic-closure-boxes", "drawer-boxes", "two-piece-boxes", "rigid-boxes", "perfume-boxes", "jewelry-boxes"],
+      features: [f("Heavy rigid board", "1200–1500gsm greyboard that feels solid in the hand."), f("Specialty papers", "Soft-touch, linen, pearl or textured wraps."), f("Foil and emboss", "Gold, silver, rose gold or holographic foil, raised or pressed logos."), f("Fitted inserts", "Foam, velvet or card inserts so nothing moves.")],
+      guide: [
+        { h: "Which luxury box style?", p: ["[Magnetic closure boxes](/packaging/magnetic-closure-boxes) are the most popular for PR kits and gifts. [Drawer boxes](/packaging/drawer-boxes) suit jewelry and small sets. [Two-piece boxes](/packaging/two-piece-boxes) with a lift-off lid feel classic and work well for apparel and candles."] },
+        { h: "Getting a premium look on a budget", p: ["Keep the print to one or two colors on a dark or textured paper, then add one foil detail. Doing less, but doing it carefully, usually reads as more expensive, and it keeps the cost per box down."] },
+        { h: "Protecting the unboxing", p: ["Luxury boxes are made to be seen, so ship them inside a plain outer carton or a printed [mailer box](/packaging/mailer-boxes). Tissue paper and a sticker seal add a nice extra layer for very little."] },
+      ],
+      faqs: [q("What is the minimum order for luxury boxes?", "From 100 boxes per design. Bigger runs bring the price per box down a lot, because rigid boxes take hand work to set up."), q("How long do luxury boxes take?", "Production usually takes 10–12 business days after you approve the proof. Rigid boxes are wrapped by hand, so very large runs can take a little longer, and we confirm the date in your quote."), q("Can you match my brand color exactly?", "Yes. We can print with Pantone colors or source a wrap paper close to your shade, and we show it on the proof."), q("Can I see a sample first?", "We send a free digital proof and 3D mockup before anything is made. A physical pre-production sample can be added to your quote.")],
+    },
+  },
+  {
+    slug: "folding-cartons", name: "Folding Cartons", parent: "product-boxes", group: "styles", icon: "carton",
+    intro: "Printed folding cartons in SBS or kraft card, the everyday retail box for cosmetics, food, supplements and more.",
+    uses: ["cosmetics and skincare", "supplements and vitamins", "food and confectionery", "small electronics and accessories"],
+    style: "straight tuck, reverse tuck, auto-lock bottom or sleeve carton", material: "14–24pt SBS or kraft paperboard", finish: "matte, gloss, soft-touch, foil and spot UV",
+    tip: "If the carton holds anything over about 1 lb (450 g), choose an auto-lock bottom so it can't drop through.",
+    rich: {
+      lede: "Folding cartons are the boxes you see on almost every shop shelf. They're made from one sheet of printed paperboard, ship flat, fold up in seconds and cost far less than rigid boxes. We print yours in full color on SBS or kraft card, cut to your size, in tuck end, auto-lock or sleeve styles from 100 cartons.",
+      styles: ["tuck-boxes", "auto-lock-boxes", "product-boxes", "window-boxes", "hang-tab-boxes", "cosmetic-boxes"],
+      features: [f("Low cost per box", "One sheet of card, printed and cut, so the price stays low."), f("Ships flat", "Saves space in freight and in your storeroom."), f("Many styles", "Straight tuck, reverse tuck, auto-lock and sleeves."), f("Shelf-ready print", "Bright full color with foil or spot UV if you want it.")],
+      guide: [
+        { h: "Which folding carton style?", p: ["A reverse tuck end is the most common and cheapest. A straight tuck end opens on one side, which looks tidier for gift products. An [auto-lock bottom](/packaging/auto-lock-boxes) pops into shape and holds heavier items. A sleeve slides over a tray or a product."] },
+        { h: "SBS or kraft?", p: ["White SBS card gives the brightest color and the sharpest detail. Kraft card has a natural brown look that suits eco and food brands, but colors print darker on it. Our [materials guide](/materials-and-finishes) has examples of both."] },
+        { h: "Adding a window or hang tab", p: ["A clear [window](/packaging/window-boxes) lets shoppers see the product without opening the box. A [hang tab](/packaging/hang-tab-boxes) lets the carton hang on a peg in retail displays."] },
+      ],
+      faqs: [q("What is a folding carton?", "A box made from one printed and die-cut sheet of paperboard that folds into shape. Most cosmetic, food and pharmacy boxes are folding cartons."), q("What thickness of card do I need?", "14–16pt for light items like cards and cosmetics, 18–24pt for heavier products. We suggest the right one in your quote."), q("Are folding cartons recyclable?", "Yes. Paperboard cartons go in paper recycling, as long as you avoid heavy plastic lamination."), q("Can each carton have a different design?", "Yes, each design starts at 100 cartons.")],
+    },
+  },
+  {
+    slug: "stand-up-pouches", name: "Stand-Up Pouches", parent: "mylar-bags", group: "bags", icon: "pouch",
+    intro: "Printed stand-up pouches with a zip lock, for coffee, snacks, supplements, pet treats and bath products.",
+    uses: ["coffee and tea", "snacks, candy and dried fruit", "supplements and protein powder", "pet treats and bath salts"],
+    style: "doypack stand-up pouch with zip lock and tear notch", material: "food-safe multi-layer film, matte, gloss, kraft or clear", finish: "matte or gloss lamination, spot gloss, window and hang hole",
+    tip: "Choose a matte finish with a spot gloss on your logo. It looks premium and hides fingerprints on the shelf.",
+    rich: {
+      lede: "Stand-up pouches stand on the shelf by themselves, reseal with a zip, and weigh far less than a jar or a tin. We print them in full color on food-safe film, with a zip lock, tear notch and the size and window you want, from 100 pouches. Popular for coffee, snacks, supplements and bath products.",
+      styles: ["mylar-bags", "spouted-pouches", "coffee-packaging", "tea-packaging", "labels-and-stickers", "candy-boxes"],
+      features: [f("Stands up on its own", "A gusseted base keeps it upright on the shelf."), f("Resealable", "A press-to-close zip keeps the contents fresh."), f("Food-safe film", "Barrier layers keep out air, moisture and light."), f("Light to ship", "Much lighter than jars and tins, so postage costs less.")],
+      guide: [
+        { h: "Clear, kraft or fully printed?", p: ["A clear window shows food at its best. Kraft-look film suits coffee, tea and natural products. A fully printed metallized pouch blocks light completely, which is what coffee, supplements and anything sensitive to light need."] },
+        { h: "Extras worth adding", p: ["A one-way degassing valve is a must for freshly roasted coffee. A hang hole lets pouches hang on retail pegs. A tear notch above the zip makes the first opening easy. See [coffee packaging](/packaging/coffee-packaging) for more coffee-specific options."] },
+        { h: "Pouch or box?", p: ["Pouches cost less to make and ship, but boxes stack better and give more space to print on. Some brands put a pouch inside a printed [folding carton](/packaging/folding-cartons) for a gift version."] },
+      ],
+      faqs: [q("Are your stand-up pouches food safe?", "Yes. The inner layer is food-safe film, suitable for dry foods, coffee, snacks and supplements."), q("Can you add a window?", "Yes, in any shape, as long as the product inside is not sensitive to light."), q("Do you make compostable or recyclable pouches?", "We can quote mono-material recyclable film and compostable kraft options. Tell us in the quote form."), q("What sizes are available?", "Any size. Tell us how much product goes in, by weight or volume, and we'll suggest the right pouch size.")],
+    },
+  },
+  {
+    slug: "tissue-paper", name: "Tissue Paper", parent: "wrapping-paper", group: "print", icon: "label",
+    intro: "Custom printed tissue paper with your logo or pattern, to wrap orders and make the unboxing feel finished.",
+    uses: ["clothing and apparel orders", "gift boxes and hampers", "candles and homeware", "subscription boxes"],
+    style: "printed tissue sheets, repeat logo or full pattern", material: "17–28gsm acid-free tissue, white, kraft or colored", finish: "one or two-color print with soy-based inks",
+    tip: "A small logo repeated across the sheet looks good whichever way the tissue is folded.",
+    rich: {
+      lede: "Custom tissue paper is one of the cheapest ways to make an order feel special. A box opens, and the first thing your customer sees is your logo wrapped around their order. We print tissue in one or two colors on white, kraft or colored sheets, with your logo repeated or as a full pattern, ready to use in mailers and gift boxes.",
+      styles: ["wrapping-paper", "labels-and-stickers", "mailer-boxes", "apparel-boxes", "gift-boxes", "poly-bags"],
+      features: [f("Big impact, small cost", "One of the cheapest upgrades to any order."), f("Your logo, repeated", "Pattern repeats that look right however the sheet is folded."), f("Eco inks", "Soy-based inks on acid-free, recyclable tissue."), f("Pairs with stickers", "Seal each wrap with a printed logo sticker.")],
+      guide: [
+        { h: "How to design tissue paper", p: ["Keep it simple. A small logo or icon repeated with plenty of space works better than a large logo that gets lost in the folds. One color on white or kraft is the most popular and the most affordable."] },
+        { h: "Finish the unboxing", p: ["Wrap the product in tissue, close it with a logo [sticker](/packaging/labels-and-stickers), and pack it in a [mailer box](/packaging/mailer-boxes) printed on the inside. It's a simple set-up, and it's what people tend to share online."] },
+        { h: "How much do I need?", p: ["One standard sheet (20 x 30 in, or 50 x 75 cm) wraps a folded T-shirt. Most small brands order a few hundred sheets with their first boxes, then reorder both together."] },
+      ],
+      faqs: [q("Is tissue cheaper in bigger runs?", "Yes, much cheaper per sheet. Tissue is often ordered with boxes, so ask for both in one quote and we'll price them together."), q("Can you print in my brand color?", "Yes, with Pantone-matched inks."), q("Is printed tissue paper recyclable?", "Yes. We print with soy-based inks on acid-free paper."), q("What sizes can you make?", "Standard 20 x 30 in (50 x 75 cm) sheets, or a custom size cut to fit your box.")],
+    },
+  },
 ];
 
 export const productCategories: Category[] = products.map(({ rich: _rich, ...c }) => c);
-export const productContent: Record<string, RichContent> = Object.fromEntries(products.map((p) => [p.slug, p.rich]));
+export const productContent: Record<string, RichContent> = Object.fromEntries(
+  products.map((p) => {
+    const extra = productExtras[p.slug];
+    return [p.slug, extra ? { ...p.rich, guide: [...p.rich.guide, ...extra.guide], faqs: [...p.rich.faqs, ...extra.faqs] } : p.rich];
+  }),
+);

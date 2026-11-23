@@ -173,3 +173,43 @@ export function MockupBand() {
     </section>
   );
 }
+
+/** Keyword links from the home page into the pages we most want to rank. */
+const popularLinks = [
+  ["/custom-boxes-with-logo", "Custom boxes with logo"],
+  ["/packaging/mailer-boxes", "Custom mailer boxes"],
+  ["/packaging/shipping-boxes", "Custom shipping boxes"],
+  ["/packaging/rigid-boxes", "Custom rigid boxes"],
+  ["/packaging/magnetic-closure-boxes", "Magnetic closure boxes"],
+  ["/packaging/folding-cartons", "Folding cartons"],
+  ["/packaging/product-boxes", "Custom product boxes"],
+  ["/packaging/cosmetic-boxes", "Custom cosmetic boxes"],
+  ["/packaging/candle-boxes", "Custom candle boxes"],
+  ["/packaging/stand-up-pouches", "Custom stand-up pouches"],
+  ["/packaging/luxury-boxes", "Luxury packaging boxes"],
+  ["/small-business-packaging", "Packaging for small business"],
+  ["/wholesale-custom-boxes", "Wholesale custom boxes"],
+  ["/sustainability", "Eco-friendly packaging"],
+];
+
+export function PopularLinks() {
+  return (
+    <section className="block band" style={{ paddingTop: 0 }}>
+      <div className="wrap">
+        <div className="head">
+          <div>
+            <p className="eyebrow">Popular searches</p>
+            <h2>Custom packaging people ask us for most.</h2>
+          </div>
+        </div>
+        <ul className="popular-links">
+          {popularLinks.map(([href, label]) => (
+            <li key={href}>
+              <Link href={href}>{label}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}

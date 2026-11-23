@@ -5,6 +5,8 @@
  */
 const withPhoto = new Set<string>([
   "apparel-boxes",
+  "drawer-boxes",
+  "stand-up-pouches",
   "bakery-boxes",
   "bath-bomb-boxes",
   "book-boxes",

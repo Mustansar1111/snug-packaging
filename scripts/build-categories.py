@@ -100,6 +100,18 @@ EXTRA = {
     "wrapping-paper": dict(uses=["gift wrapping", "retail wrapping", "subscription boxes", "events"], style="printed sheets or rolls", material="uncoated, coated or kraft paper", finish="full-color or one-color print", tip=None),
 }
 
+# Snug-specific specs that replace shared source profiles, so similar pages don't read the same.
+SPEC_OVERRIDES = {
+    "shipping-boxes": dict(uses=["e-commerce orders", "heavy or bulky products", "wholesale and B2B shipments", "subscription refills"], style="regular slotted carton or die-cut shipping box", material="single or double-wall corrugated, B or C flute", finish="one or two-color print on kraft, or full color", tip="If a box only needs to survive the trip, a one-color logo on brown kraft corrugated keeps the cost down."),
+    "favor-boxes": dict(uses=["wedding favors", "party and baby shower favors", "sweets and small treats", "event giveaways"], style="small pillow, gable, cube or two-piece box", material="14–18pt SBS or kraft card", finish="foil names and dates, ribbon, matte", tip="Add the couple's names or the event date in foil. It turns a sweet box into a keepsake."),
+    "christmas-boxes": dict(uses=["holiday gift sets", "advent calendars", "seasonal product launches", "corporate Christmas gifts"], style="magnetic, two-piece or mailer box in a seasonal design", material="rigid chipboard or E-flute corrugated", finish="red and gold foil, spot UV, soft-touch", tip="Order seasonal boxes by early October so they arrive well before the holiday rush."),
+    "cosmetic-jars": dict(uses=["face creams and moisturizers", "eye creams and serums in jars", "body butters", "balms and masks"], style="tuck end carton with a jar insert", material="16–18pt SBS card with a card collar insert", finish="soft-touch, foil and emboss", tip="A card collar insert stops the jar sliding around and costs far less than foam."),
+    "hemp-boxes": dict(uses=["hemp seed oil and tinctures", "hemp skincare", "hemp tea and snacks", "hemp wellness gift sets"], style="tuck end box or rigid kit box", material="kraft or 16–18pt SBS card", finish="kraft with earthy inks, matte or soft-touch", tip="Kraft board and earthy colors suit hemp's natural image, and they cost less than full-color coverage."),
+    "paper-bags": dict(uses=["retail purchases", "takeaway food", "gifts and events", "boutique shopping"], style="twisted, flat or rope-handle paper bag", material="100–250gsm kraft or coated paper", finish="one-color to full-color print", tip="Pick the handle by weight: twisted paper for light items, rope or die-cut handles for heavier gifts."),
+    "tote-bags": dict(uses=["boutique and retail shopping", "events and trade shows", "merch and giveaways", "gift bags"], style="reusable tote with long or short handles", material="laminated non-woven, cotton canvas or heavy kraft paper", finish="one to four-color screen print or full-color lamination", tip="Long handles that fit over the shoulder mean people carry your tote around town, not just home."),
+    "poly-bags": dict(uses=["clothing and apparel orders", "soft accessories", "textiles and bedding", "customer returns"], style="self-seal poly mailer with a peel-and-seal strip", material="co-extruded LDPE film, with recycled-content options", finish="one to three-color print, matte or gloss", tip="Ask for a second peel strip so customers can reuse the same mailer for returns."),
+}
+
 FEATURED = ["mailer-boxes", "rigid-boxes", "cosmetic-boxes", "mylar-bags", "kraft-boxes", "display-boxes", "food-boxes", "labels-and-stickers"]
 
 
@@ -119,6 +131,7 @@ for src in SRC:
         spec = dict(uses=e["uses"], style=e["style"], material=e["material"], finish=e["finish"], tip=e["tip"])
     else:
         spec = dict(uses=prof["for"], style=prof["style"], material=prof["material"], finish=prof["finish"], tip=prof["tip"])
+    spec.update(SPEC_OVERRIDES.get(slug, {}))
     rows.append(dict(slug=slug, name=name, group=group, icon=icon, intro=intro, **spec))
 
 order = {k: i for i, k in enumerate(SNUG)}

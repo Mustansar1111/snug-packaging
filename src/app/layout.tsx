@@ -34,7 +34,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <a className="skip" href="#main">
           Skip to content
         </a>
-        <Header />
+        <Header phone={site.phone} />
         <main id="main">{children}</main>
         <Footer />
         <Motion />

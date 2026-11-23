@@ -42,6 +42,9 @@ export function Footer() {
                     <Link href={`/packaging/${c.slug}`}>{c.name}</Link>
                   </li>
                 ))}
+              <li><Link href="/custom-boxes-with-logo">Custom boxes with logo</Link></li>
+              <li><Link href="/small-business-packaging">Small business packaging</Link></li>
+              <li><Link href="/wholesale-custom-boxes">Wholesale custom boxes</Link></li>
               <li>
                 <Link href="/packaging">All packaging</Link>
               </li>
@@ -63,7 +66,7 @@ export function Footer() {
               <li><Link href="/how-it-works">How it works</Link></li>
               <li><Link href="/materials-and-finishes">Materials &amp; finishes</Link></li>
               <li><Link href="/artwork-guide">Artwork guide</Link></li>
-              <li><Link href="/sustainability">Sustainability</Link></li>
+              <li><Link href="/sustainability">Eco-friendly packaging</Link></li>
               <li><Link href="/blog">Blog</Link></li>
               <li><Link href="/faq">FAQ</Link></li>
             </ul>
