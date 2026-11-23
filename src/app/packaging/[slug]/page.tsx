@@ -9,9 +9,11 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { Faq, JsonLd, Process } from "@/components/sections";
 import { categories } from "@/data/categories";
 import type { IconKey } from "@/data/types";
-import { categoryFaqs, getCategory, joinList, relatedCategories, site } from "@/lib/site";
+import { areaServed, categoryFaqs, getCategory, joinList, metaDescription, relatedCategories, site, lowerName } from "@/lib/site";
 import { getRichContent, type StyleEntry } from "@/data/categoryContent";
 import { CustomizeTabs, CategoryStats, WhyOrder } from "@/components/CategoryExtras";
+import { Guides } from "@/components/Guides";
+import { guidesFor } from "@/data/posts";
 
 /** Turn a style entry into a card: a slug becomes a link to that Snug category with its photo. */
 type ResolvedStyle = { name: string; blurb: string; img: string | null; href: string; icon?: IconKey };
@@ -44,7 +46,10 @@ export async function generateMetadata({ params }: PageProps<"/packaging/[slug]"
   if (!cat) return {};
   return {
     title: `Custom ${cat.name} with Logo`,
-    description: `${cat.intro} Made to your size from ${site.moq} units, with free design help and a 3D proof.`.slice(0, 158),
+    description: metaDescription(cat.intro, [
+      `Made to your size from ${site.moq} units, with free design help and a 3D proof.`,
+      `From ${site.moq} units, with a free 3D proof.`,
+    ]),
     alternates: { canonical: `/packaging/${cat.slug}` },
   };
 }
@@ -59,7 +64,7 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
   const styleList: StyleEntry[] = [...children.map((c) => c.slug).filter((s) => !rich?.styles.includes(s)), ...(rich?.styles ?? [])];
   const faqs = [...(rich?.faqs ?? []), ...categoryFaqs(cat)];
   const photo = packPhoto(cat.slug);
-  const lower = cat.name.toLowerCase();
+  const lower = lowerName(cat.name);
 
   return (
     <>
@@ -96,7 +101,7 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
             <div className="art-big photo" data-hero-photo>
               <span className="photo-badge">Free 3D mockup</span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={photo.src} alt={`Custom printed ${cat.name.toLowerCase()}`} width={1000} height={1000} fetchPriority="high" />
+              <img src={photo.src} alt={`Custom printed ${lowerName(cat.name)}`} width={1000} height={1000} fetchPriority="high" />
             </div>
           ) : (
             <div className="art-big" aria-hidden="true">
@@ -136,7 +141,7 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
               ))}
             </ul>
             <p style={{ color: "var(--muted)", marginTop: 20, maxWidth: "62ch" }}>
-              Whether you need {cat.name.toLowerCase()} for {joinList(cat.uses.slice(0, 2))}, we build each order around your product,
+              Whether you need {lowerName(cat.name)} for {joinList(cat.uses.slice(0, 2))}, we build each order around your product,
               print your artwork in full color and send a free proof before anything goes to press.
             </p>
             {cat.tip && (
@@ -176,7 +181,7 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
                     </span>
                     <b>{st.name}</b>
                     <span className="blurb">{st.blurb}</span>
-                    <span className="go">{st.href === "#quote" ? "Get a quote →" : `See ${st.name.toLowerCase()} →`}</span>
+                    <span className="go">{st.href === "#quote" ? "Get a quote →" : `See ${lowerName(st.name)} →`}</span>
                   </Link>
                 </li>
               ))}
@@ -246,6 +251,7 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
       )}
       <Reviews />
       <Faq items={faqs.slice(0, 8)} title={`${cat.name} questions`} />
+      <Guides posts={guidesFor(cat)} title={`Guides for buying ${lower}`} />
 
       <section className="block band" style={{ paddingTop: 0 }}>
         <div className="wrap">
@@ -255,7 +261,7 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
               <h2>Related packaging</h2>
             </div>
           </div>
-          <CategoryGrid cats={relatedCategories(cat)} />
+          <CategoryGrid cats={relatedCategories(cat, 8)} />
         </div>
       </section>
 
@@ -267,9 +273,10 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
           serviceType: "Custom printed packaging",
           description: cat.intro,
           url: `${site.url}/packaging/${cat.slug}`,
-          ...(photo ? { image: `${site.url}${photo.src}` } : {}),
-          provider: { "@type": "Organization", name: site.name, url: site.url },
-          areaServed: ["US", "GB", "AU", "EU"],
+          // Pages still waiting for a real photo point Google at their generated share image instead.
+          image: photo ? `${site.url}${photo.src}` : `${site.url}/packaging/${cat.slug}/opengraph-image`,
+          provider: { "@id": `${site.url}/#org` },
+          areaServed,
         }}
       />
       <JsonLd

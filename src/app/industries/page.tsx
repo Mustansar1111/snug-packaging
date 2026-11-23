@@ -1,3 +1,4 @@
+import { lowerName } from "@/lib/site";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
@@ -23,11 +24,11 @@ export default function IndustriesPage() {
                 <Link href={`/industries/${i.slug}`}>
                   {industryPhotoFor(i.slug) && (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img className="ind-photo" src={industryPhotoFor(i.slug)!.srcSm} alt={`Custom ${i.name.toLowerCase()} packaging`} loading="lazy" width={480} height={480} />
+                    <img className="ind-photo" src={industryPhotoFor(i.slug)!.srcSm} alt={`Custom ${lowerName(i.name)} packaging`} loading="lazy" width={480} height={480} />
                   )}
                   <h2>{i.name}</h2>
                   <p>{i.intro}</p>
-                  <span>See {i.name.toLowerCase()} packaging →</span>
+                  <span>See {lowerName(i.name)} packaging →</span>
                 </Link>
               </li>
             ))}

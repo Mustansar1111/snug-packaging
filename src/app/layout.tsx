@@ -5,7 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Motion } from "@/components/Motion";
 import { JsonLd } from "@/components/sections";
-import { site } from "@/lib/site";
+import { areaServed, site } from "@/lib/site";
 
 const display = Bricolage_Grotesque({ variable: "--font-display", subsets: ["latin"], weight: ["400", "600", "800"] });
 const body = Instrument_Sans({ variable: "--font-body", subsets: ["latin"], weight: ["400", "500", "600"] });
@@ -27,6 +27,8 @@ export const viewport: Viewport = {
   themeColor: "#3b1536",
 };
 
+const sameAs = [...new Set([site.social.instagram, site.social.facebook, ...site.profiles].filter(Boolean))];
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
@@ -34,7 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <a className="skip" href="#main">
           Skip to content
         </a>
-        <Header phone={site.phone} />
+        <Header phone={site.phone} email={site.email} social={site.social} />
         <main id="main">{children}</main>
         <Footer />
         <Motion />
@@ -45,7 +47,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             "@id": `${site.url}/#org`,
             name: site.name,
             url: site.url,
-            logo: `${site.url}/logo.png`,
+            description: site.description,
+            logo: { "@type": "ImageObject", url: `${site.url}/logo.png`, width: 512, height: 512 },
             email: site.email,
             ...(site.phone ? { telephone: site.phone } : {}),
             legalName: site.legalName,
@@ -57,7 +60,18 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               postalCode: o.postcode,
               addressCountry: o.code,
             })),
-            areaServed: ["US", "GB", "AU", "EU"],
+            areaServed,
+            contactPoint: [
+              {
+                "@type": "ContactPoint",
+                contactType: "sales",
+                email: site.email,
+                ...(site.phone ? { telephone: site.phone } : {}),
+                areaServed: ["US", "GB", "AU", "IE", "DE", "FR", "NL", "ES", "IT"],
+                availableLanguage: ["English"],
+              },
+            ],
+            ...(sameAs.length ? { sameAs } : {}),
           }}
         />
         <JsonLd
@@ -66,6 +80,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             "@type": "WebSite",
             name: site.name,
             url: site.url,
+            "@id": `${site.url}/#website`,
+            inLanguage: "en",
             publisher: { "@id": `${site.url}/#org` },
           }}
         />

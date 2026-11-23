@@ -17,6 +17,7 @@ const withPhoto = new Set<string>([
   "cardboard-boxes",
   "cbd-boxes",
   "cbd-gummies-boxes",
+  "cbd-oil-boxes",
   "cereal-boxes",
   "chinese-takeout-boxes",
   "chocolate-boxes",
@@ -89,6 +90,10 @@ const withPhoto = new Set<string>([
   "two-piece-boxes",
   "vape-boxes",
   "window-boxes",
+  "magnetic-closure-boxes",
+  "white-boxes",
+  "ribbon-boxes",
+  "luxury-boxes",
 ]);
 
 export type Photo = { src: string; srcSm: string };

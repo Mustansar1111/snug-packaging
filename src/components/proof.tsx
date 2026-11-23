@@ -165,9 +165,13 @@ export function Stories() {
   );
 }
 
+/**
+ * Reviews from real customers. Until there are some, this shows the checks a buyer can make before
+ * paying anything instead, so the page never pretends to have proof it doesn't have.
+ */
 export function Reviews({ title = "What our customers say." }: { title?: string }) {
   const items = visible(reviews);
-  if (!items.length) return null;
+  if (!items.length) return <BeforeYouPay />;
   return (
     <section className="block band" id="reviews">
       <div className="wrap">
@@ -181,13 +185,88 @@ export function Reviews({ title = "What our customers say." }: { title?: string 
         <div className="reviews" data-reveal-group>
           {items.map((r, i) => (
             <figure key={i} className={r.placeholder ? "review ph" : "review"}>
+              {r.rating ? (
+                <span className="stars" aria-label={`${r.rating} out of 5 stars`}>
+                  {"★".repeat(Math.round(r.rating))}
+                </span>
+              ) : null}
               <blockquote>“{r.quote}”</blockquote>
               <figcaption>
                 <b>{r.name}</b> {r.company}, {r.country}
+                {r.source &&
+                  (r.sourceUrl ? (
+                    <>
+                      {" · "}
+                      <a href={r.sourceUrl} target="_blank" rel="noopener">
+                        on {r.source}
+                      </a>
+                    </>
+                  ) : (
+                    ` · on ${r.source}`
+                  ))}
               </figcaption>
             </figure>
           ))}
         </div>
+        {site.reviewUrl && (
+          <p style={{ marginTop: 20 }}>
+            <a href={site.reviewUrl} target="_blank" rel="noopener">
+              Ordered from us? Leave a review →
+            </a>
+          </p>
+        )}
+      </div>
+    </section>
+  );
+}
+
+const checks = [
+  {
+    title: "See it before you pay",
+    text: "You get a free 3D mockup and a flat proof of your box. Nothing is printed, and nothing is charged, until you say yes.",
+  },
+  {
+    title: "Talk to a real person",
+    text: `Call, email or WhatsApp us and a packaging specialist replies ${site.quoteReply}, ${site.quoteReplyDays}. Ask us anything before you commit.`,
+  },
+  {
+    title: "Fair if something goes wrong",
+    text: "If your boxes arrive damaged or don't match the proof you approved, tell us within 7 days of delivery and we reprint or refund. The policy is short and in plain English.",
+  },
+  {
+    title: "Offices you can find",
+    text: "We have offices in Bradford in the UK and Airmont, New York. Our address, phone and email are on every page, not hidden behind a form.",
+  },
+];
+
+/** Shown where reviews will go, until real ones are added in src/data/proof.ts. */
+function BeforeYouPay() {
+  return (
+    <section className="block band" id="trust">
+      <div className="wrap">
+        <div className="head">
+          <div>
+            <p className="eyebrow">Before you pay</p>
+            <h2>New to us? Here&apos;s how you can check.</h2>
+          </div>
+          <p>
+            We&apos;re a young brand, so we&apos;d rather show you how we work than ask you to take our word for it. Every one of these
+            happens before you pay anything.
+          </p>
+        </div>
+        <ul className="feature-grid" data-reveal-group>
+          {checks.map((c, i) => (
+            <li key={c.title}>
+              <span className="n">{String(i + 1).padStart(2, "0")}</span>
+              <h3>{c.title}</h3>
+              <p>{c.text}</p>
+            </li>
+          ))}
+        </ul>
+        <p className="trust-links" style={{ marginTop: 20, color: "var(--muted)" }}>
+          Read the <Link href="/refund-policy">refund policy</Link>, see <Link href="/how-it-works">how ordering works</Link> or{" "}
+          <Link href="/contact">talk to us</Link>.
+        </p>
       </div>
     </section>
   );

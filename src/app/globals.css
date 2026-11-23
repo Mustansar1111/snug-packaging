@@ -38,7 +38,6 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-html.lenis, html.lenis body { height: auto; }
 body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.6 var(--body); }
 a { color: inherit; }
 img { max-width: 100%; }
@@ -547,3 +546,33 @@ footer.site-foot .legal { grid-column: 1 / -1; border-top: 1px solid color-mix(i
 .popular-links { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 10px; }
 .popular-links a { display: inline-block; padding: 10px 16px; border: 1.5px solid var(--line); border-radius: 999px; text-decoration: none; color: var(--ink); font-size: 14.5px; }
 .popular-links a:hover { border-color: var(--plum); color: var(--plum); }
+.stars { color: var(--apricot-ink); letter-spacing: 2px; font-size: 15px; }
+.posts h3 { font-size: 22px; }
+
+/* Hero entrance and photo float, in CSS so they start with the first paint and need no JavaScript.
+   Only transform moves, so the text is readable (and counted for LCP) from the first frame. */
+@keyframes heroRise { from { transform: translateY(24px); } to { transform: none; } }
+@keyframes heroPhoto { from { transform: translateY(36px) scale(.95) rotate(-2deg); } to { transform: none; } }
+@keyframes heroFloat { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
+@keyframes badgePop { from { scale: 0; } to { scale: 1; } }
+@media (prefers-reduced-motion: no-preference) {
+  .page-hero h1, .hero .display { animation: heroRise .9s cubic-bezier(.2,.7,.2,1) both; }
+  .page-hero .lede, .hero .lede { animation: heroRise .9s .12s cubic-bezier(.2,.7,.2,1) both; }
+  .page-hero .ctas, .hero .ctas { animation: heroRise .9s .2s cubic-bezier(.2,.7,.2,1) both; }
+  [data-hero-photo] { animation: heroPhoto 1.1s cubic-bezier(.2,.7,.2,1) both, heroFloat 3.2s 1.1s ease-in-out infinite; }
+  [data-hero-photo] .photo-badge { animation: badgePop .6s .7s cubic-bezier(.34,1.56,.64,1) both; }
+}
+.trust-links a { color: var(--plum); text-decoration: underline; text-underline-offset: 3px; }
+
+/* Top contact bar: email, phone and social icons above the main navigation. */
+.site-head > .head-top { border-bottom: 1px solid color-mix(in srgb, var(--hero-ink) 12%, transparent); }
+.site-head .head-top .wrap { padding-block: 7px; gap: 16px; }
+.head-contact { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.head-contact a { display: inline-flex; align-items: center; gap: 7px; color: var(--hero-muted); text-decoration: none; font: 500 13px var(--mono); white-space: nowrap; }
+.head-contact a:hover { color: var(--hero-ink); }
+.social { display: inline-flex; align-items: center; gap: 12px; }
+.social a { display: inline-flex; padding: 3px; border-radius: 6px; transition: transform .2s ease; }
+.social a:hover { transform: translateY(-1px) scale(1.08); }
+.social a:focus-visible { outline: 2px solid var(--apricot); outline-offset: 2px; }
+@media (max-width: 560px) { .head-contact .head-tel { display: none; } }
+.foot-social { margin-top: 14px; }

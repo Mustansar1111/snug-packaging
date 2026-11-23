@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { SocialIcons, type SocialLinks } from "./Social";
 
 /** Dropdown menus. Kept as plain lists here so the header doesn't pull the whole catalogue into the browser. */
 const menus: Record<string, { href: string; label: string }[]> = {
@@ -39,13 +40,37 @@ const links = [
   { href: "/about", label: "About" },
 ];
 
-export function Header({ phone }: { phone?: string }) {
+export function Header({ phone, email, social = {} }: { phone?: string; email?: string; social?: SocialLinks }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const current = (href: string) => (pathname === href || pathname.startsWith(`${href}/`) ? "page" : undefined);
 
   return (
     <header className="site-head band">
+      <div className="head-top">
+        <div className="wrap">
+          <span className="head-contact">
+            {email && (
+              <a href={`mailto:${email}`}>
+                <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8">
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="m3.5 6.5 8.5 6.5 8.5-6.5" />
+                </svg>
+                {email}
+              </a>
+            )}
+            {phone && (
+              <a className="head-tel" href={`tel:${phone.replace(/[^\d+]/g, "")}`}>
+                <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8">
+                  <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" />
+                </svg>
+                {phone}
+              </a>
+            )}
+          </span>
+          <SocialIcons links={social} className="social head-social" />
+        </div>
+      </div>
       <div className="wrap">
         <Link className="logo" href="/" aria-label="Snug Packaging home">
           <b>snug</b>
@@ -73,11 +98,6 @@ export function Header({ phone }: { phone?: string }) {
             ),
           )}
         </nav>
-        {phone && (
-          <a className="head-phone" href={`tel:${phone.replace(/[^\d+]/g, "")}`}>
-            {phone}
-          </a>
-        )}
         <Link className="btn btn-apricot head-cta" href="/quote">
           Get a quote
         </Link>

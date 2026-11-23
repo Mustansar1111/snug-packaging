@@ -2,7 +2,6 @@
 
 import { useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import gsap from "gsap";
 import { allCountries } from "@/data/regions";
 import { boxSketch } from "@/lib/boxSketch";
 import { quoteReply, quoteReplyDays } from "@/lib/promise";
@@ -90,7 +89,7 @@ export function QuoteForm({ styles, defaultStyle, defaultCountry = "United State
     setStep(n);
     const pane = formRef.current?.querySelector(`[data-step="${n}"]`);
     if (pane && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      gsap.fromTo(pane, { x: 24 }, { x: 0, duration: 0.45, ease: "power3.out" });
+      pane.animate([{ transform: "translateX(24px)" }, { transform: "none" }], { duration: 450, easing: "cubic-bezier(.2,.7,.2,1)" });
     }
   }
 

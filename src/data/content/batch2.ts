@@ -192,13 +192,26 @@ export const batch2: Record<string, RichContent> = {
     faqs: [q("Do jar boxes include inserts?", "Yes."), q("Can you print jar labels?", "Yes, see [labels and stickers](/packaging/labels-and-stickers)."), q("Will glass jars survive the post?", "With an insert and a sturdy outer, yes.")],
   },
   "soap-boxes": {
-    lede: "Soap is sold on scent and feel, so the box should let people see and smell it. We make soap boxes with cut-out windows, sleeves and kraft cartons for handmade and luxury soaps, bath bombs and bars, from 100 boxes.",
-    styles: ["kraft-boxes", "window-boxes", "trays-and-sleeves", "lotion-boxes", "labels-and-stickers", "gift-boxes"],
-    features: [f("Breathable cut-outs", "Let the scent through."), f("Sleeves", "A simple wrap around the bar."), f("Natural kraft", "Suits handmade soaps."), f("Gift sets", "Multi-bar boxes.")],
-    guide: [
-      { h: "Sleeve, window or full box?", p: ["A [sleeve](/packaging/trays-and-sleeves) is the cheapest and lets customers smell the soap. A window box protects more. A full box suits liquid soap and gift sets."] },
+    lede: "People buy soap with their nose as much as their eyes, so a good soap box lets the scent out and the color show. We make soap boxes, sleeves and window cartons for handmade bars, luxury soaps, bath bombs and gift sets, in kraft or printed card, from 100 boxes.",
+    styles: ["kraft-boxes", "window-boxes", "trays-and-sleeves", "bath-bomb-boxes", "labels-and-stickers", "gift-boxes"],
+    features: [
+      f("Cut-outs that let it breathe", "A die-cut window or vent lets shoppers smell the bar without opening anything, and lets cold-process soap keep curing."),
+      f("Sleeves for handmade bars", "A printed sleeve is the simplest wrap there is: low cost, plastic-free and quick to slide on at a craft-market stall."),
+      f("Natural kraft", "Brown kraft board suits handmade and natural soaps, and takes a one-color print beautifully."),
+      f("Gift sets that hold together", "Two-, three- and four-bar boxes with card dividers, so each bar arrives in its slot and the scents don't mix."),
     ],
-    faqs: [q("Can customers smell the soap through the box?", "Yes, with cut-outs or a sleeve."), q("Do you make kraft soap boxes?", "Yes."), q("Can you make gift sets?", "Yes, with inserts.")],
+    guide: [
+      { h: "Sleeve, window box or full box?", p: ["A [sleeve](/packaging/trays-and-sleeves) wraps the middle of the bar, leaving the ends open. It's the cheapest option and the scent comes straight through. A window box protects the bar on all sides but still shows it off. A fully closed box suits liquid soap bottles, fragile shapes and gift sets, where presentation matters more than smell.", "Many makers use sleeves for everyday bars and a rigid or [gift box](/packaging/gift-boxes) for holiday sets."] },
+      { h: "Oils, curing and ink", p: ["Handmade soap can sweat a little oil, especially in warm weather. Uncoated kraft will show small marks over time, so if your bars are oily, choose a coated card or add a thin wrap of glassine paper inside. Let bars finish curing before you box them, or use a vented box so moisture can escape.", "Keep ingredient lists on the back or bottom panel. Most markets ask for them, and customers with sensitive skin will look for them."] },
+      { h: "Branding a range of scents", p: ["Use the same box for every scent and change one thing: a colored sleeve, a sticker or a printed band. Shoppers learn your look quickly, and you only pay for one box design. Our [labels and stickers](/packaging/labels-and-stickers) are a cheap way to name each scent. For fizzy bath products, see [bath bomb boxes](/packaging/bath-bomb-boxes)."] },
+    ],
+    faqs: [
+      q("Can customers smell the soap through the box?", "Yes, if you choose a sleeve or a box with a die-cut window or vent holes. A fully closed box keeps the scent in."),
+      q("Will oily handmade soap mark the box?", "It can on uncoated kraft. A coated card or a thin glassine wrap inside the box prevents marks."),
+      q("Do you make kraft soap boxes?", "Yes, plain or printed in one or more colors."),
+      q("Can you make gift sets for several bars?", "Yes, with card dividers or an insert so each bar stays in place."),
+      q("What's the minimum order?", "100 boxes or sleeves per design."),
+    ],
   },
   "jewelry-boxes": {
     lede: "Jewelry is precious, and the box is part of the gift. We make ring, earring, necklace and bracelet boxes in rigid board with velvet, foam or card inserts, finished with foil, soft-touch and embossing, from 100 boxes.",
