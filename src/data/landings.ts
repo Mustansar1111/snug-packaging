@@ -149,7 +149,6 @@ export const landings: Landing[] = [
         h: "Keeping reorders consistent",
         p: [
           "We keep your dieline, artwork and color references on file. On a reorder we match them to the approved proof, so your boxes look the same from one batch to the next.",
-          "For very large or ongoing orders, we can quote a physical pre-production sample before the full run.",
         ],
       },
       {
@@ -167,7 +166,7 @@ export const landings: Landing[] = [
       { q: "How much cheaper are bulk boxes?", a: "The price per box drops noticeably at each step up in quantity. Your quote will show several quantities side by side so you can compare." },
       { q: "How long do large orders take?", a: "Most bulk orders take 10–12 business days to produce after you approve the proof, plus delivery. Very large runs may take longer, and we'll confirm the date in your quote." },
       { q: "Can you deliver to more than one address?", a: "Yes. Tell us the addresses and quantities and we'll include split delivery in your quote." },
-      { q: "Can I get a sample before a big order?", a: "Yes. Every order comes with a free digital proof and 3D mockup, and we can add a physical pre-production sample to your quote." },
+      { q: "Can I get a sample before a big order?", a: "Every order comes with a free digital proof and 3D mockup to approve before printing. If you need more than that for a large order, ask us about samples in your quote." },
     ],
   },
 ];
