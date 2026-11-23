@@ -3,12 +3,13 @@ import Link from "next/link";
 import { CategoryGrid } from "@/components/CategoryCard";
 import { QuoteSection } from "@/components/sections";
 import { categories } from "@/data/categories";
-import { groups, materialCategories, materials } from "@/lib/site";
+import { groups, materialCategories, materials, og } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Custom Packaging Boxes in Every Style",
   description: `Browse ${categories.length} custom packaging styles: mailer, rigid, cosmetic and food boxes, mylar bags, labels and more. Made to your size from 100 units.`,
   alternates: { canonical: "/packaging" },
+  openGraph: og("/packaging", { defaultImage: true }),
 };
 
 export default function PackagingHub() {

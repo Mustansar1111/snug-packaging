@@ -3,12 +3,13 @@ import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { Finishes } from "@/components/proof";
 import { MockupBand, QuoteSection } from "@/components/sections";
-import { materials } from "@/lib/site";
+import { materials, og } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Packaging Materials and Finishes",
   description: "Compare SBS card, kraft, corrugated and rigid board, plus finishes like soft-touch, foil, spot UV and embossing, for custom printed packaging.",
   alternates: { canonical: "/materials-and-finishes" },
+  openGraph: og("/materials-and-finishes", { defaultImage: true }),
 };
 
 const boards = [
@@ -24,7 +25,7 @@ export default function MaterialsPage() {
     <>
       <PageHero
         crumb="Materials and finishes"
-        title="Choose the board, then the finish."
+        title="Packaging materials and finishes, explained."
         lede="The board decides how strong your box is and how it feels. The finish decides how it looks. Here's how to choose both."
       />
       <section className="block band">

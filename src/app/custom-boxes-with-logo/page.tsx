@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/site";
 import { LandingPage } from "@/components/LandingPage";
 import { getLanding } from "@/data/landings";
 
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
   title: page.title,
   description: page.description,
   alternates: { canonical: "/custom-boxes-with-logo" },
+  openGraph: og("/custom-boxes-with-logo"),
 };
 
 export default function Page() {

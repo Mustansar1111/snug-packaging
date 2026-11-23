@@ -35,7 +35,7 @@ export function Footer() {
             <Offices />
           </div>
           <div>
-            <h4>Packaging</h4>
+            <p className="foot-title">Packaging</p>
             <ul>
               {featuredCategories()
                 .slice(0, 4)
@@ -53,7 +53,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h4>Industries</h4>
+            <p className="foot-title">Industries</p>
             <ul>
               {industries.map((i) => (
                 <li key={i.slug}>
@@ -63,7 +63,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h4>Resources</h4>
+            <p className="foot-title">Resources</p>
             <ul>
               <li><Link href="/how-it-works">How it works</Link></li>
               <li><Link href="/materials-and-finishes">Materials &amp; finishes</Link></li>
@@ -74,7 +74,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h4>Company</h4>
+            <p className="foot-title">Company</p>
             <ul>
               <li><Link href="/about">About Snug</Link></li>
               <li><Link href="/contact">Contact</Link></li>

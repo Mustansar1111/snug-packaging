@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
-import { site } from "@/lib/site";
+import { site, og } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "How Snug Packaging collects and uses the details you send through our quote and mockup forms.",
   alternates: { canonical: "/privacy" },
+  openGraph: og("/privacy", { defaultImage: true }),
   robots: { index: false },
 };
 

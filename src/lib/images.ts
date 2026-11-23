@@ -96,11 +96,15 @@ const withPhoto = new Set<string>([
   "luxury-boxes",
 ]);
 
-export type Photo = { src: string; srcSm: string };
+export type Photo = { src: string; srcSm: string; srcSet: string };
 
 export function packPhoto(slug: string): Photo | null {
   if (!withPhoto.has(slug)) return null;
-  return { src: `/images/packaging/${slug}.webp`, srcSm: `/images/packaging/${slug}-sm.webp` };
+  const src = `/images/packaging/${slug}.webp`;
+  const srcSm = `/images/packaging/${slug}-sm.webp`;
+  // Small files are 480 px wide; full files are at least 600 px, so the browser picks the full one
+  // only for big or high-density screens.
+  return { src, srcSm, srcSet: `${srcSm} 480w, ${src} 600w` };
 }
 
 /** Which packaging photo stands for each industry. */

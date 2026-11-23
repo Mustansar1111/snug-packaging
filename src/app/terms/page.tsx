@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import Link from "next/link";
-import { officeLines, site } from "@/lib/site";
+import { officeLines, site, og } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Terms of Sale",
   description: "The terms that apply when you request a quote or order custom packaging from Snug Packaging.",
   alternates: { canonical: "/terms" },
+  openGraph: og("/terms", { defaultImage: true }),
   robots: { index: false },
 };
 

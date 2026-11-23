@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
-import { site } from "@/lib/site";
+import { site, og } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Cookie Policy",
-  description: "How the Snug Packaging website uses cookies.",
+  description: "How the Snug Packaging website uses cookies: no advertising or tracking cookies, and what will change if we ever add analytics.",
   alternates: { canonical: "/cookies" },
+  openGraph: og("/cookies", { defaultImage: true }),
   robots: { index: false },
 };
 

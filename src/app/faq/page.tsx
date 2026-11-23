@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { Faq, QuoteSection } from "@/components/sections";
-import { generalFaqs, site } from "@/lib/site";
+import { generalFaqs, site, og } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Custom Packaging FAQs",
   description: "Answers about minimum orders, quotes, artwork, proofs, materials, production times and delivery to the USA, UK, Australia and Europe.",
   alternates: { canonical: "/faq" },
+  openGraph: og("/faq", { defaultImage: true }),
 };
 
 const more = [

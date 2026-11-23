@@ -147,11 +147,12 @@ section.block { padding-block: 88px; }
 .cat:hover { border-color: var(--plum); transform: translateY(-4px); }
 .cat .art { aspect-ratio: 4 / 3; max-width: 100%; border-radius: 10px; background: var(--plum-soft); display: grid; place-items: center; overflow: hidden; color: var(--plum); }
 .cat .art svg { width: 62%; height: auto; }
-.cat h3 { font-size: 20px; letter-spacing: -0.01em; }
+.cat h3, .cat .cat-name { font-size: 20px; letter-spacing: -0.01em; }
+.cat .cat-name { font-family: var(--display); font-weight: 700; line-height: 1.05; margin: 0; text-wrap: balance; }
 .cat .spec { font: 400 12.5px/1.4 var(--mono); color: var(--muted); }
 .cat .go { font-size: 14px; font-weight: 600; color: var(--plum); margin-top: auto; }
 @media (max-width: 960px) { .cats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 480px) { .cats { gap: 10px; } .cat { padding: 12px; } .cat h3 { font-size: 17px; } }
+@media (max-width: 480px) { .cats { gap: 10px; } .cat { padding: 12px; } .cat h3, .cat .cat-name { font-size: 17px; } }
 
 /* hub tabs */
 .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
@@ -402,7 +403,7 @@ footer.site-foot p a:hover { color: var(--hero-ink); }
 /* footer */
 footer.site-foot { background: var(--hero); color: var(--hero-muted); font-size: 14px; }
 footer.site-foot .wrap { display: grid; grid-template-columns: 1.4fr repeat(4, minmax(0, 1fr)); gap: 32px; padding-block: 56px 32px; }
-footer.site-foot h4 { color: var(--hero-ink); font: 600 14px/1 var(--body); margin: 0 0 14px; }
+footer.site-foot .foot-title { color: var(--hero-ink); font: 600 14px/1 var(--body); margin: 0 0 14px; }
 footer.site-foot ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
 footer.site-foot a { text-decoration: none; }
 footer.site-foot a:hover { color: var(--hero-ink); }
@@ -576,3 +577,4 @@ footer.site-foot .legal { grid-column: 1 / -1; border-top: 1px solid color-mix(i
 .social a:focus-visible { outline: 2px solid var(--apricot); outline-offset: 2px; }
 @media (max-width: 560px) { .head-contact .head-tel { display: none; } }
 .foot-social { margin-top: 14px; }
+.site-foot .legal a { display: inline-block; padding: 6px 4px; margin: -6px -4px; min-height: 24px; }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/site";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { Faq, QuoteSection } from "@/components/sections";
@@ -7,6 +8,7 @@ export const metadata: Metadata = {
   title: "Eco-Friendly Custom Packaging Options",
   description: "Eco-friendly custom packaging: recyclable kraft and corrugated boxes, plastic-free finishes and right-sized designs, explained honestly.",
   alternates: { canonical: "/sustainability" },
+  openGraph: og("/sustainability"),
 };
 
 // TODO before launch: add any certificates the factory holds (FSC, recycled content). Don't claim one we can't show.
