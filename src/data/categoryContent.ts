@@ -38,7 +38,7 @@ export const categoryContent: Record<string, RichContent> = {
       {
         h: "Picking the right material",
         p: [
-          "Most cosmetic cartons are printed on 16 to 18pt SBS card. It is smooth and bright white, so colours print sharp and fine type stays crisp.",
+          "Most cosmetic cartons are printed on 16 to 18pt SBS card. It is smooth and bright white, so colors print sharp and fine type stays crisp.",
           "Kraft card suits natural and vegan brands that want a raw, earthy look. Rigid chipboard wrapped in printed paper is the go-to for luxury lines. For heavy glass, we can make the box in thin E-flute corrugated so it survives the post.",
         ],
       },
@@ -52,7 +52,7 @@ export const categoryContent: Record<string, RichContent> = {
       {
         h: "Getting your size right",
         p: [
-          "Measure the product's length, width and height at the widest points, including the cap or pump, then add 2 to 3 mm on each side. Send us the numbers in inches, centimetres or millimetres and we check them before we make the dieline.",
+          "Measure the product's length, width and height at the widest points, including the cap or pump, then add 2 to 3 mm on each side. Send us the numbers in inches, centimeters or millimeters and we check them before we make the dieline.",
           "Not sure? Tell us the product and its size, and we will suggest a box size and style in your quote.",
         ],
       },
@@ -61,7 +61,7 @@ export const categoryContent: Record<string, RichContent> = {
       { q: "Can I order a small number of cosmetic boxes?", a: "Yes. The minimum is 100 boxes per design, which suits new brands, samples and limited editions." },
       { q: "Do you make luxury cosmetic boxes?", a: "Yes. We make rigid boxes with magnetic lids, drawers and inserts, finished with foil, embossing and soft-touch." },
       { q: "Will the boxes protect glass bottles and jars?", a: "We add a card or foam insert sized to your product, and can use thin corrugated board for heavier items that ship by post." },
-      { q: "Can you help with my box design?", a: "Yes, for free. Send your logo and brand colours and our designers lay out the artwork, then send a 3D mockup for you to approve." },
+      { q: "Can you help with my box design?", a: "Yes, for free. Send your logo and brand colors and our designers lay out the artwork, then send a 3D mockup for you to approve." },
       { q: "Can you print inside the box?", a: "Yes. Printing inside the lid or base is a nice surprise for customers and is popular for skincare and makeup kits." },
     ],
   },

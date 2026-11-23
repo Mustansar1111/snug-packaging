@@ -24,7 +24,7 @@ export default function PrivacyPage() {
           <h2>How we use it</h2>
           <p>We use these details only to reply to your request, prepare your quote and process your order. We never sell your data.</p>
           <h2>How long we keep it</h2>
-          <p>We keep enquiry details for as long as we need them to handle your request and any order that follows.</p>
+          <p>We keep inquiry details for as long as we need them to handle your request and any order that follows.</p>
           <h2>Your rights</h2>
           <p>
             You can ask us to see, correct or delete your details at any time by emailing {site.email}. If you are in the UK or the EU you

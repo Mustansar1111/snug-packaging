@@ -195,7 +195,7 @@ export function Reviews({ title = "What our customers say." }: { title?: string 
 
 const finishes = [
   { key: "matte", name: "Matte", note: "Soft, no-shine surface" },
-  { key: "gloss", name: "Gloss", note: "Shiny, bright colour" },
+  { key: "gloss", name: "Gloss", note: "Shiny, bright color" },
   { key: "soft", name: "Soft-touch", note: "A velvet feel in the hand" },
   { key: "foil", name: "Foil", note: "Gold, silver or holographic" },
   { key: "uv", name: "Spot UV", note: "Raised gloss on a matte base" },

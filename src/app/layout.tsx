@@ -14,11 +14,12 @@ const mono = IBM_Plex_Mono({ variable: "--font-mono", subsets: ["latin"], weight
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Custom Printed Packaging from 100 Units | Snug Packaging",
+    default: "Custom Boxes & Packaging from 100 Units | Snug Packaging",
     template: "%s | Snug Packaging",
   },
   description: site.description,
   openGraph: { siteName: site.name, type: "website", locale: "en_US" },
+  twitter: { card: "summary_large_image" },
   alternates: { canonical: "/" },
 };
 
@@ -41,8 +42,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           data={{
             "@context": "https://schema.org",
             "@type": "Organization",
+            "@id": `${site.url}/#org`,
             name: site.name,
             url: site.url,
+            logo: `${site.url}/logo.png`,
             email: site.email,
             ...(site.phone ? { telephone: site.phone } : {}),
             legalName: site.legalName,
@@ -55,6 +58,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               addressCountry: o.code,
             })),
             areaServed: ["US", "GB", "AU", "EU"],
+          }}
+        />
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: site.name,
+            url: site.url,
+            publisher: { "@id": `${site.url}/#org` },
           }}
         />
       </body>

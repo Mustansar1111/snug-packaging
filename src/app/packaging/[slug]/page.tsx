@@ -11,7 +11,7 @@ import { categories } from "@/data/categories";
 import type { IconKey } from "@/data/types";
 import { categoryFaqs, getCategory, joinList, relatedCategories, site } from "@/lib/site";
 import { getRichContent, type StyleEntry } from "@/data/categoryContent";
-import { CustomiseTabs, CategoryStats, WhyOrder } from "@/components/CategoryExtras";
+import { CustomizeTabs, CategoryStats, WhyOrder } from "@/components/CategoryExtras";
 
 /** Turn a style entry into a card: a slug becomes a link to that Snug category with its photo. */
 type ResolvedStyle = { name: string; blurb: string; img: string | null; href: string; icon?: IconKey };
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: PageProps<"/packaging/[slug]"
   const cat = getCategory(slug);
   if (!cat) return {};
   return {
-    title: `Custom ${cat.name} with Your Logo`,
+    title: `Custom ${cat.name} with Logo`,
     description: `${cat.intro} Made to your size from ${site.moq} units, with free design help and a 3D proof.`.slice(0, 158),
     alternates: { canonical: `/packaging/${cat.slug}` },
   };
@@ -126,7 +126,7 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
                 <tr><th scope="row">Finishes</th><td>{cat.finish}</td></tr>
                 <tr><th scope="row">Minimum order</th><td>{site.moq} units</td></tr>
                 <tr><th scope="row">Production</th><td>{site.turnaround} after proof approval</td></tr>
-                <tr><th scope="row">Sizes</th><td>Made to your inside dimensions, in inches, centimetres or millimetres</td></tr>
+                <tr><th scope="row">Sizes</th><td>Made to your inside dimensions, in inches, centimeters or millimeters</td></tr>
               </tbody>
             </table>
             <h3 style={{ fontSize: 22, marginTop: 36 }}>Brands use them for</h3>
@@ -137,7 +137,7 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
             </ul>
             <p style={{ color: "var(--muted)", marginTop: 20, maxWidth: "62ch" }}>
               Whether you need {cat.name.toLowerCase()} for {joinList(cat.uses.slice(0, 2))}, we build each order around your product,
-              print your artwork in full colour and send a free proof before anything goes to press.
+              print your artwork in full color and send a free proof before anything goes to press.
             </p>
             {cat.tip && (
               <div className="tip">
@@ -192,7 +192,7 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
         </section>
       )}
 
-      <CustomiseTabs name={lower} />
+      <CustomizeTabs name={lower} />
 
       {rich && (
         <section className="block band" style={{ paddingTop: 0 }}>
@@ -259,6 +259,19 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
         </div>
       </section>
 
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: `Custom ${cat.name}`,
+          serviceType: "Custom printed packaging",
+          description: cat.intro,
+          url: `${site.url}/packaging/${cat.slug}`,
+          ...(photo ? { image: `${site.url}${photo.src}` } : {}),
+          provider: { "@type": "Organization", name: site.name, url: site.url },
+          areaServed: ["US", "GB", "AU", "EU"],
+        }}
+      />
       <JsonLd
         data={{
           "@context": "https://schema.org",

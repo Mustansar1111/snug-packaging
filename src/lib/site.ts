@@ -6,7 +6,7 @@ export const site = {
   name: "Snug Packaging",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://snugpackaging.com",
   description:
-    "Custom printed boxes, bags and labels from 100 units, for brands in the USA, UK, Australia and Europe. Free design help and a digital proof before we print.",
+    "Custom boxes and packaging printed with your logo, from 100 units. Mailer, rigid and retail boxes for brands in the USA, UK, Australia and Europe.",
   legalName: "Snug Packaging",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "sales@snugpackaging.com",
   phone: process.env.NEXT_PUBLIC_CONTACT_PHONE ?? "+1 (786) 885-8250",
@@ -26,7 +26,7 @@ export const site = {
 /** Placeholder proof (logos, reviews, stories) shows only when this is on, so a launch can never show made-up proof by accident. */
 export const showPlaceholders = process.env.NEXT_PUBLIC_SHOW_PLACEHOLDERS === "true";
 
-export const industrySlugs = ["cosmetic-boxes", "candle-boxes", "apparel-boxes", "food-boxes", "coffee-packaging", "cbd-boxes", "jewellery-boxes", "bakery-boxes"];
+export const industrySlugs = ["cosmetic-boxes", "candle-boxes", "apparel-boxes", "food-boxes", "coffee-packaging", "cbd-boxes", "jewelry-boxes", "bakery-boxes"];
 
 export function industryCategories(): Category[] {
   return industrySlugs.map((s) => getCategory(s)).filter((c): c is Category => Boolean(c));
@@ -36,7 +36,7 @@ export const materials: { key: string; label: string; blurb: string; test: RegEx
   { key: "corrugated", label: "Corrugated", blurb: "Fluted board that protects products in the post.", test: /corrugated|flute/i },
   { key: "rigid", label: "Rigid board", blurb: "Thick greyboard wrapped in printed paper, for a luxury feel.", test: /rigid|greyboard|chipboard/i },
   { key: "kraft", label: "Kraft", blurb: "Natural brown board with an eco look.", test: /kraft/i },
-  { key: "card", label: "SBS card", blurb: "Smooth white card that prints sharp, bright colour.", test: /SBS|cardstock|24pt card/i },
+  { key: "card", label: "SBS card", blurb: "Smooth white card that prints sharp, bright color.", test: /SBS|cardstock|24pt card/i },
   { key: "film", label: "Film, paper & tin", blurb: "Pouches, bags, labels and tins.", test: /film|laminate|vinyl|tinplate|coated paper|uncoated/i },
 ];
 
@@ -92,7 +92,7 @@ export function categoryFaqs(cat: Category) {
     },
     {
       q: "Can you make them to my exact size?",
-      a: "Yes. Every order is made to your inside dimensions, in inches, centimetres or millimetres. If you're unsure, send us your product and we'll measure it for you.",
+      a: "Yes. Every order is made to your inside dimensions, in inches, centimeters or millimeters. If you're unsure, send us your product and we'll measure it for you.",
     },
   ];
 }

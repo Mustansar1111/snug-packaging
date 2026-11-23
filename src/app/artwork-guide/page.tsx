@@ -5,7 +5,7 @@ import { Faq, QuoteSection } from "@/components/sections";
 
 export const metadata: Metadata = {
   title: "Packaging Artwork Guide",
-  description: "How to prepare artwork for custom printed boxes: file types, bleed, CMYK and Pantone colour, resolution and fonts. Our designers check every file for free.",
+  description: "How to prepare artwork for custom printed boxes: file types, bleed, CMYK and Pantone color, resolution and fonts. Our designers check every file for free.",
   alternates: { canonical: "/artwork-guide" },
 };
 
@@ -13,16 +13,16 @@ const rules = [
   { h: "Start from our dieline", p: "A dieline is a flat drawing of your box with its cut and fold lines. Ask us for the one for your size, and place your artwork on it so logos land on the right panel." },
   { h: "Send vector files", p: "AI, PDF or EPS keep logos and text sharp at any size. Photos are fine as part of a PDF." },
   { h: "Images at 300 dpi", p: "Photos need 300 dpi at the size they print. A web image pulled from a site will look blurry on a box." },
-  { h: "Add bleed", p: "Extend background colour and images 1/8 in (3 mm) past every cut line, so no white edge shows after cutting." },
+  { h: "Add bleed", p: "Extend background color and images 1/8 in (3 mm) past every cut line, so no white edge shows after cutting." },
   { h: "Keep text inside the safe area", p: "Keep text and logos at least 1/8 in (3 mm) inside the cut and fold lines so nothing gets trimmed or lost in a fold." },
-  { h: "CMYK or Pantone", p: "Set your file in CMYK for full-colour print. For an exact brand colour, give us the Pantone code and we'll match it." },
+  { h: "CMYK or Pantone", p: "Set your file in CMYK for full-color print. For an exact brand color, give us the Pantone code and we'll match it." },
   { h: "Outline your fonts", p: "Convert text to outlines, or send the font files, so your words print in the font you chose." },
   { h: "Mark foil, spot UV and emboss", p: "Put each special finish on its own layer, in solid black, and name the layer after the finish." },
 ];
 
 const faqs = [
   { q: "I don't have artwork. Can you design it?", a: "Yes. Send us your logo and a few words on the look you want. Our designers set up the artwork for free and send a 3D mockup." },
-  { q: "Will you check my file before printing?", a: "Yes. Our designers check every file for bleed, resolution and colour, and tell you about any problem before your proof." },
+  { q: "Will you check my file before printing?", a: "Yes. Our designers check every file for bleed, resolution and color, and tell you about any problem before your proof." },
   { q: "Can I print on the inside of the box?", a: "Yes. Add the inside artwork on the inside dieline we send, and we'll print both sides." },
 ];
 

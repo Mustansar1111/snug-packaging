@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 };
 
 const boards = [
-  { sw: "sbs", name: "SBS card", spec: "14–24pt (about 350–600 gsm)", good: "Retail, cosmetic and tuck boxes", note: "Smooth and white, so colours print sharp and bright.", key: "card" },
+  { sw: "sbs", name: "SBS card", spec: "14–24pt (about 350–600 gsm)", good: "Retail, cosmetic and tuck boxes", note: "Smooth and white, so colors print sharp and bright.", key: "card" },
   { sw: "kraft", name: "Kraft board", spec: "16–24pt, brown or white", good: "Food, candles, soap and eco brands", note: "A natural paper look that customers read as eco-friendly.", key: "kraft" },
   { sw: "flute", name: "Corrugated", spec: "E, B or F flute, single or double wall", good: "Mailers and shipping boxes", note: "A fluted middle layer that protects products in the post.", key: "corrugated" },
-  { sw: "rigid", name: "Rigid greyboard", spec: "1200–1500 gsm, wrapped in printed paper", good: "Luxury, gift and jewellery boxes", note: "Thick and sturdy. The box doesn't fold flat and feels premium in the hand.", key: "rigid" },
-  { sw: "film", name: "Film & laminates", spec: "Metallised, clear or kraft-laminated", good: "Mylar pouches, coffee and snack bags", note: "Barrier layers keep out air, light and moisture.", key: "film" },
+  { sw: "rigid", name: "Rigid greyboard", spec: "1200–1500 gsm, wrapped in printed paper", good: "Luxury, gift and jewelry boxes", note: "Thick and sturdy. The box doesn't fold flat and feels premium in the hand.", key: "rigid" },
+  { sw: "film", name: "Film & laminates", spec: "Metallized, clear or kraft-laminated", good: "Mylar pouches, coffee and snack bags", note: "Barrier layers keep out air, light and moisture.", key: "film" },
 ];
 
 export default function MaterialsPage() {

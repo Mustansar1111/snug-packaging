@@ -9,7 +9,7 @@ import { quoteReply, quoteReplyDays } from "@/lib/promise";
 import { submitLead } from "@/lib/submitLead";
 
 type Unit = "in" | "cm" | "mm";
-/** Millimetres in one of each unit. */
+/** Millimeters in one of each unit. */
 const MM_PER: Record<Unit, number> = { in: 25.4, cm: 10, mm: 1 };
 
 const QUANTITIES = ["100", "250", "500", "1,000", "2,500+"];

@@ -53,11 +53,11 @@ export default function RefundPolicyPage() {
           <h2>What isn&apos;t covered</h2>
           <ul>
             <li>Mistakes in artwork you approved on the proof, such as a typo, a wrong barcode or the wrong size. That&apos;s why we ask you to check the proof carefully.</li>
-            <li>Small colour differences between your screen and printed board, and small differences between print runs. If an exact colour matters, give us a Pantone code.</li>
+            <li>Small color differences between your screen and printed board, and small differences between print runs. If an exact color matters, give us a Pantone code.</li>
             <li>Delivery delays caused by couriers or customs. We&apos;ll always chase them for you.</li>
           </ul>
 
-          <h2>Cancelling an order</h2>
+          <h2>Canceling an order</h2>
           <p>
             Before you approve your proof, you can cancel for a full refund, no questions asked. Once you approve it, your order is booked for
             production. If you change your mind within 24 hours of approving and printing hasn&apos;t started, we&apos;ll refund you less any

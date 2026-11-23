@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: PageProps<"/industries/[slug]
   const ind = getIndustry((await params).slug);
   if (!ind) return { robots: { index: false } };
   return {
-    title: `Custom ${ind.name} Packaging`,
-    description: `${ind.intro} Free design help and a free proof. Delivered to the USA, UK, Australia and Europe.`,
+    title: ind.seo,
+    description: `${ind.intro} Free design help and proof.`.slice(0, 160),
     alternates: { canonical: `/industries/${ind.slug}` },
   };
 }

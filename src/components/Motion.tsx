@@ -120,7 +120,7 @@ export function Motion() {
         });
       });
       // Page titles: a soft lift on load.
-      const title = document.querySelector(".page-hero h1, .hero h1");
+      const title = document.querySelector(".page-hero h1, .hero .display");
       if (title) gsap.from(title, { y: 30, duration: 1, ease: "power3.out" });
       document.querySelectorAll(".page-hero .lede, .page-hero .ctas, .hero .lede, .hero .ctas").forEach((el, i) => {
         gsap.from(el, { y: 20, duration: 0.9, delay: 0.15 + i * 0.08, ease: "power3.out" });

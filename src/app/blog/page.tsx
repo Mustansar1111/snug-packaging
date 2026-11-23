@@ -6,7 +6,7 @@ import { posts } from "@/data/posts";
 
 export const metadata: Metadata = {
   title: "Packaging Guides and Tips",
-  description: "Practical guides to ordering custom packaging: choosing a box, measuring, artwork, colour and finishes.",
+  description: "Practical guides to ordering custom packaging: choosing a box, measuring, artwork, color and finishes.",
   alternates: { canonical: "/blog" },
 };
 
