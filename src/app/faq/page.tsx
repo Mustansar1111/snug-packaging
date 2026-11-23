@@ -5,7 +5,7 @@ import { Faq, QuoteSection } from "@/components/sections";
 import { generalFaqs, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Custom Packaging FAQs: MOQ, Proofs, Delivery",
+  title: "Custom Packaging FAQs",
   description: "Answers about minimum orders, quotes, artwork, proofs, materials, production times and delivery to the USA, UK, Australia and Europe.",
   alternates: { canonical: "/faq" },
 };

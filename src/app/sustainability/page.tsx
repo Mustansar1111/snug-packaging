@@ -4,8 +4,8 @@ import { PageHero } from "@/components/PageHero";
 import { Faq, QuoteSection } from "@/components/sections";
 
 export const metadata: Metadata = {
-  title: "Sustainable Packaging Options",
-  description: "Recyclable kraft and corrugated board, plastic-free finishes and right-sized boxes. How to make your custom packaging lower-impact.",
+  title: "Eco-Friendly Custom Packaging Options",
+  description: "Eco-friendly custom packaging: recyclable kraft and corrugated boxes, plastic-free finishes and right-sized designs, explained honestly.",
   alternates: { canonical: "/sustainability" },
 };
 
@@ -30,7 +30,7 @@ export default function SustainabilityPage() {
     <>
       <PageHero
         crumb="Sustainability"
-        title="Lower-impact packaging, without the greenwash."
+        title="Eco-friendly custom packaging, without the greenwash."
         lede="Small choices add up: the board, the finish and the size of the box. Here's what you can choose, and we'll tell you honestly what each option does."
       />
       <section className="block band">

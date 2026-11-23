@@ -6,7 +6,7 @@ import { regions } from "@/data/regions";
 import { site } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const pages = ["", "/packaging", "/quote", "/free-mockup", "/how-it-works", "/artwork-guide", "/shipping", "/about", "/contact", "/faq", "/industries", "/materials-and-finishes", "/sustainability", "/blog", "/refund-policy"];
+  const pages = ["", "/packaging", "/quote", "/free-mockup", "/how-it-works", "/artwork-guide", "/shipping", "/about", "/contact", "/faq", "/industries", "/materials-and-finishes", "/sustainability", "/blog", "/refund-policy", "/custom-boxes-with-logo", "/small-business-packaging", "/wholesale-custom-boxes"];
   return [
     ...pages.map((p) => ({ url: `${site.url}${p}`, changeFrequency: "monthly" as const, priority: p === "" ? 1 : 0.7 })),
     ...regions.map((r) => ({ url: `${site.url}/${r.slug}`, changeFrequency: "monthly" as const, priority: 0.8 })),

@@ -1,17 +1,18 @@
 import Link from "next/link";
+import { withLinks } from "@/lib/withLinks";
 import { CategoryGrid } from "@/components/CategoryCard";
 import { Faq, Process, QuoteSection, MockupBand } from "@/components/sections";
 import type { Region } from "@/data/regions";
-import { featuredCategories, site } from "@/lib/site";
+import { getCategory, site } from "@/lib/site";
+import type { Category } from "@/data/types";
+
 
 export function RegionPage({ region }: { region: Region }) {
-  const mm = region.units.startsWith("millimeters");
-  const faqs = [
-    { q: `Do you deliver to ${region.name}?`, a: `Yes. We deliver to addresses across ${region.name}, and your quote includes delivery to your door.` },
-    { q: `Can I get my quote in ${region.currency}?`, a: `Yes. Choose your country in the quote form and we'll price your order in ${region.currency}.` },
-    { q: `Can I give my sizes in ${mm ? "millimeters" : "inches"}?`, a: "Yes. The quote form takes inches, centimeters or millimeters, and your proof shows the size in the unit you use." },
-    { q: "What is the minimum order?", a: `You can order from ${site.moq} units for most styles.` },
-  ];
+  const mm = region.mm;
+  const faqs = [...region.faqs, { q: "What is the minimum order?", a: `You can order from ${site.moq} units for most styles.` }].filter(
+    (f, i, all) => all.findIndex((x) => x.q === f.q) === i,
+  );
+  const popular = region.popular.map(getCategory).filter((c): c is Category => Boolean(c));
   return (
     <>
       <section className="page-hero band on-dark">
@@ -41,7 +42,19 @@ export function RegionPage({ region }: { region: Region }) {
               </Link>
             </p>
           </div>
-          <CategoryGrid cats={featuredCategories()} />
+          <CategoryGrid cats={popular} />
+        </div>
+      </section>
+      <section className="block band">
+        <div className="wrap prose">
+          {region.sections.map((s) => (
+            <div key={s.h} style={{ display: "grid", gap: 16 }}>
+              <h2>{s.h}</h2>
+              {s.p.map((p, i) => (
+                <p key={i}>{withLinks(p)}</p>
+              ))}
+            </div>
+          ))}
         </div>
       </section>
       <Process />
