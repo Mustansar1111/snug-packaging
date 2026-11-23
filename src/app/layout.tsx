@@ -27,6 +27,8 @@ export const viewport: Viewport = {
   themeColor: "#3b1536",
 };
 
+const sameAs = [...new Set([site.social.instagram, site.social.facebook, ...site.profiles].filter(Boolean))];
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
@@ -34,7 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <a className="skip" href="#main">
           Skip to content
         </a>
-        <Header phone={site.phone} />
+        <Header phone={site.phone} email={site.email} social={site.social} />
         <main id="main">{children}</main>
         <Footer />
         <Motion />
@@ -69,7 +71,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 availableLanguage: ["English"],
               },
             ],
-            ...(site.profiles.length ? { sameAs: site.profiles } : {}),
+            ...(sameAs.length ? { sameAs } : {}),
           }}
         />
         <JsonLd

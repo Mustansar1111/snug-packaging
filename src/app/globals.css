@@ -563,3 +563,16 @@ footer.site-foot .legal { grid-column: 1 / -1; border-top: 1px solid color-mix(i
   [data-hero-photo] .photo-badge { animation: badgePop .6s .7s cubic-bezier(.34,1.56,.64,1) both; }
 }
 .trust-links a { color: var(--plum); text-decoration: underline; text-underline-offset: 3px; }
+
+/* Top contact bar: email, phone and social icons above the main navigation. */
+.site-head > .head-top { border-bottom: 1px solid color-mix(in srgb, var(--hero-ink) 12%, transparent); }
+.site-head .head-top .wrap { padding-block: 7px; gap: 16px; }
+.head-contact { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.head-contact a { display: inline-flex; align-items: center; gap: 7px; color: var(--hero-muted); text-decoration: none; font: 500 13px var(--mono); white-space: nowrap; }
+.head-contact a:hover { color: var(--hero-ink); }
+.social { display: inline-flex; align-items: center; gap: 12px; }
+.social a { display: inline-flex; padding: 3px; border-radius: 6px; transition: transform .2s ease; }
+.social a:hover { transform: translateY(-1px) scale(1.08); }
+.social a:focus-visible { outline: 2px solid var(--apricot); outline-offset: 2px; }
+@media (max-width: 560px) { .head-contact .head-tel { display: none; } }
+.foot-social { margin-top: 14px; }

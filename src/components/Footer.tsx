@@ -4,6 +4,7 @@ import { industries } from "@/data/industries";
 import { regions } from "@/data/regions";
 import { CtaBand } from "./proof";
 import { Offices, WhatsAppButton } from "./Offices";
+import { SocialIcons } from "./Social";
 
 export function Footer() {
   return (
@@ -30,6 +31,7 @@ export function Footer() {
                 </>
               )}
             </p>
+            <SocialIcons links={site.social} size={22} className="social foot-social" />
             <Offices />
           </div>
           <div>

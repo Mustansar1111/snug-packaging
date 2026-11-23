@@ -21,6 +21,14 @@ export const site = {
    * Trustpilot...). They go into the Organization schema as sameAs. Add each one once it exists.
    */
   profiles: (process.env.NEXT_PUBLIC_PROFILES ?? "").split(",").map((u) => u.trim()).filter(Boolean),
+  /**
+   * Instagram and Facebook page URLs, shown as icons in the header and footer and added to the
+   * Organization schema. Paste the full profile URL here (or set the env vars on Netlify).
+   */
+  social: {
+    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "",
+    facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL ?? "",
+  },
   /** Link where customers can leave a review (Google review link or Trustpilot). Empty hides the button. */
   reviewUrl: process.env.NEXT_PUBLIC_REVIEW_URL ?? "",
   /**
