@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SocialIcons, type SocialLinks } from "./Social";
 
 /** Dropdown menus. Kept as plain lists here so the header doesn't pull the whole catalogue into the browser. */
@@ -43,6 +43,31 @@ const links = [
 export function Header({ phone, email, social = {} }: { phone?: string; email?: string; social?: SocialLinks }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  // Touch screens have no hover, so the first tap on "Packaging" or "Industries" opens its dropdown
+  // and a second tap goes to the page.
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const navRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    if (!openMenu) return;
+    const close = (e: PointerEvent) => {
+      if (!navRef.current?.contains(e.target as Node)) setOpenMenu(null);
+    };
+    document.addEventListener("pointerdown", close);
+    return () => document.removeEventListener("pointerdown", close);
+  }, [openMenu]);
+  // Blur too: the menu also opens on :focus-within, and the header stays mounted across page changes.
+  const closeMenu = () => {
+    setOpenMenu(null);
+    (document.activeElement as HTMLElement | null)?.blur();
+  };
+  const onMenuTap = (href: string) => (e: React.MouseEvent) => {
+    if (openMenu === href || window.matchMedia("(hover: hover)").matches) {
+      closeMenu();
+      return;
+    }
+    e.preventDefault();
+    setOpenMenu(href);
+  };
   const current = (href: string) => (pathname === href || pathname.startsWith(`${href}/`) ? "page" : undefined);
 
   return (
@@ -76,16 +101,22 @@ export function Header({ phone, email, social = {} }: { phone?: string; email?: 
           <b>snug</b>
           <span>packaging</span>
         </Link>
-        <nav className="nav" aria-label="Main">
+        <nav className="nav" aria-label="Main" ref={navRef}>
           {links.map((l) =>
             menus[l.href] ? (
-              <div className="nav-item" key={l.href}>
-                <Link href={l.href} aria-current={current(l.href)} aria-haspopup="true">
+              <div className={openMenu === l.href ? "nav-item is-open" : "nav-item"} key={l.href}>
+                <Link
+                  href={l.href}
+                  aria-current={current(l.href)}
+                  aria-haspopup="true"
+                  aria-expanded={openMenu === l.href}
+                  onClick={onMenuTap(l.href)}
+                >
                   {l.label} <span aria-hidden="true">▾</span>
                 </Link>
                 <div className="nav-menu">
                   {menus[l.href].map((m) => (
-                    <Link key={m.href} href={m.href}>
+                    <Link key={m.href} href={m.href} onClick={closeMenu}>
                       {m.label}
                     </Link>
                   ))}

@@ -40,12 +40,12 @@ export function Offices({ variant = "footer" }: { variant?: "footer" | "cards" }
   );
 }
 
-/** Floating WhatsApp button, shown on every page. */
-export function WhatsAppButton() {
+/** WhatsApp button. Floats in the corner on larger screens; on phones it sits in the bottom quote bar. */
+export function WhatsAppButton({ className = "wa-float" }: { className?: string }) {
   if (!site.whatsapp) return null;
   return (
     <a
-      className="wa-float"
+      className={className}
       href={whatsappHref("Hi Snug Packaging, I'd like a quote for custom packaging.")}
       rel="noopener"
       aria-label="Chat with us on WhatsApp"
