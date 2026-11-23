@@ -26,7 +26,7 @@ export const site = {
    * Organization schema. Paste the full profile URL here (or set the env vars on Netlify).
    */
   social: {
-    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "",
+    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "https://www.instagram.com/snug.packaging/",
     facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL ?? "https://www.facebook.com/Snug.Packaging/",
   },
   /** Link where customers can leave a review (Google review link or Trustpilot). Empty hides the button. */
