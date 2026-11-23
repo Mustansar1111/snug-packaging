@@ -5,7 +5,26 @@
  */
 
 export type Logo = { name: string; placeholder: boolean };
-export type Review = { quote: string; name: string; company: string; country: string; placeholder: boolean };
+/**
+ * A customer review. Only add reviews a real customer wrote, with their permission.
+ * `source` and `sourceUrl` point to where the review can be checked (Google, Trustpilot, an email
+ * you can show on request), which is what makes a review believable to buyers and to Google.
+ */
+export type Review = {
+  quote: string;
+  name: string;
+  company: string;
+  country: string;
+  /** Where the review was left, e.g. "Google", "Trustpilot". */
+  source?: string;
+  /** Public link to the original review. */
+  sourceUrl?: string;
+  /** Star rating out of 5, only if the source shows one. */
+  rating?: number;
+  /** Month the review was written, e.g. "2026-12". */
+  date?: string;
+  placeholder: boolean;
+};
 export type Story = {
   brand: string;
   industry: string;

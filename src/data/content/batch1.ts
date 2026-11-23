@@ -42,7 +42,7 @@ export const batch1: Record<string, RichContent> = {
       { q: "Are your mailer boxes strong enough to post without an outer box?", a: "Yes, for most products. E-flute mailers travel well on their own; for heavy or fragile items we suggest B-flute or an outer shipper." },
       { q: "Can you print inside the mailer box?", a: "Yes. We can print a full design, a pattern or a short message on the inside of the lid and base." },
       { q: "Do mailer boxes ship flat?", a: "Yes. They arrive flat-packed to save storage space and fold together in seconds without tape." },
-      { q: "Are mailer boxes recyclable?", a: "Yes. Corrugated board is widely recycled at the kerbside in the USA, UK, Australia and Europe." },
+      { q: "Are mailer boxes recyclable?", a: "Yes. Corrugated board is widely recycled at the curbside in the USA, UK, Australia and Europe." },
     ],
   },
 

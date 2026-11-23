@@ -5,8 +5,10 @@ import { CategoryGrid } from "@/components/CategoryCard";
 import { Reviews } from "@/components/proof";
 import { Faq, JsonLd, MockupBand, Process, QuoteSection } from "@/components/sections";
 import { getIndustry, industries } from "@/data/industries";
-import { getCategory, site } from "@/lib/site";
+import { getCategory, metaDescription, site, lowerName } from "@/lib/site";
 import type { Category } from "@/data/types";
+import { Guides } from "@/components/Guides";
+import { guidesFor } from "@/data/posts";
 
 export function generateStaticParams() {
   return industries.map((i) => ({ slug: i.slug }));
@@ -17,7 +19,7 @@ export async function generateMetadata({ params }: PageProps<"/industries/[slug]
   if (!ind) return { robots: { index: false } };
   return {
     title: ind.seo,
-    description: `${ind.intro} Free design help and proof.`.slice(0, 160),
+    description: metaDescription(ind.intro, ["Free design help and a 3D proof before you pay.", "Free design help and proof."]),
     alternates: { canonical: `/industries/${ind.slug}` },
   };
 }
@@ -77,10 +79,11 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[s
         </div>
       </section>
       <Process />
-      <QuoteSection defaultStyle={ind.defaultStyle} title={`Get a price for your ${ind.name.toLowerCase()} packaging.`} />
+      <QuoteSection defaultStyle={ind.defaultStyle} title={`Get a price for your ${lowerName(ind.name)} packaging.`} />
       <Reviews />
       <MockupBand />
       <Faq items={[...ind.faqs, { q: "What is the minimum order?", a: `You can order from ${site.moq} units for most styles.` }]} title={`${ind.name} packaging questions`} />
+      {cats[0] && <Guides posts={guidesFor(cats[0])} title={`Guides for ${lowerName(ind.name)} brands`} />}
       <JsonLd
         data={{
           "@context": "https://schema.org",

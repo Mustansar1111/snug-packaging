@@ -16,6 +16,23 @@ export const site = {
     { country: "United Kingdom", code: "GB", street: "91 Grantham Road", city: "Bradford", region: "", postcode: "BD7 1RN" },
     { country: "United States", code: "US", street: "178 NY-59 Ste 301", city: "Airmont", region: "NY", postcode: "10952" },
   ],
+  /**
+   * Public profiles that confirm the business is real (Google Business Profile, Instagram, LinkedIn,
+   * Trustpilot...). They go into the Organization schema as sameAs. Add each one once it exists.
+   */
+  profiles: (process.env.NEXT_PUBLIC_PROFILES ?? "").split(",").map((u) => u.trim()).filter(Boolean),
+  /** Link where customers can leave a review (Google review link or Trustpilot). Empty hides the button. */
+  reviewUrl: process.env.NEXT_PUBLIC_REVIEW_URL ?? "",
+  /**
+   * The real person who writes or checks the guides (founder, designer...). Set NEXT_PUBLIC_AUTHOR_NAME
+   * (and optionally NEXT_PUBLIC_AUTHOR_ROLE, NEXT_PUBLIC_AUTHOR_URL for a LinkedIn page) to credit them by
+   * name on every guide. Until then guides are credited to the company, never to an invented name.
+   */
+  author: {
+    name: process.env.NEXT_PUBLIC_AUTHOR_NAME ?? "",
+    role: process.env.NEXT_PUBLIC_AUTHOR_ROLE ?? "",
+    url: process.env.NEXT_PUBLIC_AUTHOR_URL ?? "",
+  },
   moq: 100,
   turnaround: "10–12 business days",
   quoteReply,
@@ -61,13 +78,17 @@ export function featuredCategories(): Category[] {
 }
 
 export function relatedCategories(cat: Category, limit = 4): Category[] {
-  // Product pages link to their parent and siblings first; parents link to their own products.
-  const family = categories.filter(
-    (c) => c.slug !== cat.slug && (c.slug === cat.parent || (cat.parent && c.parent === cat.parent) || c.parent === cat.slug),
-  );
+  // Product pages link to their parent and then their siblings. Siblings are taken in turn starting
+  // just after this page, so every product in a family gets linked from its neighbours, not only the
+  // first few. Parent pages link to their own products.
+  const parent = cat.parent ? categories.find((c) => c.slug === cat.parent) : undefined;
+  const family = cat.parent ? categories.filter((c) => c.parent === cat.parent) : [];
+  const at = family.findIndex((c) => c.slug === cat.slug);
+  const siblings = [...family.slice(at + 1), ...family.slice(0, at)];
+  const children = categories.filter((c) => c.parent === cat.slug);
   const sameIcon = categories.filter((c) => c.slug !== cat.slug && c.icon === cat.icon);
   const sameGroup = categories.filter((c) => c.slug !== cat.slug && c.group === cat.group && c.icon !== cat.icon);
-  return [...new Set([...family, ...sameIcon, ...sameGroup])].slice(0, limit);
+  return [...new Set([...(parent ? [parent] : []), ...siblings, ...children, ...sameIcon, ...sameGroup])].slice(0, limit);
 }
 
 export function joinList(items: string[]): string {
@@ -76,7 +97,7 @@ export function joinList(items: string[]): string {
 }
 
 export function categoryFaqs(cat: Category) {
-  const lower = cat.name.toLowerCase();
+  const lower = lowerName(cat.name);
   return [
     {
       q: `What is the minimum order for ${lower}?`,
@@ -110,3 +131,34 @@ export const whatsappHref = (text?: string) =>
   `https://wa.me/${site.whatsapp}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
 export const officeLines = (o: (typeof site.offices)[number]) =>
   [o.street, o.region ? `${o.city}, ${o.region} ${o.postcode}` : `${o.city} ${o.postcode}`, o.country];
+
+/**
+ * Build a meta description that fits Google's ~160 character snippet without cutting a word in half.
+ * Starts with the page's own summary, then adds the longest closing line that still fits.
+ * A summary that is too long on its own is trimmed at the last full word and closed with a period.
+ */
+export function metaDescription(summary: string, endings: string[] = [], max = 158): string {
+  const base = summary.trim();
+  if (base.length > max) {
+    const cut = base.slice(0, max - 1);
+    return `${cut.slice(0, cut.lastIndexOf(" ")).replace(/[,;:–-]+$/, "")}.`;
+  }
+  const ending = endings.find((e) => base.length + 1 + e.length <= max);
+  return ending ? `${base} ${ending}` : base;
+}
+
+/** Where we deliver, in the form schema.org expects (ISO country codes, plus Europe as a place). */
+export const areaServed = [
+  { "@type": "Country", name: "US" },
+  { "@type": "Country", name: "GB" },
+  { "@type": "Country", name: "AU" },
+  { "@type": "Place", name: "Europe" },
+];
+
+/** Lowercase a name for use mid-sentence, but keep proper nouns and acronyms ("Christmas", "CBD") as they should be. */
+export function lowerName(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/\b(christmas|easter|valentine|halloween|diwali|eid|hanukkah)\b/g, (w) => w[0].toUpperCase() + w.slice(1))
+    .replace(/\b(cbd|uk|usa|us|diy)\b/g, (w) => w.toUpperCase());
+}

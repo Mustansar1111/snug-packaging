@@ -4,7 +4,8 @@ import { withLinks } from "@/lib/withLinks";
 import { notFound } from "next/navigation";
 import { CategoryGrid } from "@/components/CategoryCard";
 import { JsonLd, QuoteSection } from "@/components/sections";
-import { getPost, posts } from "@/data/posts";
+import { getPost, guidesFor, posts } from "@/data/posts";
+import { Guides } from "@/components/Guides";
 import type { Category } from "@/data/types";
 import { getCategory, site } from "@/lib/site";
 
@@ -20,7 +21,15 @@ export async function generateMetadata({ params }: PageProps<"/blog/[slug]">): P
     title: post.title.length > 42 ? { absolute: post.title } : post.title,
     description: post.description,
     alternates: { canonical: `/blog/${post.slug}` },
-    openGraph: { type: "article", publishedTime: post.date },
+    openGraph: {
+      type: "article",
+      siteName: site.name,
+      locale: "en_US",
+      url: `/blog/${post.slug}`,
+      publishedTime: post.date,
+      modifiedTime: post.updated ?? post.date,
+      section: post.tag,
+    },
   };
 }
 
@@ -38,7 +47,7 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
           <h1 style={{ maxWidth: "18em" }}>{post.title}</h1>
           <p className="lede">{post.description}</p>
           <p className="post-byline">
-            Snug Packaging · <time dateTime={post.date}>{new Date(`${post.date}T00:00:00Z`).toLocaleDateString("en-US", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" })}</time> · {post.readMins} min read
+            {site.author.name ? `By ${site.author.name}${site.author.role ? `, ${site.author.role}` : ""}` : "By the Snug Packaging team"} · <time dateTime={post.date}>{new Date(`${post.date}T00:00:00Z`).toLocaleDateString("en-US", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" })}</time> · {post.readMins} min read
           </p>
         </div>
       </section>
@@ -70,6 +79,11 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
           <CategoryGrid cats={related} />
         </div>
       </section>
+      <Guides
+        eyebrow="Keep reading"
+        title="More packaging guides."
+        posts={(related[0] ? guidesFor(related[0], 4) : posts).filter((p) => p.slug !== post.slug).slice(0, 3)}
+      />
       <QuoteSection defaultStyle={related[0]?.name} />
       <JsonLd
         data={{
@@ -78,10 +92,32 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
           headline: post.title,
           description: post.description,
           datePublished: post.date,
-          author: { "@type": "Organization", name: `${site.name} team`, url: `${site.url}/about` },
+          dateModified: post.updated ?? post.date,
+          author: site.author.name
+            ? {
+                "@type": "Person",
+                name: site.author.name,
+                ...(site.author.role ? { jobTitle: site.author.role } : {}),
+                ...(site.author.url ? { url: site.author.url } : {}),
+                worksFor: { "@id": `${site.url}/#org` },
+              }
+            : { "@type": "Organization", "@id": `${site.url}/#org`, name: site.name, url: `${site.url}/about` },
           image: `${site.url}/blog/${post.slug}/opengraph-image`,
-          publisher: { "@type": "Organization", name: site.name },
-          mainEntityOfPage: `${site.url}/blog/${post.slug}`,
+          publisher: { "@type": "Organization", "@id": `${site.url}/#org`, name: site.name, logo: { "@type": "ImageObject", url: `${site.url}/logo.png` } },
+          mainEntityOfPage: { "@type": "WebPage", "@id": `${site.url}/blog/${post.slug}` },
+          articleSection: post.tag,
+          inLanguage: "en",
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+            { "@type": "ListItem", position: 2, name: "Guides", item: `${site.url}/blog` },
+            { "@type": "ListItem", position: 3, name: post.title, item: `${site.url}/blog/${post.slug}` },
+          ],
         }}
       />
     </>

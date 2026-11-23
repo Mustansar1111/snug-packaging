@@ -4,6 +4,8 @@ export type Post = {
   title: string;
   description: string;
   date: string;
+  /** Date of the last real edit to the guide (defaults to date). */
+  updated?: string;
   readMins: number;
   tag: string;
   /** Packaging styles to link at the end, by category slug. */
@@ -148,3 +150,34 @@ export const posts: Post[] = [
 ];
 
 export const getPost = (slug: string) => posts.find((p) => p.slug === slug);
+
+/**
+ * Which guides help a buyer of each kind of packaging. A guide scores highest where it already lists
+ * the page as a related style, then where its topic fits the page's board or group. The cost and
+ * measuring guides suit every box, so they fill any gaps.
+ */
+const guideFit: Record<string, (c: GuideTarget) => boolean> = {
+  "mailer-box-sizes": (c) => /corrugated|flute/i.test(c.material) || /mailer|subscription|apparel|shipping/.test(c.slug),
+  "mailer-box-vs-shipping-box": (c) => /corrugated|flute/i.test(c.material),
+  "kraft-vs-white-boxes": (c) => /kraft|SBS|white/i.test(c.material) || /kraft|white|eco|soap|candle/.test(c.slug),
+  "what-is-a-dieline": (c) => /SBS|card|tuck|auto-lock|die-cut/i.test(`${c.material} ${c.style}`),
+  "cmyk-vs-pantone": (c) => c.group === "print" || /cosmetic|retail|display|lip|makeup|perfume|label|logo/.test(c.slug),
+  "packaging-finishes-explained": (c) => /rigid|greyboard/i.test(c.material) || /luxury|gift|jewelry|perfume|magnetic|drawer/.test(c.slug),
+};
+const everyBox = ["how-to-measure-for-a-custom-box", "how-much-do-custom-boxes-cost"];
+
+export type GuideTarget = { slug: string; parent?: string; material: string; style: string; group: string };
+
+export function guidesFor(c: GuideTarget, limit = 3): Post[] {
+  const score = (p: Post) =>
+    (p.related.includes(c.slug) ? 4 : 0) +
+    (c.parent && p.related.includes(c.parent) ? 2 : 0) +
+    (guideFit[p.slug]?.(c) ? 2 : 0) +
+    (everyBox.includes(p.slug) ? 1 : 0);
+  return [...posts]
+    .map((p, i) => ({ p, s: score(p), i }))
+    .filter((x) => x.s > 0)
+    .sort((a, b) => b.s - a.s || a.i - b.i)
+    .slice(0, limit)
+    .map((x) => x.p);
+}
