@@ -27,7 +27,7 @@ export const site = {
    */
   social: {
     instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "",
-    facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL ?? "https://www.facebook.com/profile.php?id=61597071171498",
+    facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL ?? "https://www.facebook.com/Snug.Packaging/",
   },
   /** Link where customers can leave a review (Google review link or Trustpilot). Empty hides the button. */
   reviewUrl: process.env.NEXT_PUBLIC_REVIEW_URL ?? "",
