@@ -97,6 +97,7 @@ export function Footer() {
         <Link className="btn btn-apricot" href="/quote">
           Get a free quote
         </Link>
+        <WhatsAppButton className="mbar-wa" />
       </div>
     </>
   );
