@@ -6,7 +6,7 @@ import { categories } from "@/data/categories";
 import { groups, materialCategories, materials } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "All Custom Packaging Styles",
+  title: "Custom Packaging Boxes in Every Style",
   description: `Browse ${categories.length} custom packaging styles: mailer, rigid, cosmetic and food boxes, mylar bags, labels and more. Made to your size from 100 units.`,
   alternates: { canonical: "/packaging" },
 };
@@ -19,7 +19,7 @@ export default function PackagingHub() {
           <nav className="crumbs" aria-label="Breadcrumb">
             <Link href="/">Home</Link> <span>/</span> <span>Packaging</span>
           </nav>
-          <h1>Every kind of custom packaging, made to your size.</h1>
+          <h1>Custom packaging boxes in every style, made to your size.</h1>
           <p className="lede">
             {categories.length} styles of printed boxes, bags and labels. Pick by box style, by what you sell or by material, then get a free quote.
           </p>

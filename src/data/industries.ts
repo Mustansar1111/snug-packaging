@@ -2,6 +2,8 @@ export type Industry = {
   slug: string;
   name: string;
   title: string;
+  /** Browser tab and Google title. */
+  seo: string;
   intro: string;
   /** Packaging styles to show, by category slug. */
   styles: string[];
@@ -16,7 +18,8 @@ export const industries: Industry[] = [
     slug: "cosmetics",
     name: "Cosmetics & beauty",
     title: "Custom cosmetic packaging that looks good on the shelf.",
-    intro: "Tuck boxes, rigid gift boxes and jars for skincare, makeup and haircare, printed in your brand colours from 100 units.",
+    seo: "Custom Cosmetic Boxes & Beauty Packaging",
+    intro: "Tuck boxes, rigid gift boxes and jars for skincare, makeup and haircare, printed in your brand colors from 100 units.",
     styles: ["cosmetic-boxes", "cosmetic-jars", "tuck-boxes", "rigid-boxes", "soap-boxes", "labels-and-stickers", "mailer-boxes", "gift-boxes"],
     defaultStyle: "Cosmetic Boxes",
     needs: [
@@ -25,14 +28,15 @@ export const industries: Industry[] = [
       { h: "Room for the rules", p: "We leave space on the dieline for ingredients, barcodes and batch codes." },
     ],
     faqs: [
-      { q: "Can you match my brand colour exactly?", a: "Yes. Give us your Pantone code and we print to it, or we match CMYK as closely as the board allows." },
+      { q: "Can you match my brand color exactly?", a: "Yes. Give us your Pantone code and we print to it, or we match CMYK as closely as the board allows." },
       { q: "Can I order a few sizes in one order?", a: "Yes. Tell us each size and quantity in the quote form and we'll price them together." },
     ],
   },
   {
     slug: "food-and-bakery",
     name: "Food & bakery",
-    title: "Food and bakery boxes made with food-safe board.",
+    title: "Custom food and bakery boxes, made with food-safe board.",
+    seo: "Custom Food & Bakery Boxes, Food-Safe",
     intro: "Bakery, pizza, chocolate and takeaway boxes, plus coffee and tea pouches, printed with your branding.",
     styles: ["bakery-boxes", "food-boxes", "pizza-boxes", "chocolate-boxes", "cereal-boxes", "coffee-packaging", "tea-packaging", "window-boxes"],
     defaultStyle: "Bakery Boxes",
@@ -49,9 +53,10 @@ export const industries: Industry[] = [
   {
     slug: "apparel",
     name: "Apparel & fashion",
-    title: "Apparel boxes and mailers for an unboxing people share.",
+    title: "Custom apparel boxes and mailers people love to unbox.",
+    seo: "Custom Apparel Boxes & Clothing Packaging",
     intro: "Printed mailers, rigid boxes, tissue-ready gift boxes, hang tags and bags for clothing and accessories brands.",
-    styles: ["apparel-boxes", "mailer-boxes", "rigid-boxes", "hang-tags", "paper-bags", "tote-bags", "poly-bags", "jewellery-boxes"],
+    styles: ["apparel-boxes", "mailer-boxes", "rigid-boxes", "hang-tags", "paper-bags", "tote-bags", "poly-bags", "jewelry-boxes"],
     defaultStyle: "Apparel Boxes",
     needs: [
       { h: "Print inside the box", p: "A printed inside lid is the first thing customers see when they open it." },
@@ -60,18 +65,19 @@ export const industries: Industry[] = [
     ],
     faqs: [
       { q: "Can you print on the inside and outside?", a: "Yes. Send artwork for both sides and we print the inside and outside of the box." },
-      { q: "Do you make hang tags and bags too?", a: "Yes. Add them to the same quote and we'll match the colours across everything." },
+      { q: "Do you make hang tags and bags too?", a: "Yes. Add them to the same quote and we'll match the colors across everything." },
     ],
   },
   {
     slug: "cbd-and-candles",
     name: "CBD & candles",
-    title: "Packaging for CBD, hemp and candle brands.",
+    title: "Custom CBD, hemp and candle boxes.",
+    seo: "Custom CBD Boxes & Candle Packaging",
     intro: "CBD and pre-roll boxes, mylar pouches and candle boxes with inserts, printed from 100 units.",
     styles: ["cbd-boxes", "hemp-boxes", "pre-roll-boxes", "mylar-bags", "candle-boxes", "tube-packaging", "labels-and-stickers", "rigid-boxes"],
     defaultStyle: "CBD Boxes",
     needs: [
-      { h: "Space for labelling", p: "Room on the box for the information your market requires." },
+      { h: "Space for labeling", p: "Room on the box for the information your market requires." },
       { h: "Inserts for glass", p: "Card inserts hold candle jars and tincture bottles in place." },
       { h: "Smell-proof pouches", p: "Mylar pouches with zip closures keep products fresh." },
     ],
@@ -83,7 +89,8 @@ export const industries: Industry[] = [
   {
     slug: "subscription-boxes",
     name: "Subscription boxes",
-    title: "Subscription boxes that make every delivery feel like a gift.",
+    title: "Custom subscription boxes that feel like a gift every month.",
+    seo: "Custom Subscription Boxes with Your Logo",
     intro: "Printed mailer boxes, inserts and stickers for monthly boxes, built to protect the contents and look great on camera.",
     styles: ["mailer-boxes", "shipping-boxes", "corrugated-boxes", "trays-and-sleeves", "labels-and-stickers", "gift-boxes", "rigid-boxes", "poly-bags"],
     defaultStyle: "Mailer Boxes",
@@ -100,12 +107,13 @@ export const industries: Industry[] = [
   {
     slug: "retail",
     name: "Retail",
-    title: "Retail packaging that sells from the shelf.",
+    title: "Custom retail packaging that sells from the shelf.",
+    seo: "Custom Retail Packaging & Product Boxes",
     intro: "Product boxes, display boxes, window boxes and tuck boxes for products sold in shops and online.",
     styles: ["retail-boxes", "product-boxes", "display-boxes", "tuck-boxes", "window-boxes", "pillow-boxes", "gable-boxes", "labels-and-stickers"],
     defaultStyle: "Retail Boxes",
     needs: [
-      { h: "Stand out on the shelf", p: "Bright full-colour print with foil or spot UV draws the eye." },
+      { h: "Stand out on the shelf", p: "Bright full-color print with foil or spot UV draws the eye." },
       { h: "Counter displays", p: "Display boxes turn a shipping carton into a ready-made stand at the till." },
       { h: "Barcodes that scan", p: "We check barcode size and placement on your proof." },
     ],

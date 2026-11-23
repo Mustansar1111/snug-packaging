@@ -39,6 +39,14 @@ export function Motion() {
     };
   }, []);
 
+  // On a new page, start at the top. Lenis keeps its own scroll target, so without this a click on a
+  // footer link loads the new page but leaves you at its footer, which looks like nothing happened.
+  useEffect(() => {
+    if (location.hash) return;
+    if (lenisInstance) lenisInstance.scrollTo(0, { immediate: true, force: true });
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   // "Get a quote" links jump to the quote form on the same page when there is one, instead of opening /quote.
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
@@ -112,7 +120,7 @@ export function Motion() {
         });
       });
       // Page titles: a soft lift on load.
-      const title = document.querySelector(".page-hero h1, .hero h1");
+      const title = document.querySelector(".page-hero h1, .hero .display");
       if (title) gsap.from(title, { y: 30, duration: 1, ease: "power3.out" });
       document.querySelectorAll(".page-hero .lede, .page-hero .ctas, .hero .lede, .hero .ctas").forEach((el, i) => {
         gsap.from(el, { y: 20, duration: 0.9, delay: 0.15 + i * 0.08, ease: "power3.out" });

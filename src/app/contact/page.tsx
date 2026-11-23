@@ -6,7 +6,7 @@ import { site, whatsappHref } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact Snug Packaging",
-  description: "Contact Snug Packaging about custom boxes, bags and labels. Email sales@snugpackaging.com, call or WhatsApp +1 (786) 885-8250, or send a quote request. Offices in Bradford, UK and Airmont, New York.",
+  description: "Questions about custom boxes? Email sales@snugpackaging.com, call or WhatsApp +1 (786) 885-8250. Offices in Bradford, UK and Airmont, New York.",
   alternates: { canonical: "/contact" },
 };
 

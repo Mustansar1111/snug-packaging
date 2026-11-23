@@ -17,11 +17,11 @@ const products: P[] = [
     intro: "Slim lipstick cartons that hold the bullet upright and show off the shade, printed to match your brand.",
     uses: ["single lipsticks", "lip sets and duos", "limited-edition shades", "gift-with-purchase"],
     style: "reverse tuck end carton or rigid drawer for sets", material: "16–18pt SBS card", finish: "soft-touch, foil and spot UV",
-    tip: "Print the shade name and a colour swatch on the end panel so it can be read on a shelf or in a drawer.",
+    tip: "Print the shade name and a color swatch on the end panel so it can be read on a shelf or in a drawer.",
     rich: {
-      lede: "A lipstick box is small, but customers look at it closely. We make slim cartons with a neat fit around the tube, so the bullet never rattles, and we print the shade, swatch and your logo on every side. Add foil for launches or a window to show the colour, from 100 boxes.",
+      lede: "A lipstick box is small, but customers look at it closely. We make slim cartons with a neat fit around the tube, so the bullet never rattles, and we print the shade, swatch and your logo on every side. Add foil for launches or a window to show the color, from 100 boxes.",
       styles: ["lip-gloss-boxes", "lip-balm-boxes", "makeup-boxes", "cosmetic-boxes", "display-boxes", "labels-and-stickers"],
-      features: [f("Snug fit", "Cut to your tube size so the lipstick stays upright and safe."), f("Shade-ready", "A colour block or window on the front shows the shade at a glance."), f("Premium touches", "Soft-touch and gold foil make a small box feel expensive."), f("Sets and duos", "Two or three-lipstick boxes with an insert make easy gift sets.")],
+      features: [f("Snug fit", "Cut to your tube size so the lipstick stays upright and safe."), f("Shade-ready", "A color block or window on the front shows the shade at a glance."), f("Premium touches", "Soft-touch and gold foil make a small box feel expensive."), f("Sets and duos", "Two or three-lipstick boxes with an insert make easy gift sets.")],
       guide: [
         { h: "Single carton or set box?", p: ["Single tuck cartons are the most cost-effective way to box each shade. For gift sets, a small [rigid box](/packaging/rigid-boxes) with an insert holds two to five lipsticks side by side. See the whole range on our [cosmetic boxes](/packaging/cosmetic-boxes) page."] },
         { h: "Shelf and counter display", p: ["Selling in salons or shops? A [display box](/packaging/display-boxes) holds a row of shades at the till, while each lipstick stays in its own carton."] },
@@ -31,12 +31,12 @@ const products: P[] = [
   },
   {
     slug: "lip-gloss-boxes", name: "Lip Gloss Boxes", parent: "cosmetic-boxes", group: "industries", icon: "tall",
-    intro: "Tall, slim lip gloss cartons and window trays that keep tubes upright and let the colour do the selling.",
+    intro: "Tall, slim lip gloss cartons and window trays that keep tubes upright and let the color do the selling.",
     uses: ["lip gloss tubes", "lip oil and plumpers", "gloss sets", "subscription box add-ons"],
     style: "tall tuck end carton or window tray", material: "16–18pt SBS card", finish: "gloss, holographic or foil",
     tip: "Holographic and pearl finishes suit glossy products; matte suits nude and natural ranges.",
     rich: {
-      lede: "Lip gloss sells on colour and shine, so the box should show both. We make tall slim cartons, window boxes and multi-tube trays that hold each wand upright and print your brand in full colour, from 100 boxes. Pick a holographic or pearl finish to make the box shine like the gloss.",
+      lede: "Lip gloss sells on color and shine, so the box should show both. We make tall slim cartons, window boxes and multi-tube trays that hold each wand upright and print your brand in full color, from 100 boxes. Pick a holographic or pearl finish to make the box shine like the gloss.",
       styles: ["lipstick-boxes", "lip-balm-boxes", "makeup-boxes", "window-boxes", "cosmetic-boxes", "mailer-boxes"],
       features: [f("Tall and slim", "Cut to the height of your tube with a tuck that won't pop open."), f("Shine finishes", "Holographic, gloss and foil echo the product inside."), f("Sets that sell", "Three and four-tube trays are popular gift and bundle boxes."), f("Ship-ready", "Pack sets inside a printed mailer for online orders.")],
       guide: [
@@ -50,17 +50,17 @@ const products: P[] = [
     slug: "lip-balm-boxes", name: "Lip Balm Boxes", parent: "cosmetic-boxes", group: "industries", icon: "tall",
     intro: "Small lip balm boxes for sticks, pots and tins, as singles, multipacks or gift sets.",
     uses: ["lip balm sticks", "balm pots and tins", "multipacks", "hotel and event giveaways"],
-    style: "small tuck end, sleeve or hang-tab box", material: "16–18pt SBS or kraft card", finish: "matte, gloss or kraft with one-colour print",
-    tip: "Kraft boxes with a simple one-colour print suit natural and beeswax balms.",
+    style: "small tuck end, sleeve or hang-tab box", material: "16–18pt SBS or kraft card", finish: "matte, gloss or kraft with one-color print",
+    tip: "Kraft boxes with a simple one-color print suit natural and beeswax balms.",
     rich: {
-      lede: "Lip balm is an easy impulse buy, so the box needs to catch the eye in a second. We make small tuck boxes, sleeves and hang-tab cartons for sticks, pots and tins, printed in full colour or a simple one-colour logo on kraft. Order from 100 boxes and refresh designs for each flavour.",
+      lede: "Lip balm is an easy impulse buy, so the box needs to catch the eye in a second. We make small tuck boxes, sleeves and hang-tab cartons for sticks, pots and tins, printed in full color or a simple one-color logo on kraft. Order from 100 boxes and refresh designs for each flavor.",
       styles: ["lipstick-boxes", "kraft-boxes", "hang-tab-boxes", "labels-and-stickers", "display-boxes", "soap-boxes"],
-      features: [f("Tiny but strong", "Small cartons in sturdy card that keep sticks from snapping."), f("Hang tabs", "Add a euro hook tab for pegboard displays."), f("Natural look", "Kraft board and earthy inks suit organic balms."), f("Flavour by flavour", "Low minimums make it easy to print a box for every flavour.")],
+      features: [f("Tiny but strong", "Small cartons in sturdy card that keep sticks from snapping."), f("Hang tabs", "Add a euro hook tab for pegboard displays."), f("Natural look", "Kraft board and earthy inks suit organic balms."), f("Flavor by flavor", "Low minimums make it easy to print a box for every flavor.")],
       guide: [
         { h: "Box, sleeve or label?", p: ["A small tuck box gives the most space for ingredients and branding. A sleeve is cheaper and shows the product. For pots and tins, a printed [label](/packaging/labels-and-stickers) on the lid may be all you need."] },
         { h: "Selling at the counter", p: ["Lip balms sell well next to the till. A [counter display box](/packaging/display-boxes) holds 12 to 24 sticks, and [hang-tab boxes](/packaging/hang-tab-boxes) work on hooks."] },
       ],
-      faqs: [q("Do you make boxes for lip balm tins?", "Yes, square or round cartons and sleeves cut to the tin size."), q("Is kraft lip balm packaging available?", "Yes, brown or white kraft with one or two-colour print.")],
+      faqs: [q("Do you make boxes for lip balm tins?", "Yes, square or round cartons and sleeves cut to the tin size."), q("Is kraft lip balm packaging available?", "Yes, brown or white kraft with one or two-color print.")],
     },
   },
   {
@@ -70,7 +70,7 @@ const products: P[] = [
     style: "tall reverse tuck end carton", material: "16–18pt SBS card", finish: "gloss, foil or spot UV",
     tip: "Put key claims like 'lengthening' or 'waterproof' on the front panel, large enough to read from a shelf.",
     rich: {
-      lede: "Mascara boxes are long and narrow, which makes every millimetre of the front panel count. We cut cartons to your tube size, add a tight tuck so they stay closed, and print claims, shade and logo crisply in full colour. Add spot UV or foil to stand out on a crowded shelf, from 100 boxes.",
+      lede: "Mascara boxes are long and narrow, which makes every millimeter of the front panel count. We cut cartons to your tube size, add a tight tuck so they stay closed, and print claims, shade and logo crisply in full color. Add spot UV or foil to stand out on a crowded shelf, from 100 boxes.",
       styles: ["eyeliner-boxes", "eyelash-boxes", "eyeshadow-boxes", "makeup-boxes", "cosmetic-boxes", "display-boxes"],
       features: [f("Exact fit", "No wobble, no wasted space, less risk of a cracked cap."), f("Clear claims", "Large, sharp type for the words that sell."), f("Pairs and sets", "Mascara and liner duo boxes with an insert."), f("Shelf shine", "Spot UV and foil catch the eye under shop lights.")],
       guide: [
@@ -104,7 +104,7 @@ const products: P[] = [
     style: "long tuck end carton or sleeve", material: "16–18pt SBS card", finish: "matte, gloss or foil",
     tip: "Add a hang tab if you plan to sell on pegboard hooks.",
     rich: {
-      lede: "Eyeliners are long and thin, which makes a well-made box surprisingly important. We cut slim cartons that stop pencils from snapping and pens from leaking onto the print, and add a hang tab or window when you need one. Full colour print and premium finishes from 100 boxes.",
+      lede: "Eyeliners are long and thin, which makes a well-made box surprisingly important. We cut slim cartons that stop pencils from snapping and pens from leaking onto the print, and add a hang tab or window when you need one. Full color print and premium finishes from 100 boxes.",
       styles: ["mascara-boxes", "eyeshadow-boxes", "eyelash-boxes", "hang-tab-boxes", "cosmetic-boxes", "display-boxes"],
       features: [f("Protects tips", "A snug carton stops pencils from snapping in transit."), f("Hook-ready", "Optional hang tabs for retail pegboards."), f("Multipacks", "Two and three-liner boxes for sets."), f("Clean branding", "Simple, bold designs work best on slim panels.")],
       guide: [
@@ -118,7 +118,7 @@ const products: P[] = [
     intro: "Flat palette boxes, sleeves and single-pan cartons cut to your compact or palette.",
     uses: ["eyeshadow palettes", "single pans and compacts", "highlighters and blush", "palette gift sets"],
     style: "sleeve, two-piece or tuck carton", material: "16–18pt SBS or rigid board", finish: "foil, holographic and soft-touch",
-    tip: "Print the shade layout on the back so customers can see every colour before buying.",
+    tip: "Print the shade layout on the back so customers can see every color before buying.",
     rich: {
       lede: "Eyeshadow palettes are flat and wide, and the box is a big canvas for your art. We make sleeves, two-piece boxes and tuck cartons cut to your palette or compact, printed edge to edge with foil, holographic or soft-touch finishes, from 100 boxes.",
       styles: ["makeup-boxes", "mascara-boxes", "eyeliner-boxes", "trays-and-sleeves", "rigid-boxes", "cosmetic-boxes"],
@@ -131,7 +131,7 @@ const products: P[] = [
   },
   {
     slug: "perfume-boxes", name: "Perfume Boxes", parent: "cosmetic-boxes", group: "industries", icon: "rigid",
-    intro: "Rigid and folding perfume and cologne boxes with inserts that keep the bottle safe and centred.",
+    intro: "Rigid and folding perfume and cologne boxes with inserts that keep the bottle safe and centered.",
     uses: ["perfume and cologne bottles", "travel sprays and samplers", "fragrance gift sets", "body mists"],
     style: "rigid two-piece, magnetic or tuck carton with insert", material: "rigid chipboard or 18–24pt SBS", finish: "foil, embossing, soft-touch and textured papers",
     tip: "A fitted insert stops the bottle from moving, which protects both the glass and the atomiser.",
@@ -153,9 +153,9 @@ const products: P[] = [
     style: "tall tuck end carton", material: "16–18pt SBS card", finish: "matte, soft-touch or spot UV",
     tip: "Leave space on a side panel for ingredients and directions; skincare buyers read them.",
     rich: {
-      lede: "Skincare customers read every word, so lotion boxes need room for ingredients, directions and your story. We make tall cartons for pumps, droppers and tubes, printed on all sides in full colour with clean, calm finishes like soft-touch and matte, from 100 boxes.",
+      lede: "Skincare customers read every word, so lotion boxes need room for ingredients, directions and your story. We make tall cartons for pumps, droppers and tubes, printed on all sides in full color with clean, calm finishes like soft-touch and matte, from 100 boxes.",
       styles: ["cream-boxes", "perfume-boxes", "bath-bomb-boxes", "cosmetic-jars", "soap-boxes", "cosmetic-boxes"],
-      features: [f("Room to read", "Four printed sides for ingredients, claims and directions."), f("Pump-safe", "Cut tall enough for pumps and droppers, with a snug tuck."), f("Calm finishes", "Matte and soft-touch suit clean skincare brands."), f("Sets and duos", "Cleanser and moisturiser pairs in one box.")],
+      features: [f("Room to read", "Four printed sides for ingredients, claims and directions."), f("Pump-safe", "Cut tall enough for pumps and droppers, with a snug tuck."), f("Calm finishes", "Matte and soft-touch suit clean skincare brands."), f("Sets and duos", "Cleanser and moisturizer pairs in one box.")],
       guide: [
         { h: "Sizing for pumps and droppers", p: ["Measure the bottle with the pump or dropper fitted, at its tallest point. Our guide on [how to measure for a custom box](/blog/how-to-measure-for-a-custom-box) shows how. For jars, see [cream boxes](/packaging/cream-boxes)."] },
       ],
@@ -171,7 +171,7 @@ const products: P[] = [
     rich: {
       lede: "A jar of face cream is often the most expensive thing on a dressing table, and the box should feel worth it. We make square cartons and rigid boxes with inserts that hold glass and plastic jars in place, finished with soft-touch, foil or embossing, from 100 boxes.",
       styles: ["cosmetic-jars", "lotion-boxes", "perfume-boxes", "rigid-boxes", "cosmetic-boxes", "gift-boxes"],
-      features: [f("Insert included", "A card collar keeps the jar centred and away from the walls."), f("Premium feel", "Soft-touch and foil for luxury skincare."), f("Square and neat", "A cube carton stacks well on shelves."), f("Gift sets", "Two or three-jar sets in a rigid box.")],
+      features: [f("Insert included", "A card collar keeps the jar centered and away from the walls."), f("Premium feel", "Soft-touch and foil for luxury skincare."), f("Square and neat", "A cube carton stacks well on shelves."), f("Gift sets", "Two or three-jar sets in a rigid box.")],
       guide: [
         { h: "Jar boxes and jar labels", p: ["Pair a printed cream box with a matching lid [label](/packaging/labels-and-stickers) for a finished look. For a wider range of jars and pots, see [cosmetic jar packaging](/packaging/cosmetic-jars)."] },
       ],
@@ -183,15 +183,15 @@ const products: P[] = [
     intro: "Small cartons and multi-bottle sets for nail polish, top coats and nail care.",
     uses: ["single nail polish bottles", "polish sets", "nail care kits", "salon retail"],
     style: "small tuck carton or set box with insert", material: "16–18pt SBS card", finish: "gloss, foil or holographic",
-    tip: "Show the colour: a printed swatch or a window helps people choose.",
+    tip: "Show the color: a printed swatch or a window helps people choose.",
     rich: {
-      lede: "Nail polish is all about colour, and the box is where customers first see it. We make small cartons for single bottles and set boxes with inserts for three to six polishes, printed in bright full colour with gloss or holographic finishes, from 100 boxes.",
+      lede: "Nail polish is all about color, and the box is where customers first see it. We make small cartons for single bottles and set boxes with inserts for three to six polishes, printed in bright full color with gloss or holographic finishes, from 100 boxes.",
       styles: ["makeup-boxes", "display-boxes", "window-boxes", "gift-boxes", "cosmetic-boxes", "labels-and-stickers"],
-      features: [f("Colour first", "A swatch or window on every box."), f("Sets with inserts", "Bottles sit upright in their own slots."), f("Salon displays", "Counter displays for best-selling shades."), f("Glossy finishes", "Gloss and holographic that match the polish.")],
+      features: [f("Color first", "A swatch or window on every box."), f("Sets with inserts", "Bottles sit upright in their own slots."), f("Salon displays", "Counter displays for best-selling shades."), f("Glossy finishes", "Gloss and holographic that match the polish.")],
       guide: [
         { h: "Single or set?", p: ["Singles sell at the counter; sets sell online and at holidays. A [window box](/packaging/window-boxes) shows the shades in a set without opening it."] },
       ],
-      faqs: [q("Can you make a box for six polishes?", "Yes, with an insert that holds each bottle upright."), q("Can each colour have its own box?", "Yes, each design has a 100-box minimum.")],
+      faqs: [q("Can you make a box for six polishes?", "Yes, with an insert that holds each bottle upright."), q("Can each color have its own box?", "Yes, each design has a 100-box minimum.")],
     },
   },
   {
@@ -203,7 +203,7 @@ const products: P[] = [
     rich: {
       lede: "Hair extensions are a big purchase, and customers expect a box that feels as premium as the hair. We make long magnetic and window boxes with satin or tissue lining, foil logos and soft-touch finishes for bundles, clip-ins and wigs, from 100 boxes.",
       styles: ["rigid-boxes", "window-boxes", "lotion-boxes", "gift-boxes", "mailer-boxes", "labels-and-stickers"],
-      features: [f("Long formats", "Sized to lay bundles and clip-ins flat."), f("Satin lining", "Keeps hair smooth and looks luxurious."), f("Window option", "Show the texture and colour."), f("Reusable", "Customers keep rigid boxes to store their hair.")],
+      features: [f("Long formats", "Sized to lay bundles and clip-ins flat."), f("Satin lining", "Keeps hair smooth and looks luxurious."), f("Window option", "Show the texture and color."), f("Reusable", "Customers keep rigid boxes to store their hair.")],
       guide: [
         { h: "Shipping extensions", p: ["Rigid boxes protect well but should travel inside a [mailer box](/packaging/mailer-boxes) or shipper. Add a texture and length [label](/packaging/labels-and-stickers) on the side for easy picking."] },
       ],
@@ -233,9 +233,9 @@ const products: P[] = [
     style: "cube tuck box, window box or set box with insert", material: "16–18pt SBS or kraft card", finish: "matte, gloss or kraft",
     tip: "Shrink-wrap or a sealed bag inside the box keeps moisture out and the fizz in.",
     rich: {
-      lede: "Bath bombs are colourful, fragrant and fragile, so the box needs to protect them and show them off. We make cube boxes, window boxes and gift sets with inserts for bath bombs, steamers and salts, in bright full colour or natural kraft, from 100 boxes.",
+      lede: "Bath bombs are colorful, fragrant and fragile, so the box needs to protect them and show them off. We make cube boxes, window boxes and gift sets with inserts for bath bombs, steamers and salts, in bright full color or natural kraft, from 100 boxes.",
       styles: ["soap-boxes", "cube-boxes", "window-boxes", "gift-boxes", "kraft-boxes", "lotion-boxes"],
-      features: [f("Holds its shape", "A snug cube or insert stops the bomb from crumbling."), f("Window to the colour", "Customers love to see the colours."), f("Gift sets", "Three to six bombs in one box."), f("Natural options", "Kraft and plastic-free choices.")],
+      features: [f("Holds its shape", "A snug cube or insert stops the bomb from crumbling."), f("Window to the color", "Customers love to see the colors."), f("Gift sets", "Three to six bombs in one box."), f("Natural options", "Kraft and plastic-free choices.")],
       guide: [
         { h: "Keeping bath bombs dry", p: ["Moisture makes bath bombs fizz early. Wrap each one in film or a sealed sleeve, then box it. Plastic-free? Use a wax paper wrap and a snug [kraft box](/packaging/kraft-boxes)."] },
       ],
@@ -267,9 +267,9 @@ const products: P[] = [
     style: "tuck end box or display box", material: "food-grade SBS card", finish: "gloss, matte or holographic",
     tip: "Gummies inside need a sealed bag or jar; the box is the branded outer.",
     rich: {
-      lede: "Gummies are colourful and fun, and the packaging should be too, while still looking trustworthy. We make outer boxes for gummy jars and pouches, multipack cartons and counter displays, printed in bright food-safe inks, from 100 boxes.",
+      lede: "Gummies are colorful and fun, and the packaging should be too, while still looking trustworthy. We make outer boxes for gummy jars and pouches, multipack cartons and counter displays, printed in bright food-safe inks, from 100 boxes.",
       styles: ["cbd-oil-boxes", "cbd-boxes", "mylar-bags", "candy-boxes", "display-boxes", "labels-and-stickers"],
-      features: [f("Food-safe inks", "Suitable for edible products."), f("Bright and clear", "Fun colours with clear strength and serving info."), f("Pairs with pouches", "Box a resealable mylar pouch or a jar."), f("Display-ready", "Counter displays for shops.")],
+      features: [f("Food-safe inks", "Suitable for edible products."), f("Bright and clear", "Fun colors with clear strength and serving info."), f("Pairs with pouches", "Box a resealable mylar pouch or a jar."), f("Display-ready", "Counter displays for shops.")],
       guide: [
         { h: "Box or pouch?", p: ["Many brands sell gummies in a resealable [mylar bag](/packaging/mylar-bags) and use a box for gift sets and retail. Both can share one design."] },
       ],
@@ -283,11 +283,11 @@ const products: P[] = [
     style: "tall tuck end carton or sleeve", material: "16–18pt SBS card", finish: "gloss, foil or holographic",
     tip: "Plan the warning area first, then design around it.",
     rich: {
-      lede: "Vape and e-liquid packaging has to carry warnings and still look bold enough to stand out. We make cartons for bottles, cartridges and pods, with room planned for the required text, printed in full colour with foil or holographic finishes, from 100 boxes.",
+      lede: "Vape and e-liquid packaging has to carry warnings and still look bold enough to stand out. We make cartons for bottles, cartridges and pods, with room planned for the required text, printed in full color with foil or holographic finishes, from 100 boxes.",
       styles: ["vape-boxes", "cbd-oil-boxes", "pre-roll-boxes", "display-boxes", "cigarette-boxes", "labels-and-stickers"],
-      features: [f("Warnings planned in", "We size the box so warnings fit without crowding."), f("Bold shelf look", "Bright print, foil and holographic."), f("Cartridge inserts", "Slots that hold carts and pods."), f("Range consistency", "One template, many flavours.")],
+      features: [f("Warnings planned in", "We size the box so warnings fit without crowding."), f("Bold shelf look", "Bright print, foil and holographic."), f("Cartridge inserts", "Slots that hold carts and pods."), f("Range consistency", "One template, many flavors.")],
       guide: [
-        { h: "Planning your flavour range", p: ["Use one box shape and change the colour per flavour. With 100-box minimums per design, it's easy to test new flavours. See all [vape boxes](/packaging/vape-boxes)."] },
+        { h: "Planning your flavor range", p: ["Use one box shape and change the color per flavor. With 100-box minimums per design, it's easy to test new flavors. See all [vape boxes](/packaging/vape-boxes)."] },
       ],
       faqs: [q("Can you fit health warnings?", "Yes. Send the required text and we plan the layout around it."), q("Do you make cartridge boxes?", "Yes, with inserts for one or more carts.")],
     },
@@ -351,7 +351,7 @@ const products: P[] = [
     style: "flat lock-corner box with window", material: "food-grade SBS or kraft", finish: "food-safe inks, grease-resistant coating",
     tip: "A grease-resistant coating keeps glaze from soaking through.",
     rich: {
-      lede: "A box of donuts is a treat to open, and the right box makes it even better. We make flat donut boxes with windows and grease-resistant coatings for singles, half dozens and dozens, printed with your shop's colours, from 100 boxes.",
+      lede: "A box of donuts is a treat to open, and the right box makes it even better. We make flat donut boxes with windows and grease-resistant coatings for singles, half dozens and dozens, printed with your shop's colors, from 100 boxes.",
       styles: ["cake-boxes", "cupcake-boxes", "cookie-boxes", "bakery-boxes", "window-boxes", "food-boxes"],
       features: [f("Grease-resistant", "Glaze and filling stay inside."), f("Window lids", "Show the toppings."), f("Dozen-ready", "Flat boxes sized for 1, 2, 6 or 12."), f("Stackable", "Flat lids stack in bags and cars.")],
       guide: [
@@ -367,57 +367,57 @@ const products: P[] = [
     style: "window box, two-piece or sleeve", material: "food-grade SBS or kraft", finish: "food-safe inks, kraft or gloss",
     tip: "Wrap cookies in glassine or a sealed bag first to keep them fresh.",
     rich: {
-      lede: "Cookies are one of the most gifted bakes, and a good box turns a few cookies into a present. We make window boxes, two-piece gift boxes and slim sleeves for cookie stacks and assortments, in kraft or bright full colour, from 100 boxes.",
+      lede: "Cookies are one of the most gifted bakes, and a good box turns a few cookies into a present. We make window boxes, two-piece gift boxes and slim sleeves for cookie stacks and assortments, in kraft or bright full color, from 100 boxes.",
       styles: ["cake-boxes", "cupcake-boxes", "macaron-boxes", "bakery-boxes", "kraft-boxes", "mailer-boxes"],
-      features: [f("Gift-ready", "Two-piece boxes with ribbon."), f("Kraft or colour", "Rustic kraft or bright branding."), f("Ships well", "Pack cookie boxes inside a mailer for posting."), f("Stack sleeves", "Long sleeves for stacked cookies.")],
+      features: [f("Gift-ready", "Two-piece boxes with ribbon."), f("Kraft or color", "Rustic kraft or bright branding."), f("Ships well", "Pack cookie boxes inside a mailer for posting."), f("Stack sleeves", "Long sleeves for stacked cookies.")],
       guide: [
         { h: "Posting cookies", p: ["Cookies travel well when they can't move. Use a tight-fitting box, wrap them first and send them inside a [mailer box](/packaging/mailer-boxes)."] },
       ],
-      faqs: [q("Can you make kraft cookie boxes?", "Yes, with a window and one or two-colour print."), q("Do you make cookie gift boxes?", "Yes, two-piece boxes with ribbon or a sleeve.")],
+      faqs: [q("Can you make kraft cookie boxes?", "Yes, with a window and one or two-color print."), q("Do you make cookie gift boxes?", "Yes, two-piece boxes with ribbon or a sleeve.")],
     },
   },
   {
     slug: "macaron-boxes", name: "Macaron Boxes", parent: "bakery-boxes", group: "industries", icon: "sleeve",
     intro: "Slim macaron boxes with trays and windows for 6, 12 or 24 macarons.",
-    uses: ["macaron gift boxes", "wedding favours", "patisserie counters", "corporate gifts"],
+    uses: ["macaron gift boxes", "wedding favors", "patisserie counters", "corporate gifts"],
     style: "tray and sleeve or window box with insert", material: "food-grade SBS or rigid board", finish: "soft-touch, foil and pastel print",
     tip: "A tray with grooves stops macarons from rolling and cracking.",
     rich: {
-      lede: "Macarons are delicate and pretty, and their box should be both. We make slim tray-and-sleeve boxes and window boxes with grooved inserts that hold each macaron in a neat row, finished with pastel colours, foil and soft-touch, from 100 boxes.",
-      styles: ["cookie-boxes", "cupcake-boxes", "favour-boxes", "trays-and-sleeves", "bakery-boxes", "gift-boxes"],
-      features: [f("Grooved trays", "Every macaron in its place."), f("Window views", "Show the colours."), f("Favour sizes", "Two and four-macaron boxes for weddings."), f("Luxury finishes", "Foil and soft-touch for patisseries.")],
+      lede: "Macarons are delicate and pretty, and their box should be both. We make slim tray-and-sleeve boxes and window boxes with grooved inserts that hold each macaron in a neat row, finished with pastel colors, foil and soft-touch, from 100 boxes.",
+      styles: ["cookie-boxes", "cupcake-boxes", "favor-boxes", "trays-and-sleeves", "bakery-boxes", "gift-boxes"],
+      features: [f("Grooved trays", "Every macaron in its place."), f("Window views", "Show the colors."), f("Favor sizes", "Two and four-macaron boxes for weddings."), f("Luxury finishes", "Foil and soft-touch for patisseries.")],
       guide: [
-        { h: "Macarons as favours and gifts", p: ["Small two-macaron boxes make lovely [wedding favours](/packaging/favour-boxes). For gifting, a [tray and sleeve](/packaging/trays-and-sleeves) feels elegant and simple."] },
+        { h: "Macarons as favors and gifts", p: ["Small two-macaron boxes make lovely [wedding favors](/packaging/favor-boxes). For gifting, a [tray and sleeve](/packaging/trays-and-sleeves) feels elegant and simple."] },
       ],
-      faqs: [q("Do macaron boxes include a tray?", "Yes, a grooved insert sized to your macarons."), q("Can you make favour boxes for two macarons?", "Yes.")],
+      faqs: [q("Do macaron boxes include a tray?", "Yes, a grooved insert sized to your macarons."), q("Can you make favor boxes for two macarons?", "Yes.")],
     },
   },
   {
     slug: "popcorn-boxes", name: "Popcorn Boxes", parent: "food-boxes", group: "industries", icon: "carton",
     intro: "Open-top and closed popcorn boxes for cinemas, events and snack brands.",
-    uses: ["cinema and event popcorn", "gourmet popcorn gifts", "party favours", "snack brands"],
+    uses: ["cinema and event popcorn", "gourmet popcorn gifts", "party favors", "snack brands"],
     style: "open-top tapered box or closed tuck carton", material: "food-grade SBS card", finish: "grease-resistant coating, gloss",
-    tip: "Classic stripes are instantly recognisable; add your logo on the front panel.",
+    tip: "Classic stripes are instantly recognizable; add your logo on the front panel.",
     rich: {
       lede: "Nothing says treat like a box of popcorn. We make open-top popcorn boxes for cinemas and events, and closed cartons and gift boxes for gourmet popcorn brands, in food-grade board with grease-resistant coating, from 100 boxes.",
-      styles: ["food-boxes", "fries-boxes", "candy-boxes", "chinese-takeout-boxes", "favour-boxes", "mylar-bags"],
-      features: [f("Grease-resistant", "Butter and oil stay inside."), f("Event-ready", "Stack and fill quickly."), f("Gourmet gifts", "Closed boxes and pouches for flavoured popcorn."), f("Fun to brand", "Big panels for bold designs.")],
+      styles: ["food-boxes", "fries-boxes", "candy-boxes", "chinese-takeout-boxes", "favor-boxes", "mylar-bags"],
+      features: [f("Grease-resistant", "Butter and oil stay inside."), f("Event-ready", "Stack and fill quickly."), f("Gourmet gifts", "Closed boxes and pouches for flavored popcorn."), f("Fun to brand", "Big panels for bold designs.")],
       guide: [
         { h: "Open box or sealed pack?", p: ["Fresh popcorn goes in open-top boxes. Packaged popcorn needs a sealed [mylar bag](/packaging/mylar-bags) inside a box to stay crunchy."] },
       ],
-      faqs: [q("Are popcorn boxes food-safe?", "Yes, food-grade board and coating."), q("Can you make small favour sizes?", "Yes, mini popcorn boxes for parties.")],
+      faqs: [q("Are popcorn boxes food-safe?", "Yes, food-grade board and coating."), q("Can you make small favor sizes?", "Yes, mini popcorn boxes for parties.")],
     },
   },
   {
     slug: "chinese-takeout-boxes", name: "Chinese Takeout Boxes", parent: "food-boxes", group: "industries", icon: "carton",
     intro: "Folded takeout boxes for noodles, rice and street food, with or without handles.",
-    uses: ["noodles and rice", "street food", "party favours", "gift boxes"],
+    uses: ["noodles and rice", "street food", "party favors", "gift boxes"],
     style: "folded takeout pail with wire or card handle", material: "food-grade SBS or kraft", finish: "grease-resistant coating",
     tip: "Choose a card handle if the boxes go in a microwave.",
     rich: {
-      lede: "The folded takeout box is a design classic, and it works for much more than noodles. We make takeout pails in food-grade white or kraft board with grease-resistant coatings, for restaurants, street food stalls and even party favours, printed with your brand, from 100 boxes.",
+      lede: "The folded takeout box is a design classic, and it works for much more than noodles. We make takeout pails in food-grade white or kraft board with grease-resistant coatings, for restaurants, street food stalls and even party favors, printed with your brand, from 100 boxes.",
       styles: ["food-boxes", "fries-boxes", "sandwich-boxes", "popcorn-boxes", "kraft-boxes", "paper-bags"],
-      features: [f("Leak-resistant folds", "Folded from one piece with no glued seams at the bottom."), f("Grease-resistant", "Sauces stay inside."), f("Handle options", "Wire or card handles."), f("Not just food", "Popular for gifts and favours too.")],
+      features: [f("Leak-resistant folds", "Folded from one piece with no glued seams at the bottom."), f("Grease-resistant", "Sauces stay inside."), f("Handle options", "Wire or card handles."), f("Not just food", "Popular for gifts and favors too.")],
       guide: [
         { h: "Sizes for your menu", p: ["Takeout boxes come in standard sizes from 8 to 32 oz. Tell us your portion and we'll match it. Carry orders in a branded [paper bag](/packaging/paper-bags)."] },
       ],
@@ -435,7 +435,7 @@ const products: P[] = [
       styles: ["food-boxes", "chinese-takeout-boxes", "fries-boxes", "kraft-boxes", "window-boxes", "labels-and-stickers"],
       features: [f("Show the filling", "Clear windows on the slope."), f("Kraft look", "Natural kraft suits cafes and delis."), f("Easy to seal", "Tuck closures or a sticker seal."), f("Label space", "Room for ingredients and allergens.")],
       guide: [
-        { h: "Labelling sandwiches", p: ["Print your brand on the box and add ingredients with a [label](/packaging/labels-and-stickers), so one box works for every filling."] },
+        { h: "Labeling sandwiches", p: ["Print your brand on the box and add ingredients with a [label](/packaging/labels-and-stickers), so one box works for every filling."] },
       ],
       faqs: [q("Do sandwich boxes have a window?", "Yes, a clear film window."), q("Can the box be kraft?", "Yes.")],
     },
@@ -459,17 +459,17 @@ const products: P[] = [
   {
     slug: "candy-boxes", name: "Candy Boxes", parent: "chocolate-boxes", group: "industries", icon: "carton",
     intro: "Sweet boxes, pick-and-mix boxes and candy gift boxes, bright and food-safe.",
-    uses: ["pick-and-mix sweets", "candy gift boxes", "party favours", "confectionery brands"],
-    style: "tuck box, window box or display carton", material: "food-grade SBS", finish: "gloss and bright full colour",
-    tip: "Bright colours and windows work best for sweets.",
+    uses: ["pick-and-mix sweets", "candy gift boxes", "party favors", "confectionery brands"],
+    style: "tuck box, window box or display carton", material: "food-grade SBS", finish: "gloss and bright full color",
+    tip: "Bright colors and windows work best for sweets.",
     rich: {
-      lede: "Candy packaging should feel like a treat before it's opened. We make bright candy boxes, pick-and-mix cartons, window boxes and display packs in food-grade board, printed in bold full colour, from 100 boxes.",
-      styles: ["chocolate-boxes", "truffle-boxes", "popcorn-boxes", "favour-boxes", "display-boxes", "mylar-bags"],
-      features: [f("Food-safe", "Food-grade board and inks."), f("Window options", "Show the colours."), f("Displays", "Counter boxes for shops."), f("Favours", "Mini boxes for parties.")],
+      lede: "Candy packaging should feel like a treat before it's opened. We make bright candy boxes, pick-and-mix cartons, window boxes and display packs in food-grade board, printed in bold full color, from 100 boxes.",
+      styles: ["chocolate-boxes", "truffle-boxes", "popcorn-boxes", "favor-boxes", "display-boxes", "mylar-bags"],
+      features: [f("Food-safe", "Food-grade board and inks."), f("Window options", "Show the colors."), f("Displays", "Counter boxes for shops."), f("Favors", "Mini boxes for parties.")],
       guide: [
         { h: "Box or bag?", p: ["Loose sweets often sit in a sealed [mylar bag](/packaging/mylar-bags) inside the box. For gifts, pair with [chocolate boxes](/packaging/chocolate-boxes)."] },
       ],
-      faqs: [q("Are the boxes food-safe?", "Yes."), q("Can you make small favour boxes?", "Yes.")],
+      faqs: [q("Are the boxes food-safe?", "Yes."), q("Can you make small favor boxes?", "Yes.")],
     },
   },
   {
@@ -477,15 +477,15 @@ const products: P[] = [
     intro: "Luxury truffle and bonbon boxes with cavity inserts for 2 to 24 pieces.",
     uses: ["chocolate truffles", "bonbons", "chocolate gift boxes", "wedding and corporate gifts"],
     style: "rigid two-piece or drawer box with cavity insert", material: "rigid chipboard or SBS", finish: "foil, embossing and ribbon",
-    tip: "Print a flavour key inside the lid so customers know what's what.",
+    tip: "Print a flavor key inside the lid so customers know what's what.",
     rich: {
-      lede: "Truffles are small luxuries, and the box should feel like one. We make rigid and folding truffle boxes with cavity inserts for 2 to 24 pieces, finished with foil, embossing and ribbons, and a flavour key printed inside the lid, from 100 boxes.",
-      styles: ["chocolate-boxes", "candy-boxes", "rigid-boxes", "gift-boxes", "favour-boxes", "christmas-boxes"],
-      features: [f("Cavity inserts", "Every piece in its own cup."), f("Flavour key", "Printed inside the lid."), f("Luxury finishes", "Foil, embossing and ribbon."), f("Gift sizes", "From a two-piece favour to a 24-piece gift.")],
+      lede: "Truffles are small luxuries, and the box should feel like one. We make rigid and folding truffle boxes with cavity inserts for 2 to 24 pieces, finished with foil, embossing and ribbons, and a flavor key printed inside the lid, from 100 boxes.",
+      styles: ["chocolate-boxes", "candy-boxes", "rigid-boxes", "gift-boxes", "favor-boxes", "christmas-boxes"],
+      features: [f("Cavity inserts", "Every piece in its own cup."), f("Flavor key", "Printed inside the lid."), f("Luxury finishes", "Foil, embossing and ribbon."), f("Gift sizes", "From a two-piece favor to a 24-piece gift.")],
       guide: [
         { h: "Seasonal truffle boxes", p: ["Truffles sell most at Christmas and Valentine's. Low minimums mean you can print [Christmas](/packaging/christmas-boxes) and [holiday](/packaging/holiday-boxes) designs each year."] },
       ],
-      faqs: [q("Do truffle boxes come with inserts?", "Yes, cavity inserts sized to your truffles."), q("Can you print a flavour key?", "Yes, inside the lid.")],
+      faqs: [q("Do truffle boxes come with inserts?", "Yes, cavity inserts sized to your truffles."), q("Can you print a flavor key?", "Yes, inside the lid.")],
     },
   },
 
@@ -510,7 +510,7 @@ const products: P[] = [
     slug: "game-boxes", name: "Game Boxes", parent: "rigid-boxes", group: "styles", icon: "rigid",
     intro: "Board game and puzzle boxes with lift-off lids and inserts for every piece.",
     uses: ["board games", "puzzles", "card games", "kids' activity kits"],
-    style: "two-piece rigid box with insert", material: "rigid chipboard", finish: "full colour wrap, gloss or matte",
+    style: "two-piece rigid box with insert", material: "rigid chipboard", finish: "full color wrap, gloss or matte",
     tip: "Plan the insert so every piece has a place; players love a tidy box.",
     rich: {
       lede: "Board game boxes need to survive years of being opened, stacked and shoved on a shelf. We make two-piece rigid game and puzzle boxes with printed wraps and inserts for boards, cards and pieces, from 100 boxes, ideal for indie game makers and crowdfunded projects.",
@@ -526,12 +526,12 @@ const products: P[] = [
     slug: "toy-boxes", name: "Toy Boxes", parent: "retail-boxes", group: "industries", icon: "window",
     intro: "Window boxes, hang-tab cartons and gift boxes for toys and children's products.",
     uses: ["toys and figures", "plush toys", "kids' kits", "baby gifts"],
-    style: "window box, hang-tab carton or two-piece", material: "SBS or E-flute corrugated", finish: "bright gloss full colour",
+    style: "window box, hang-tab carton or two-piece", material: "SBS or E-flute corrugated", finish: "bright gloss full color",
     tip: "A window lets kids see the toy, which often makes the sale.",
     rich: {
-      lede: "Toy packaging is half the fun. We make bright window boxes that show the toy, hang-tab cartons for pegboards and sturdy gift boxes for bigger sets, printed in bold, child-friendly colours, from 100 boxes.",
+      lede: "Toy packaging is half the fun. We make bright window boxes that show the toy, hang-tab cartons for pegboards and sturdy gift boxes for bigger sets, printed in bold, child-friendly colors, from 100 boxes.",
       styles: ["game-boxes", "window-boxes", "hang-tab-boxes", "retail-boxes", "gift-boxes", "display-boxes"],
-      features: [f("Window views", "Kids see what's inside."), f("Hook-ready", "Hang tabs for retail."), f("Sturdy", "Corrugated options for heavier toys."), f("Bright print", "Bold colour and gloss.")],
+      features: [f("Window views", "Kids see what's inside."), f("Hook-ready", "Hang tabs for retail."), f("Sturdy", "Corrugated options for heavier toys."), f("Bright print", "Bold color and gloss.")],
       guide: [
         { h: "Retail-ready toy packaging", p: ["Shops want toys that hang or stack. Choose [hang-tab boxes](/packaging/hang-tab-boxes) for small toys and [window boxes](/packaging/window-boxes) for larger ones."] },
       ],
@@ -562,10 +562,10 @@ const products: P[] = [
     tip: "A box invitation often doubles as a keepsake, so make it beautiful inside too.",
     rich: {
       lede: "A boxed invitation tells guests that something special is coming. We make rigid invitation boxes with lift-off or magnetic lids for weddings, launches and VIP events, finished with foil, embossing and textured papers, with space for cards and small gifts, from 100 boxes.",
-      styles: ["gift-boxes", "favour-boxes", "rigid-boxes", "book-boxes", "business-card-boxes", "wrapping-paper"],
-      features: [f("Keepsake quality", "Guests keep these for years."), f("Room for extras", "Cards, favours and small gifts."), f("Luxury finishes", "Foil, embossing and textured papers."), f("Short runs", "From 100 boxes for each event.")],
+      styles: ["gift-boxes", "favor-boxes", "rigid-boxes", "book-boxes", "business-card-boxes", "wrapping-paper"],
+      features: [f("Keepsake quality", "Guests keep these for years."), f("Room for extras", "Cards, favors and small gifts."), f("Luxury finishes", "Foil, embossing and textured papers."), f("Short runs", "From 100 boxes for each event.")],
       guide: [
-        { h: "Wedding stationery and favours", p: ["Match your invitation box with [favour boxes](/packaging/favour-boxes) for the big day for a consistent look."] },
+        { h: "Wedding stationery and favors", p: ["Match your invitation box with [favor boxes](/packaging/favor-boxes) for the big day for a consistent look."] },
       ],
       faqs: [q("Can you make wedding invitation boxes?", "Yes."), q("Can the box hold a small gift?", "Yes, with an insert.")],
     },
@@ -594,10 +594,10 @@ const products: P[] = [
     tip: "A satin or card insert keeps the tie rolled or folded neatly.",
     rich: {
       lede: "A tie is a classic gift, and the box makes it feel like one. We make long rigid tie boxes, window boxes and bow tie boxes with inserts that keep everything neat, finished with foil and soft-touch, from 100 boxes. Popular for menswear brands and groomsmen gifts.",
-      styles: ["apparel-boxes", "shoe-boxes", "gift-boxes", "rigid-boxes", "jewellery-boxes", "two-piece-boxes"],
+      styles: ["apparel-boxes", "shoe-boxes", "gift-boxes", "rigid-boxes", "jewelry-boxes", "two-piece-boxes"],
       features: [f("Long formats", "Sized for folded or rolled ties."), f("Bow tie boxes", "Small square boxes with inserts."), f("Gift sets", "Tie, pocket square and cufflinks."), f("Premium finishes", "Foil and soft-touch.")],
       guide: [
-        { h: "Menswear gifting", p: ["Pair tie boxes with [jewellery boxes](/packaging/jewellery-boxes) for cufflinks, or a larger [apparel box](/packaging/apparel-boxes) for shirt-and-tie sets."] },
+        { h: "Menswear gifting", p: ["Pair tie boxes with [jewelry boxes](/packaging/jewelry-boxes) for cufflinks, or a larger [apparel box](/packaging/apparel-boxes) for shirt-and-tie sets."] },
       ],
       faqs: [q("Do you make bow tie boxes?", "Yes."), q("Can a tie box include cufflinks?", "Yes, with a two-part insert.")],
     },
@@ -622,10 +622,10 @@ const products: P[] = [
     slug: "mug-boxes", name: "Mug Boxes", parent: "gift-boxes", group: "industries", icon: "carton",
     intro: "Mug boxes with inserts that protect ceramics in shops and in the post.",
     uses: ["ceramic mugs", "travel mugs", "mug gift sets", "promotional mugs"],
-    style: "tuck box or window box with insert", material: "SBS or E-flute corrugated", finish: "full colour, gloss or matte",
+    style: "tuck box or window box with insert", material: "SBS or E-flute corrugated", finish: "full color, gloss or matte",
     tip: "Use corrugated board if the mug ships by post.",
     rich: {
-      lede: "Mugs are one of the most popular gifts, and one of the easiest to chip. We make mug boxes with inserts that hold the handle and body still, in SBS for shops or corrugated for posting, printed in full colour, from 100 boxes.",
+      lede: "Mugs are one of the most popular gifts, and one of the easiest to chip. We make mug boxes with inserts that hold the handle and body still, in SBS for shops or corrugated for posting, printed in full color, from 100 boxes.",
       styles: ["gift-boxes", "cube-boxes", "window-boxes", "coffee-packaging", "corrugated-boxes", "mailer-boxes"],
       features: [f("Handle-safe inserts", "Stop the mug from moving."), f("Postable", "Corrugated options for e-commerce."), f("Window", "Show the mug design."), f("Gift sets", "Mug and coffee sets.")],
       guide: [
@@ -654,10 +654,10 @@ const products: P[] = [
     slug: "tennis-ball-boxes", name: "Tennis Ball Boxes", parent: "sports-boxes", group: "industries", icon: "tall",
     intro: "Tall cartons and tube-style boxes for tennis, padel and squash balls.",
     uses: ["tennis balls", "padel balls", "squash balls", "club and event gifts"],
-    style: "tall tuck carton or tube", material: "SBS or kraft card", finish: "gloss and full colour",
-    tip: "A window strip shows the balls and their colour.",
+    style: "tall tuck carton or tube", material: "SBS or kraft card", finish: "gloss and full color",
+    tip: "A window strip shows the balls and their color.",
     rich: {
-      lede: "Ball sports packaging should feel as energetic as the game. We make tall cartons and tube-style boxes for tennis, padel and squash balls, with optional window strips, printed in bold full colour for clubs, shops and events, from 100 boxes.",
+      lede: "Ball sports packaging should feel as energetic as the game. We make tall cartons and tube-style boxes for tennis, padel and squash balls, with optional window strips, printed in bold full color for clubs, shops and events, from 100 boxes.",
       styles: ["golf-ball-boxes", "sports-boxes", "tube-packaging", "display-boxes", "hang-tab-boxes", "gift-boxes"],
       features: [f("Tall and slim", "Holds three or four balls."), f("Window strips", "Show the balls."), f("Club branding", "Great for clubs and events."), f("Display options", "Counter displays for pro shops.")],
       guide: [
@@ -672,7 +672,7 @@ const products: P[] = [
     slug: "cube-boxes", name: "Cube Boxes", parent: "product-boxes", group: "styles", icon: "carton",
     intro: "Square cube boxes in folding card or rigid board for candles, mugs, gifts and more.",
     uses: ["candles and jars", "mugs", "small gifts", "bath bombs"],
-    style: "cube tuck box or two-piece", material: "SBS, kraft or rigid board", finish: "full colour, foil, soft-touch",
+    style: "cube tuck box or two-piece", material: "SBS, kraft or rigid board", finish: "full color, foil, soft-touch",
     tip: "Cubes are great for stacking in shop displays.",
     rich: {
       lede: "Cube boxes are simple, neat and endlessly useful. We make square boxes in folding card or rigid board for candles, mugs, bath bombs and small gifts, with all six sides printable, from 100 boxes.",
@@ -689,7 +689,7 @@ const products: P[] = [
     intro: "Lid-and-base boxes in rigid or folding board, the classic gift and retail box.",
     uses: ["candles and gifts", "apparel", "chocolate and treats", "presentation sets"],
     style: "lift-off lid and base", material: "rigid chipboard or folding SBS", finish: "foil, soft-touch, wrap papers",
-    tip: "A slightly shorter lid shows a band of the base colour, a nice design detail.",
+    tip: "A slightly shorter lid shows a band of the base color, a nice design detail.",
     rich: {
       lede: "The two-piece box is the classic gift box: a base and a lift-off lid that make opening slow and satisfying. We make them in rigid board or folding card, any size, with inserts and premium finishes, from 100 boxes.",
       styles: ["rigid-boxes", "gift-boxes", "cube-boxes", "candle-boxes", "apparel-boxes", "book-boxes"],
@@ -704,10 +704,10 @@ const products: P[] = [
     slug: "auto-lock-boxes", name: "Auto-Lock Bottom Boxes", parent: "tuck-boxes", group: "styles", icon: "carton",
     intro: "Crash-lock bottom cartons that pop into shape and hold heavier products securely.",
     uses: ["bottles and jars", "supplements", "heavier retail products", "fast packing lines"],
-    style: "auto-lock (crash-lock) bottom with tuck top", material: "18–24pt SBS or E-flute", finish: "full colour, gloss or matte",
+    style: "auto-lock (crash-lock) bottom with tuck top", material: "18–24pt SBS or E-flute", finish: "full color, gloss or matte",
     tip: "Auto-lock bottoms save time when packing large orders.",
     rich: {
-      lede: "Auto-lock bottom boxes pop open into shape with the base already locked, which makes packing faster and holds heavier products securely. We make them in SBS card or E-flute for bottles, jars and supplements, printed in full colour, from 100 boxes.",
+      lede: "Auto-lock bottom boxes pop open into shape with the base already locked, which makes packing faster and holds heavier products securely. We make them in SBS card or E-flute for bottles, jars and supplements, printed in full color, from 100 boxes.",
       styles: ["tuck-boxes", "medicine-boxes", "bottle-boxes", "health-boxes", "product-boxes", "cube-boxes"],
       features: [f("Fast to pack", "Base locks as you open it."), f("Strong base", "Holds heavier products."), f("Ships flat", "Saves storage space."), f("Any size", "Made to your product.")],
       guide: [
@@ -720,12 +720,12 @@ const products: P[] = [
     slug: "die-cut-boxes", name: "Die-Cut Boxes", parent: "product-boxes", group: "styles", icon: "window",
     intro: "Boxes with custom shapes, windows and cut-outs that make your packaging one of a kind.",
     uses: ["shaped windows", "custom shapes", "kraft boxes with cut-outs", "retail packaging"],
-    style: "any custom die-cut shape", material: "SBS, kraft or E-flute", finish: "full colour or kraft",
+    style: "any custom die-cut shape", material: "SBS, kraft or E-flute", finish: "full color or kraft",
     tip: "A cut-out shaped like your logo is a simple way to stand out.",
     rich: {
       lede: "Die-cut boxes break away from plain rectangles. We cut custom windows, handles and shapes into card, kraft and corrugated board, so your packaging looks like nobody else's, from 100 boxes.",
       styles: ["window-boxes", "product-boxes", "kraft-boxes", "gable-boxes", "pillow-boxes", "display-boxes"],
-      features: [f("Any shape", "Windows, handles and outlines."), f("Logo cut-outs", "A unique brand detail."), f("Kraft or colour", "Works on all boards."), f("Free dieline", "We design the cut for you.")],
+      features: [f("Any shape", "Windows, handles and outlines."), f("Logo cut-outs", "A unique brand detail."), f("Kraft or color", "Works on all boards."), f("Free dieline", "We design the cut for you.")],
       guide: [
         { h: "Designing a cut-out", p: ["Keep cut-outs away from folds and leave enough board around them for strength. Our designers check this on your free [3D mockup](/free-mockup)."] },
       ],
@@ -736,10 +736,10 @@ const products: P[] = [
     slug: "hang-tab-boxes", name: "Hang Tab Boxes", parent: "retail-boxes", group: "styles", icon: "tag",
     intro: "Retail cartons with a built-in hang tab for pegboards and hooks.",
     uses: ["small retail products", "cosmetics and accessories", "tools and hardware", "toys"],
-    style: "tuck carton with euro or round hang tab", material: "16–18pt SBS", finish: "full colour, gloss",
+    style: "tuck carton with euro or round hang tab", material: "16–18pt SBS", finish: "full color, gloss",
     tip: "A euro slot is the most common shape for retail hooks.",
     rich: {
-      lede: "Hang tab boxes let your product hang at eye level on a shop peg. We make tuck cartons with built-in euro or round hang tabs for cosmetics, accessories, tools and toys, printed in full colour, from 100 boxes.",
+      lede: "Hang tab boxes let your product hang at eye level on a shop peg. We make tuck cartons with built-in euro or round hang tabs for cosmetics, accessories, tools and toys, printed in full color, from 100 boxes.",
       styles: ["retail-boxes", "toy-boxes", "eyeliner-boxes", "lip-balm-boxes", "hardware-boxes", "display-boxes"],
       features: [f("Eye-level display", "Hangs where shoppers look."), f("Built-in tab", "No extra header card."), f("Window option", "Show the product."), f("Any size", "Made to your product.")],
       guide: [
@@ -752,12 +752,12 @@ const products: P[] = [
     slug: "white-boxes", name: "White Boxes", parent: "product-boxes", group: "styles", icon: "carton",
     intro: "Clean white boxes, plain or with a simple logo, for a minimal premium look.",
     uses: ["minimal branding", "bakeries and gifts", "subscription boxes", "retail"],
-    style: "tuck, mailer or two-piece", material: "white SBS or white corrugated", finish: "one-colour logo, foil or blank",
+    style: "tuck, mailer or two-piece", material: "white SBS or white corrugated", finish: "one-color logo, foil or blank",
     tip: "A single foil logo on white looks premium and costs little.",
     rich: {
       lede: "White boxes are a blank canvas that feels clean and modern. We make plain white tuck boxes, mailers and two-piece boxes, or add a single logo in ink or foil for an understated premium look, from 100 boxes.",
       styles: ["product-boxes", "mailer-boxes", "two-piece-boxes", "kraft-boxes", "bakery-boxes", "labels-and-stickers"],
-      features: [f("Clean and modern", "Minimal looks that suit any brand."), f("Low cost", "One-colour or foil logos."), f("Add a sticker", "Brand with a label instead of print."), f("Any style", "Tuck, mailer or two-piece.")],
+      features: [f("Clean and modern", "Minimal looks that suit any brand."), f("Low cost", "One-color or foil logos."), f("Add a sticker", "Brand with a label instead of print."), f("Any style", "Tuck, mailer or two-piece.")],
       guide: [
         { h: "Branding a white box cheaply", p: ["A foil logo or a printed [sticker](/packaging/labels-and-stickers) turns a white box into a branded one at a low cost. Prefer a natural look? See [kraft boxes](/packaging/kraft-boxes)."] },
       ],
@@ -768,7 +768,7 @@ const products: P[] = [
     slug: "archive-boxes", name: "Archive Boxes", parent: "corrugated-boxes", group: "styles", icon: "mailer",
     intro: "Strong corrugated archive and storage boxes with lids and hand holes.",
     uses: ["document storage", "office moves", "stock storage", "branded storage"],
-    style: "corrugated box with lift-off lid and hand holes", material: "B or C-flute corrugated", finish: "one or two-colour print",
+    style: "corrugated box with lift-off lid and hand holes", material: "B or C-flute corrugated", finish: "one or two-color print",
     tip: "Add a label panel on the end so contents are easy to find.",
     rich: {
       lede: "Archive boxes keep files, stock and keepsakes safe and easy to find. We make strong corrugated storage boxes with lids, hand holes and label panels, printed with your logo, from 100 boxes. Great for offices, warehouses and branded storage.",
@@ -787,7 +787,7 @@ const products: P[] = [
     style: "printed conical paper sleeve", material: "food-grade paper or card", finish: "food-safe inks",
     tip: "A sleeve keeps hands clean and puts your logo in every photo.",
     rich: {
-      lede: "Cone sleeves wrap ice creams, crepes and wraps so they're easy to hold, keep hands clean and carry your logo into every photo. We print food-safe sleeves in full colour to fit your cones, from 100 sleeves.",
+      lede: "Cone sleeves wrap ice creams, crepes and wraps so they're easy to hold, keep hands clean and carry your logo into every photo. We print food-safe sleeves in full color to fit your cones, from 100 sleeves.",
       styles: ["food-boxes", "fries-boxes", "popcorn-boxes", "paper-bags", "labels-and-stickers", "sandwich-boxes"],
       features: [f("Food-safe", "Food-grade paper and inks."), f("Clean hands", "Catches drips and crumbs."), f("Photo-friendly", "Your logo in every post."), f("Any cone size", "Made to fit.")],
       guide: [
@@ -800,10 +800,10 @@ const products: P[] = [
     slug: "dispenser-boxes", name: "Dispenser Boxes", parent: "display-boxes", group: "styles", icon: "display",
     intro: "Boxes with a pull-out or tear-open opening for dispensing sachets, tissues and single items.",
     uses: ["sachets and stick packs", "tissues and wipes", "gloves", "tea bags and sweets"],
-    style: "dispenser carton with perforated opening", material: "SBS or E-flute", finish: "full colour",
+    style: "dispenser carton with perforated opening", material: "SBS or E-flute", finish: "full color",
     tip: "A perforated tear-open front keeps the box neat until first use.",
     rich: {
-      lede: "Dispenser boxes let customers take one item at a time, which is perfect for sachets, tea bags, wipes, gloves and sweets. We make them with perforated or pull-out openings, printed in full colour, from 100 boxes.",
+      lede: "Dispenser boxes let customers take one item at a time, which is perfect for sachets, tea bags, wipes, gloves and sweets. We make them with perforated or pull-out openings, printed in full color, from 100 boxes.",
       styles: ["display-boxes", "tea-packaging", "health-boxes", "candy-boxes", "medicine-boxes", "retail-boxes"],
       features: [f("One at a time", "Easy, tidy dispensing."), f("Tear-open front", "Perforated for first use."), f("Counter-ready", "Works as a display too."), f("Any size", "Made to your product.")],
       guide: [
@@ -817,15 +817,15 @@ const products: P[] = [
     intro: "Magnetic and two-piece boxes finished with a ribbon tie or ribbon closure.",
     uses: ["gift boxes", "bridesmaid and wedding gifts", "luxury retail", "corporate gifts"],
     style: "magnetic or two-piece with ribbon", material: "rigid chipboard", finish: "ribbon, foil and soft-touch",
-    tip: "Choose a ribbon colour from your brand palette for a finished look.",
+    tip: "Choose a ribbon color from your brand palette for a finished look.",
     rich: {
-      lede: "A ribbon makes any box feel like a present. We make rigid magnetic and two-piece boxes with ribbon ties and closures in your brand colours, finished with foil and soft-touch, from 100 boxes.",
-      styles: ["gift-boxes", "rigid-boxes", "two-piece-boxes", "favour-boxes", "invitation-boxes", "wrapping-paper"],
-      features: [f("Ready to give", "No wrapping needed."), f("Brand colours", "Ribbon to match your palette."), f("Magnetic or lift-off", "Two classic styles."), f("Luxury finishes", "Foil and soft-touch.")],
+      lede: "A ribbon makes any box feel like a present. We make rigid magnetic and two-piece boxes with ribbon ties and closures in your brand colors, finished with foil and soft-touch, from 100 boxes.",
+      styles: ["gift-boxes", "rigid-boxes", "two-piece-boxes", "favor-boxes", "invitation-boxes", "wrapping-paper"],
+      features: [f("Ready to give", "No wrapping needed."), f("Brand colors", "Ribbon to match your palette."), f("Magnetic or lift-off", "Two classic styles."), f("Luxury finishes", "Foil and soft-touch.")],
       guide: [
-        { h: "Wedding and event gifts", p: ["Ribbon boxes are popular for bridesmaid gifts and event favours. See [favour boxes](/packaging/favour-boxes) for smaller sizes."] },
+        { h: "Wedding and event gifts", p: ["Ribbon boxes are popular for bridesmaid gifts and event favors. See [favor boxes](/packaging/favor-boxes) for smaller sizes."] },
       ],
-      faqs: [q("Can I choose the ribbon colour?", "Yes."), q("Is the ribbon attached?", "It can be attached or tied separately.")],
+      faqs: [q("Can I choose the ribbon color?", "Yes."), q("Is the ribbon attached?", "It can be attached or tied separately.")],
     },
   },
 ];

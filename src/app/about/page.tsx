@@ -4,7 +4,7 @@ import { QuoteSection } from "@/components/sections";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About Snug Packaging",
+  title: "About Us: Custom Box Makers for Small Brands",
   description: "Snug Packaging makes custom printed boxes, bags and labels for growing brands in the USA, UK, Australia and Europe, from 100 units.",
   alternates: { canonical: "/about" },
 };
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <PageHero crumb="About" title="Packaging for brands that care how things arrive." />
+      <PageHero crumb="About" title="We make custom boxes for brands that care how things arrive." />
       <section className="block band">
         <div className="wrap prose">
           {/* TODO: replace with Snug's own story before launch. */}

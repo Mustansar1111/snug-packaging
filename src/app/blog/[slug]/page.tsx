@@ -15,7 +15,8 @@ export async function generateMetadata({ params }: PageProps<"/blog/[slug]">): P
   const post = getPost((await params).slug);
   if (!post) return { robots: { index: false } };
   return {
-    title: post.title,
+    // Long post titles drop the brand suffix so Google doesn't cut them off.
+    title: post.title.length > 45 ? { absolute: post.title } : post.title,
     description: post.description,
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: { type: "article", publishedTime: post.date },
@@ -76,7 +77,8 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
           headline: post.title,
           description: post.description,
           datePublished: post.date,
-          author: { "@type": "Organization", name: site.name },
+          author: { "@type": "Organization", name: `${site.name} team`, url: `${site.url}/about` },
+          image: `${site.url}/blog/${post.slug}/opengraph-image`,
           publisher: { "@type": "Organization", name: site.name },
           mainEntityOfPage: `${site.url}/blog/${post.slug}`,
         }}

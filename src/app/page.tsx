@@ -10,15 +10,16 @@ export default function Home() {
       <section className="hero band">
         <div className="wrap">
           <div>
-            <p className="eyebrow" style={{ color: "var(--apricot)" }}>
-              Custom printed packaging · USA · UK · Australia · Europe
-            </p>
-            <h1>
-              <span className="hl">Packaging that makes</span> <span className="hl">people <em>keep the box.</em></span>
+            {/* The small line is the page's H1 so Google reads the keywords; the big slogan stays as the visual headline. */}
+            <h1 className="eyebrow" style={{ color: "var(--apricot)" }}>
+              Custom boxes &amp; packaging with your logo · USA · UK · Australia · Europe
             </h1>
+            <p className="display">
+              <span className="hl"><em>Snug</em> Packaging</span> <span className="hl">that makes people</span> <span className="hl"><em>keep the box.</em></span>
+            </p>
             <p className="lede">
-              Custom mailer, rigid and retail boxes, bags and labels, printed with your artwork from just {site.moq} units. Free design help, a
-              digital proof before we print, and delivery to your door.
+              Custom boxes printed with your logo, from just {site.moq} units. Mailer boxes, rigid gift boxes, retail boxes, bags and labels,
+              with free design help, a digital proof before we print, and delivery to your door.
             </p>
             <div className="ctas">
               <Link className="btn btn-apricot" href="/quote">

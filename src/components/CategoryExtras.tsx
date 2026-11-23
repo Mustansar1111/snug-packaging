@@ -31,7 +31,7 @@ const options = {
     label: "Material",
     intro: "The board decides how the box feels and how much it protects.",
     items: [
-      ["SBS card", "Smooth white card that prints bright, sharp colour."],
+      ["SBS card", "Smooth white card that prints bright, sharp color."],
       ["Kraft card", "Natural brown board for an earthy, eco look."],
       ["Corrugated (E, B or F flute)", "Fluted board that protects products in the post."],
       ["Rigid chipboard", "Thick board wrapped in printed paper for premium boxes."],
@@ -40,12 +40,12 @@ const options = {
   },
   printing: {
     label: "Printing",
-    intro: "Full colour as standard, with exact brand colours when you need them.",
+    intro: "Full color as standard, with exact brand colors when you need them.",
     items: [
-      ["CMYK full colour", "Photos, gradients and artwork on every side."],
-      ["Pantone (PMS) matching", "Your exact brand colour, matched by ink."],
+      ["CMYK full color", "Photos, gradients and artwork on every side."],
+      ["Pantone (PMS) matching", "Your exact brand color, matched by ink."],
       ["Inside printing", "A message or pattern inside the lid or base."],
-      ["One-colour on kraft", "A simple logo print that keeps costs down."],
+      ["One-color on kraft", "A simple logo print that keeps costs down."],
     ],
   },
   finishes: {
@@ -73,19 +73,19 @@ const options = {
 } as const;
 
 /** Material, printing, finish and add-on choices, in tabs. Same for every category. */
-export function CustomiseTabs({ name }: { name: string }) {
+export function CustomizeTabs({ name }: { name: string }) {
   return (
-    <section className="block band" id="customise">
+    <section className="block band" id="customize">
       <div className="wrap">
         <div className="head">
           <div>
             <p className="eyebrow">Make it yours</p>
-            <h2>Customise your {name}</h2>
+            <h2>Customize your {name}</h2>
           </div>
           <p>Choose the board, print and finish. Not sure? Tell us your product and budget and we&apos;ll recommend a mix.</p>
         </div>
         <Tabs
-          label="Customise by"
+          label="Customize by"
           tabs={Object.entries(options).map(([key, o]) => ({
             key: `opt-${key}`,
             label: o.label,

@@ -22,7 +22,7 @@ export const batch1: Record<string, RichContent> = {
       {
         h: "Choosing the board",
         p: [
-          "Most mailers are E-flute corrugated with a white or [kraft](/packaging/kraft-boxes) outer layer. White takes bright colour beautifully; kraft gives a natural look and hides scuffs. For heavy items like candles or glass, ask for B-flute or a double wall, or read more about [corrugated boxes](/packaging/corrugated-boxes).",
+          "Most mailers are E-flute corrugated with a white or [kraft](/packaging/kraft-boxes) outer layer. White takes bright color beautifully; kraft gives a natural look and hides scuffs. For heavy items like candles or glass, ask for B-flute or a double wall, or read more about [corrugated boxes](/packaging/corrugated-boxes).",
         ],
       },
       {
@@ -34,7 +34,7 @@ export const batch1: Record<string, RichContent> = {
       {
         h: "Measuring for a mailer",
         p: [
-          "Measure the inside space you need, not the outside of the box. Add a few millimetres for tissue or an insert. Our step-by-step guide on [how to measure for a custom box](/blog/how-to-measure-for-a-custom-box) shows exactly where to put the tape measure.",
+          "Measure the inside space you need, not the outside of the box. Add a few millimeters for tissue or an insert. Our step-by-step guide on [how to measure for a custom box](/blog/how-to-measure-for-a-custom-box) shows exactly where to put the tape measure.",
         ],
       },
     ],
@@ -49,7 +49,7 @@ export const batch1: Record<string, RichContent> = {
   "rigid-boxes": {
     lede:
       "Rigid boxes are the heavyweights of packaging: thick greyboard wrapped in printed or textured paper, with lids that lift off slowly or snap shut on a magnet. They are made for launches, gift sets and anything you want to feel special in the hand. We make them to your size from 100 boxes.",
-    styles: ["gift-boxes", "jewellery-boxes", "cosmetic-boxes", "trays-and-sleeves", "round-boxes", "chocolate-boxes", "christmas-boxes", "apparel-boxes"],
+    styles: ["gift-boxes", "jewelry-boxes", "cosmetic-boxes", "trays-and-sleeves", "round-boxes", "chocolate-boxes", "christmas-boxes", "apparel-boxes"],
     features: [
       { title: "A box people keep", text: "Rigid boxes rarely go in the bin. They get reused for keepsakes, which keeps your brand in the home." },
       { title: "Lids that feel good", text: "Two-piece, magnetic flap, drawer or book-style: choose the opening that suits the product." },
@@ -60,7 +60,7 @@ export const batch1: Record<string, RichContent> = {
       {
         h: "Which rigid box style?",
         p: [
-          "A two-piece lid and base is the classic choice for apparel and [gift boxes](/packaging/gift-boxes). Magnetic flap boxes suit [cosmetics](/packaging/cosmetic-boxes) and tech, because the lid closes with a satisfying click. Drawer boxes slide open and are popular for [jewellery](/packaging/jewellery-boxes) and small sets.",
+          "A two-piece lid and base is the classic choice for apparel and [gift boxes](/packaging/gift-boxes). Magnetic flap boxes suit [cosmetics](/packaging/cosmetic-boxes) and tech, because the lid closes with a satisfying click. Drawer boxes slide open and are popular for [jewelry](/packaging/jewelry-boxes) and small sets.",
         ],
       },
       {
@@ -86,19 +86,19 @@ export const batch1: Record<string, RichContent> = {
 
   "kraft-boxes": {
     lede:
-      "Kraft boxes have an honest, natural look that customers connect with eco-minded brands. The brown board shows through the print, so simple one or two-colour designs look intentional and stylish. We make kraft boxes in tuck, mailer, two-piece and window styles, sized to your product, from 100 units.",
+      "Kraft boxes have an honest, natural look that customers connect with eco-minded brands. The brown board shows through the print, so simple one or two-color designs look intentional and stylish. We make kraft boxes in tuck, mailer, two-piece and window styles, sized to your product, from 100 units.",
     styles: ["mailer-boxes", "tuck-boxes", "window-boxes", "pillow-boxes", "gable-boxes", "food-boxes", "soap-boxes", "hang-tags"],
     features: [
       { title: "Natural look", text: "The brown board gives an earthy, handmade feel that suits organic, vegan and craft brands." },
       { title: "Easy to recycle", text: "Kraft board goes in the paper recycling. Choose no lamination to keep it fully plastic-free." },
-      { title: "Low-cost print", text: "One or two colours on kraft look great and keep the price per box down." },
-      { title: "White kraft too", text: "Want brighter colours? White kraft has the same feel with a lighter base for full colour print." },
+      { title: "Low-cost print", text: "One or two colors on kraft look great and keep the price per box down." },
+      { title: "White kraft too", text: "Want brighter colors? White kraft has the same feel with a lighter base for full color print." },
     ],
     guide: [
       {
         h: "How print looks on kraft",
         p: [
-          "Ink on brown board looks a little darker and more muted than on white, because the brown shows through. Dark colours and black work best. If you need bright brand colours, ask for a white ink underlay or white kraft. Read our [CMYK vs Pantone guide](/blog/cmyk-vs-pantone) for colour tips.",
+          "Ink on brown board looks a little darker and more muted than on white, because the brown shows through. Dark colors and black work best. If you need bright brand colors, ask for a white ink underlay or white kraft. Read our [CMYK vs Pantone guide](/blog/cmyk-vs-pantone) for color tips.",
         ],
       },
       {
@@ -115,7 +115,7 @@ export const batch1: Record<string, RichContent> = {
       },
     ],
     faqs: [
-      { q: "Can you print full colour on kraft?", a: "Yes, but colours look darker on brown board. For bright full colour we suggest white kraft or a white underlay." },
+      { q: "Can you print full color on kraft?", a: "Yes, but colors look darker on brown board. For bright full color we suggest white kraft or a white underlay." },
       { q: "Are kraft boxes food-safe?", a: "Yes, with food-safe board and inks. Tell us the product so we can choose the right grade." },
       { q: "Are kraft boxes strong?", a: "Kraft paperboard suits light products; for heavier items we make kraft boxes in corrugated board." },
       { q: "What is the minimum order?", a: "100 boxes per design." },
@@ -124,7 +124,7 @@ export const batch1: Record<string, RichContent> = {
 
   "mylar-bags": {
     lede:
-      "Mylar bags keep food, coffee, supplements and snacks fresh by blocking air, light and moisture. Ours are printed in full colour, close with a zip lock and can stand up on a shelf. Choose a shiny, matte, kraft or holographic look, add a window or a hang hole, and order from 100 bags.",
+      "Mylar bags keep food, coffee, supplements and snacks fresh by blocking air, light and moisture. Ours are printed in full color, close with a zip lock and can stand up on a shelf. Choose a shiny, matte, kraft or holographic look, add a window or a hang hole, and order from 100 bags.",
     styles: ["spouted-pouches", "coffee-packaging", "tea-packaging", "poly-bags", "labels-and-stickers", "paper-bags", "food-boxes", "cbd-boxes"],
     features: [
       { title: "Keeps products fresh", text: "Layered film blocks air, light and moisture, so contents last longer on the shelf." },
@@ -142,13 +142,13 @@ export const batch1: Record<string, RichContent> = {
       {
         h: "Finishes and windows",
         p: [
-          "A matte finish looks modern and hides fingerprints; gloss makes colours pop; holographic film catches the light. A clear window shows the product, but lets in light, so skip it for coffee and light-sensitive goods. Our [coffee packaging](/packaging/coffee-packaging) page has more on valves and freshness.",
+          "A matte finish looks modern and hides fingerprints; gloss makes colors pop; holographic film catches the light. A clear window shows the product, but lets in light, so skip it for coffee and light-sensitive goods. Our [coffee packaging](/packaging/coffee-packaging) page has more on valves and freshness.",
         ],
       },
       {
         h: "Labels or fully printed bags?",
         p: [
-          "If you have many flavours in small amounts, plain bags with printed [labels and stickers](/packaging/labels-and-stickers) can be cheaper. Fully printed bags look more polished and work out better as your volumes grow.",
+          "If you have many flavors in small amounts, plain bags with printed [labels and stickers](/packaging/labels-and-stickers) can be cheaper. Fully printed bags look more polished and work out better as your volumes grow.",
         ],
       },
     ],
@@ -250,7 +250,7 @@ export const batch1: Record<string, RichContent> = {
       {
         h: "Labels vs printed packaging",
         p: [
-          "Labels let you use one plain box or [mylar bag](/packaging/mylar-bags) for many flavours or scents, which keeps stock simple. Once one product sells in volume, fully printed packaging usually looks better and works out cheaper per unit.",
+          "Labels let you use one plain box or [mylar bag](/packaging/mylar-bags) for many flavors or scents, which keeps stock simple. Once one product sells in volume, fully printed packaging usually looks better and works out cheaper per unit.",
         ],
       },
       {
@@ -308,11 +308,11 @@ export const batch1: Record<string, RichContent> = {
 
   "shipping-boxes": {
     lede:
-      "Shipping boxes do the hard work: protecting orders through sorting centres, vans and doorsteps. We make them in sturdy corrugated board, printed with your logo so even the outer box says who it's from. Choose a mailer style, a regular slotted carton or a self-locking box, sized to your products, from 100 units.",
+      "Shipping boxes do the hard work: protecting orders through sorting centers, vans and doorsteps. We make them in sturdy corrugated board, printed with your logo so even the outer box says who it's from. Choose a mailer style, a regular slotted carton or a self-locking box, sized to your products, from 100 units.",
     styles: ["mailer-boxes", "corrugated-boxes", "cardboard-boxes", "kraft-boxes", "poly-bags", "labels-and-stickers", "electronics-boxes", "hardware-boxes"],
     features: [
       { title: "Protection first", text: "Single or double-wall corrugated board absorbs knocks and stacks well." },
-      { title: "Branded outside", text: "Even a one-colour logo makes your parcel stand out on the doorstep." },
+      { title: "Branded outside", text: "Even a one-color logo makes your parcel stand out on the doorstep." },
       { title: "Right-sized", text: "Boxes cut to your products save on void fill and on dimensional-weight postage." },
       { title: "Quick to pack", text: "Self-locking and tuck styles fold together fast, with less tape." },
     ],
@@ -332,13 +332,13 @@ export const batch1: Record<string, RichContent> = {
       {
         h: "Branding a shipper",
         p: [
-          "If the box is mostly about protection, a simple logo in one colour on [kraft](/packaging/kraft-boxes) keeps costs down. If customers open it directly, consider a fully printed [mailer box](/packaging/mailer-boxes) instead. For soft goods, branded [poly mailers](/packaging/poly-bags) are lighter still.",
+          "If the box is mostly about protection, a simple logo in one color on [kraft](/packaging/kraft-boxes) keeps costs down. If customers open it directly, consider a fully printed [mailer box](/packaging/mailer-boxes) instead. For soft goods, branded [poly mailers](/packaging/poly-bags) are lighter still.",
         ],
       },
     ],
     faqs: [
       { q: "What is the difference between a mailer and a shipping box?", a: "A mailer is a printed, folding presentation box; a shipping box is focused on protection. Many brands use both." },
-      { q: "Can shipping boxes be printed?", a: "Yes, from a one-colour logo to full colour inside and out." },
+      { q: "Can shipping boxes be printed?", a: "Yes, from a one-color logo to full color inside and out." },
       { q: "Can you make double-wall boxes?", a: "Yes, for heavy or fragile products." },
       { q: "What is the minimum order?", a: "100 boxes per design." },
     ],
@@ -347,7 +347,7 @@ export const batch1: Record<string, RichContent> = {
   "gift-boxes": {
     lede:
       "A good gift box makes the present feel chosen with care before it is even opened. We make gift boxes with lift-off lids, magnetic flaps, ribbons and windows, in rigid board or folding card, printed to match your brand or the season. Perfect for retail, corporate gifts and hampers, from 100 boxes.",
-    styles: ["rigid-boxes", "favour-boxes", "christmas-boxes", "holiday-boxes", "chocolate-boxes", "jewellery-boxes", "round-boxes", "wrapping-paper"],
+    styles: ["rigid-boxes", "favor-boxes", "christmas-boxes", "holiday-boxes", "chocolate-boxes", "jewelry-boxes", "round-boxes", "wrapping-paper"],
     features: [
       { title: "A real sense of occasion", text: "Lift-off lids, magnetic closures and ribbon pulls slow the reveal down." },
       { title: "Corporate gifting", text: "Branded gift boxes for clients and staff, with inserts for each item." },
@@ -358,7 +358,7 @@ export const batch1: Record<string, RichContent> = {
       {
         h: "Rigid or folding gift box?",
         p: [
-          "[Rigid boxes](/packaging/rigid-boxes) feel the most luxurious and are reused for years. Folding card gift boxes ship flat, cost less and still look great with foil or a ribbon. Small [favour boxes](/packaging/favour-boxes) suit weddings and events.",
+          "[Rigid boxes](/packaging/rigid-boxes) feel the most luxurious and are reused for years. Folding card gift boxes ship flat, cost less and still look great with foil or a ribbon. Small [favor boxes](/packaging/favor-boxes) suit weddings and events.",
         ],
       },
       {
@@ -375,7 +375,7 @@ export const batch1: Record<string, RichContent> = {
       },
     ],
     faqs: [
-      { q: "Can gift boxes have a ribbon?", a: "Yes, ribbon ties, ribbon pulls and ribbon closures are all available in many colours." },
+      { q: "Can gift boxes have a ribbon?", a: "Yes, ribbon ties, ribbon pulls and ribbon closures are all available in many colors." },
       { q: "Do you make corporate gift boxes?", a: "Yes, with your logo and inserts for each item in the set." },
       { q: "Do gift boxes ship flat?", a: "Folding gift boxes ship flat; rigid gift boxes usually arrive made up." },
       { q: "What is the minimum order?", a: "100 boxes per design." },

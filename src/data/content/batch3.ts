@@ -30,7 +30,7 @@ export const batch3: Record<string, RichContent> = {
     styles: ["food-boxes", "corrugated-boxes", "chinese-takeout-boxes", "fries-boxes", "paper-bags", "labels-and-stickers"],
     features: [f("Keeps heat in", "Strong corrugated walls."), f("Vents", "Let steam escape so the base stays crisp."), f("Printed lid", "Your brand on every delivery."), f("Any size", "From personal to family size.")],
     guide: [
-      { h: "Printing a pizza box", p: ["Most shops use one or two colours on kraft or white board, which keeps the price per box low. Add a menu or QR code inside the lid. Pair with [fries boxes](/packaging/fries-boxes) and [paper bags](/packaging/paper-bags) for sides."] },
+      { h: "Printing a pizza box", p: ["Most shops use one or two colors on kraft or white board, which keeps the price per box low. Add a menu or QR code inside the lid. Pair with [fries boxes](/packaging/fries-boxes) and [paper bags](/packaging/paper-bags) for sides."] },
     ],
     faqs: [q("Are pizza boxes food-safe?", "Yes."), q("Can you print inside the lid?", "Yes."), q("What sizes are available?", "Any size, made to order.")],
   },
@@ -45,7 +45,7 @@ export const batch3: Record<string, RichContent> = {
     faqs: [q("Are chocolate boxes food-safe?", "Yes."), q("Do you make bar wrappers?", "We make sleeves and boxes for bars."), q("Can you add a ribbon?", "Yes.")],
   },
   "cereal-boxes": {
-    lede: "Cereal boxes have one of the biggest canvases on the supermarket shelf. We make food-grade cereal, granola and oat boxes in bold full colour, sized for your bag-in-box, from 100 boxes, so smaller brands can compete with the big names.",
+    lede: "Cereal boxes have one of the biggest canvases on the supermarket shelf. We make food-grade cereal, granola and oat boxes in bold full color, sized for your bag-in-box, from 100 boxes, so smaller brands can compete with the big names.",
     styles: ["food-boxes", "retail-boxes", "kraft-boxes", "mylar-bags", "display-boxes", "tuck-boxes"],
     features: [f("Big shelf presence", "Large front panel for bold design."), f("Food-safe", "Food-grade board and inks."), f("Bag-in-box sizing", "Made to fit your inner bag."), f("Small runs", "Great for new brands.")],
     guide: [
@@ -94,14 +94,14 @@ export const batch3: Record<string, RichContent> = {
   "hemp-boxes": {
     lede: "Hemp brands are usually proud of being natural, and their packaging should say so. We make kraft and recycled-board boxes for hemp oils, creams, seeds and textiles, printed with earthy inks and simple, honest designs, from 100 boxes.",
     styles: ["cbd-boxes", "kraft-boxes", "pre-roll-boxes", "soap-boxes", "labels-and-stickers", "mylar-bags"],
-    features: [f("Natural kraft", "An honest, earthy look."), f("Recycled board", "Lower-impact options."), f("Simple print", "One or two colours keep costs down."), f("Range-ready", "One template for many products.")],
+    features: [f("Natural kraft", "An honest, earthy look."), f("Recycled board", "Lower-impact options."), f("Simple print", "One or two colors keep costs down."), f("Range-ready", "One template for many products.")],
     guide: [
-      { h: "Keeping it natural", p: ["Kraft with a one-colour logo is affordable and on-brand. Read more on our [sustainability page](/sustainability) and see [CBD boxes](/packaging/cbd-boxes)."] },
+      { h: "Keeping it natural", p: ["Kraft with a one-color logo is affordable and on-brand. Read more on our [sustainability page](/sustainability) and see [CBD boxes](/packaging/cbd-boxes)."] },
     ],
     faqs: [q("Are hemp boxes recyclable?", "Yes."), q("Can you print on kraft?", "Yes."), q("Do you make pouches?", "Yes, see [mylar bags](/packaging/mylar-bags).")],
   },
   "pre-roll-boxes": {
-    lede: "Pre-roll packaging has to look good, hold the product firmly and carry the right information. We make single and multi-pack pre-roll boxes with inserts and tube options, printed in full colour with premium finishes, from 100 boxes.",
+    lede: "Pre-roll packaging has to look good, hold the product firmly and carry the right information. We make single and multi-pack pre-roll boxes with inserts and tube options, printed in full color with premium finishes, from 100 boxes.",
     styles: ["cbd-boxes", "hemp-boxes", "vape-boxes", "tube-packaging", "display-boxes", "cigarette-boxes"],
     features: [f("Inserts", "Hold each pre-roll still."), f("Single or multi-pack", "One to ten per box."), f("Premium finishes", "Foil and holographic."), f("Information space", "Room for required text.")],
     guide: [
@@ -173,7 +173,7 @@ export const batch3: Record<string, RichContent> = {
     faqs: [q("Can boxes hold heavy parts?", "Yes."), q("Can you print part numbers?", "Yes, or use labels."), q("What's the minimum?", "100 boxes.")],
   },
   "sports-boxes": {
-    lede: "Sports packaging should feel as energetic as the kit inside. We make boxes for balls, gear, supplements and accessories, from three-ball sleeves to gift sets, printed in bold full colour, from 100 boxes.",
+    lede: "Sports packaging should feel as energetic as the kit inside. We make boxes for balls, gear, supplements and accessories, from three-ball sleeves to gift sets, printed in bold full color, from 100 boxes.",
     styles: ["retail-boxes", "display-boxes", "gift-boxes", "hang-tab-boxes", "health-boxes", "mailer-boxes"],
     features: [f("Bold print", "Bright, sporty designs."), f("Gift sets", "For clubs and events."), f("Retail-ready", "Displays and hang tabs."), f("Strong options", "For heavier gear.")],
     guide: [
@@ -201,7 +201,7 @@ export const batch3: Record<string, RichContent> = {
   },
   "holiday-boxes": {
     lede: "Every holiday is a chance to sell more, and special packaging helps. We make seasonal boxes for Valentine's, Easter, Mother's Day, Halloween and more, printed with limited-edition designs, from 100 boxes.",
-    styles: ["christmas-boxes", "gift-boxes", "chocolate-boxes", "favour-boxes", "trays-and-sleeves", "ribbon-boxes"],
+    styles: ["christmas-boxes", "gift-boxes", "chocolate-boxes", "favor-boxes", "trays-and-sleeves", "ribbon-boxes"],
     features: [f("Limited editions", "Low minimums for seasonal runs."), f("Sleeves", "Rebrand a standard box."), f("Gift-ready", "Ribbon and magnetic lids."), f("Treat boxes", "Food-safe options.")],
     guide: [
       { h: "Seasonal sleeves", p: ["Keep one box and print a seasonal [sleeve](/packaging/trays-and-sleeves) for each holiday. It's the cheapest way to refresh."] },

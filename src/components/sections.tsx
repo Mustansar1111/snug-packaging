@@ -40,7 +40,7 @@ export function Faq({ items, title = "Good to know." }: { items: { q: string; a:
 }
 
 export function Marquee() {
-  const items = ["Cosmetics", "Coffee & tea", "Apparel", "Bakery", "Candles", "CBD & hemp", "Jewellery", "Subscription boxes", "Electronics", "Gifts"];
+  const items = ["Cosmetics", "Coffee & tea", "Apparel", "Bakery", "Candles", "CBD & hemp", "Jewelry", "Subscription boxes", "Electronics", "Gifts"];
   return (
     <div className="marquee" aria-label="Industries we make packaging for">
       <div className="track">
