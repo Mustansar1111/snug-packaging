@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
-import { site, telHref, whatsappHref } from "@/lib/site";
+import { site, telHref, whatsappHref, og } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Refund Policy",
   description: "If something goes wrong with your custom packaging order, here's how Snug Packaging puts it right: reprints, refunds and cancellations, in plain English.",
   alternates: { canonical: "/refund-policy" },
+  openGraph: og("/refund-policy", { defaultImage: true }),
 };
 
 export default function RefundPolicyPage() {

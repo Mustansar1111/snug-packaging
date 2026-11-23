@@ -26,8 +26,8 @@ export const site = {
    * Organization schema. Paste the full profile URL here (or set the env vars on Netlify).
    */
   social: {
-    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "",
-    facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL ?? "",
+    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "https://www.instagram.com/snug.packaging/",
+    facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL ?? "https://www.facebook.com/Snug.Packaging/",
   },
   /** Link where customers can leave a review (Google review link or Trustpilot). Empty hides the button. */
   reviewUrl: process.env.NEXT_PUBLIC_REVIEW_URL ?? "",
@@ -170,3 +170,40 @@ export function lowerName(name: string): string {
     .replace(/\b(christmas|easter|valentine|halloween|diwali|eid|hanukkah)\b/g, (w) => w[0].toUpperCase() + w.slice(1))
     .replace(/\b(cbd|uk|usa|us|diy)\b/g, (w) => w.toUpperCase());
 }
+
+/**
+ * Open Graph tags for a page. A page that sets its own openGraph replaces the layout's, so this always
+ * returns the full set (site name, type, locale and the page URL, matching its canonical).
+ */
+export function og(path: string, { locale = "en_US", defaultImage = false }: { locale?: string; defaultImage?: boolean } = {}) {
+  return {
+    siteName: site.name,
+    type: "website" as const,
+    locale,
+    url: path,
+    // Pages without their own opengraph-image file lose the site-wide card once they set openGraph,
+    // so they ask for it here. Pages with their own card must leave this off, or it would replace theirs.
+    ...(defaultImage ? { images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Snug Packaging: custom boxes from 100 units" }] } : {}),
+  };
+}
+
+/**
+ * hreflang links between the country pages. Every country page (and the home page, as x-default)
+ * carries the same set, so Google can send UK searchers to /uk, Australians to /australia, and so on.
+ */
+export const regionLanguages: Record<string, string> = {
+  "en-US": "/us",
+  "en-GB": "/uk",
+  "en-AU": "/australia",
+  "en-NZ": "/australia",
+  "en-IE": "/europe",
+  "en-DE": "/europe",
+  "en-FR": "/europe",
+  "en-NL": "/europe",
+  "en-BE": "/europe",
+  "en-ES": "/europe",
+  "en-IT": "/europe",
+  "en-SE": "/europe",
+  "en-DK": "/europe",
+  "x-default": "/",
+};

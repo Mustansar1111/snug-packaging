@@ -1,4 +1,4 @@
-import { lowerName } from "@/lib/site";
+import { lowerName, og } from "@/lib/site";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Custom Packaging by Industry",
   description: "Custom packaging for cosmetics, food and bakery, apparel, CBD and candles, subscription boxes and retail. From 100 units, with a free proof.",
   alternates: { canonical: "/industries" },
+  openGraph: og("/industries", { defaultImage: true }),
 };
 
 export default function IndustriesPage() {

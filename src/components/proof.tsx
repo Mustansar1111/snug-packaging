@@ -51,15 +51,15 @@ export function ShopTabs() {
         <Tabs
           label="Shop packaging by"
           tabs={[
-            { key: "style", label: "By style", panel: <><CategoryGrid cats={featuredCategories()} />{link("/packaging", `See all ${categories.length} styles`)}</> },
-            { key: "industry", label: "By industry", panel: <><CategoryGrid cats={industryCategories()} />{link("/packaging#industries", "See every industry")}</> },
+            { key: "style", label: "By style", panel: <><CategoryGrid plain cats={featuredCategories()} />{link("/packaging", `See all ${categories.length} styles`)}</> },
+            { key: "industry", label: "By industry", panel: <><CategoryGrid plain cats={industryCategories()} />{link("/packaging#industries", "See every industry")}</> },
             ...materials.map((m) => ({
               key: m.key,
               label: m.label,
               panel: (
                 <>
                   <p className="group-blurb">{m.blurb}</p>
-                  <CategoryGrid cats={materialCategories(m.key).slice(0, 8)} />
+                  <CategoryGrid plain cats={materialCategories(m.key).slice(0, 8)} />
                   {link(`/packaging#${m.key}`, `See all ${m.label.toLowerCase()} packaging`)}
                 </>
               ),

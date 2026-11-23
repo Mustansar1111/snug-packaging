@@ -9,7 +9,7 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { Faq, JsonLd, Process } from "@/components/sections";
 import { categories } from "@/data/categories";
 import type { IconKey } from "@/data/types";
-import { areaServed, categoryFaqs, getCategory, joinList, metaDescription, relatedCategories, site, lowerName } from "@/lib/site";
+import { areaServed, categoryFaqs, getCategory, joinList, metaDescription, relatedCategories, site, lowerName, og } from "@/lib/site";
 import { getRichContent, type StyleEntry } from "@/data/categoryContent";
 import { CustomizeTabs, CategoryStats, WhyOrder } from "@/components/CategoryExtras";
 import { Guides } from "@/components/Guides";
@@ -51,6 +51,7 @@ export async function generateMetadata({ params }: PageProps<"/packaging/[slug]"
       `From ${site.moq} units, with a free 3D proof.`,
     ]),
     alternates: { canonical: `/packaging/${cat.slug}` },
+    openGraph: og(`/packaging/${cat.slug}`),
   };
 }
 
@@ -101,7 +102,15 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
             <div className="art-big photo" data-hero-photo>
               <span className="photo-badge">Free 3D mockup</span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={photo.src} alt={`Custom printed ${lowerName(cat.name)}`} width={1000} height={1000} fetchPriority="high" />
+              <img
+                src={photo.src}
+                srcSet={photo.srcSet}
+                sizes="(max-width: 860px) 90vw, 360px"
+                alt={`Custom printed ${lowerName(cat.name)}`}
+                width={600}
+                height={600}
+                fetchPriority="high"
+              />
             </div>
           ) : (
             <div className="art-big" aria-hidden="true">

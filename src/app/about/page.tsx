@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { QuoteSection } from "@/components/sections";
-import { site } from "@/lib/site";
+import { site, og } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About Snug: Custom Box Makers",
   description: "Snug Packaging makes custom printed boxes, bags and labels for growing brands in the USA, UK, Australia and Europe, from 100 units.",
   alternates: { canonical: "/about" },
+  openGraph: og("/about"),
 };
 
 export default function AboutPage() {

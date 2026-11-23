@@ -261,8 +261,13 @@ export function QuoteForm({ styles, defaultStyle, defaultCountry = "United State
       </div>
 
       <div className="pane done" data-step="4" hidden={step !== 4} aria-live="polite">
-        <h3>Thanks, your request is in.</h3>
-        <p>A packaging specialist will email you a price and options {quoteReply}, {quoteReplyDays}. Check your spam folder if nothing arrives.</p>
+        {/* Rendered only after sending, so pages don't carry a hidden "thanks" heading. */}
+        {step === 4 && (
+          <>
+            <h3>Thanks, your request is in.</h3>
+            <p>A packaging specialist will email you a price and options {quoteReply}, {quoteReplyDays}. Check your spam folder if nothing arrives.</p>
+          </>
+        )}
       </div>
 
       {step < 4 && (

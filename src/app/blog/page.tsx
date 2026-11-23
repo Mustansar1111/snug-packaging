@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/site";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { QuoteSection } from "@/components/sections";
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
   title: "Packaging Guides and Tips",
   description: "Practical guides to ordering custom packaging: choosing a box, measuring, artwork, color and finishes.",
   alternates: { canonical: "/blog" },
+  openGraph: og("/blog", { defaultImage: true }),
 };
 
 const fmt = (d: string) => new Date(`${d}T00:00:00Z`).toLocaleDateString("en-US", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });

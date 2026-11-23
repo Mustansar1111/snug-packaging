@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { QuoteSection } from "@/components/sections";
 import { Offices } from "@/components/Offices";
-import { site, whatsappHref } from "@/lib/site";
+import { site, whatsappHref, og } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact Snug Packaging",
+  title: "Contact Us for a Packaging Quote",
   description: "Questions about custom boxes? Email sales@snugpackaging.com, call or WhatsApp +1 (786) 885-8250. Offices in Bradford, UK and Airmont, New York.",
   alternates: { canonical: "/contact" },
+  openGraph: og("/contact", { defaultImage: true }),
 };
 
 export default function ContactPage() {

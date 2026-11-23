@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/site";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { Faq, QuoteSection } from "@/components/sections";
@@ -7,6 +8,7 @@ export const metadata: Metadata = {
   title: "Packaging Artwork Guide",
   description: "How to prepare artwork for custom printed boxes: file types, bleed, CMYK and Pantone color, resolution and fonts. Our designers check every file for free.",
   alternates: { canonical: "/artwork-guide" },
+  openGraph: og("/artwork-guide", { defaultImage: true }),
 };
 
 const rules = [
@@ -31,7 +33,7 @@ export default function ArtworkGuidePage() {
     <>
       <PageHero
         crumb="Artwork guide"
-        title="Get your artwork print-ready."
+        title="Packaging artwork guide: get your files print-ready."
         lede="Eight simple rules for artwork that prints sharp and lines up on the box. Our designers check every file for free before your proof."
       />
       <section className="block band">

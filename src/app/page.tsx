@@ -2,7 +2,13 @@ import Link from "next/link";
 import { FoldingBox } from "@/components/FoldingBox";
 import { Finishes, Reviews, ShopTabs, Stories, TrustBar, WhySnug } from "@/components/proof";
 import { Faq, Marquee, PopularLinks, Process, QuoteSection, RegionsBand, MockupBand } from "@/components/sections";
-import { generalFaqs, site } from "@/lib/site";
+import type { Metadata } from "next";
+import { generalFaqs, og, regionLanguages, site } from "@/lib/site";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/", languages: regionLanguages },
+  openGraph: og("/"),
+};
 
 export default function Home() {
   return (

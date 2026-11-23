@@ -5,7 +5,7 @@ import { CategoryGrid } from "@/components/CategoryCard";
 import { Reviews } from "@/components/proof";
 import { Faq, JsonLd, MockupBand, Process, QuoteSection } from "@/components/sections";
 import { getIndustry, industries } from "@/data/industries";
-import { getCategory, metaDescription, site, lowerName } from "@/lib/site";
+import { getCategory, metaDescription, site, lowerName, og } from "@/lib/site";
 import type { Category } from "@/data/types";
 import { Guides } from "@/components/Guides";
 import { guidesFor } from "@/data/posts";
@@ -21,6 +21,7 @@ export async function generateMetadata({ params }: PageProps<"/industries/[slug]
     title: ind.seo,
     description: metaDescription(ind.intro, ["Free design help and a 3D proof before you pay.", "Free design help and proof."]),
     alternates: { canonical: `/industries/${ind.slug}` },
+    openGraph: og(`/industries/${ind.slug}`),
   };
 }
 
