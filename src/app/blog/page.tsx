@@ -24,6 +24,10 @@ export default function BlogIndex() {
             {posts.map((p) => (
               <li key={p.slug}>
                 <Link href={`/blog/${p.slug}`}>
+                  {p.image && (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img className="post-thumb" src={p.image.webpSm} alt={p.image.alt} width={836} height={470} loading="lazy" decoding="async" />
+                  )}
                   <p className="post-meta">{p.tag} · <time dateTime={p.date}>{fmt(p.date)}</time> · {p.readMins} min read</p>
                   <h2>{p.title}</h2>
                   <p>{p.description}</p>

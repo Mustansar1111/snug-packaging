@@ -421,6 +421,11 @@ footer.site-foot p a:hover { color: var(--hero-ink); }
 
 /* prose (legal, about) */
 .prose { max-width: 68ch; display: grid; gap: 16px; }
+.post-hero-img { margin: 0 0 8px; display: grid; gap: 10px; }
+.post-hero-img img { width: 100%; height: auto; border-radius: var(--radius); display: block; }
+.post-hero-img figcaption { font-size: 14px; color: var(--muted); }
+.post-brief { margin: 0; padding: 18px 20px; border-left: 4px solid var(--plum); background: var(--surface); border-radius: 0 var(--radius) var(--radius) 0; color: var(--ink); font-style: italic; }
+.posts .post-thumb { width: 100%; height: auto; border-radius: calc(var(--radius) - 4px); display: block; }
 .prose h2 { font-size: 28px; margin-top: 24px; }
 .prose p, .prose li { color: var(--muted); }
 

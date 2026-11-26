@@ -5,6 +5,7 @@ import { regions } from "@/data/regions";
 import { site } from "@/lib/site";
 import { QuoteForm } from "./QuoteForm";
 import { MockupForm } from "./MockupForm";
+import { withLinks } from "@/lib/withLinks";
 
 export function JsonLd({ data }: { data: object }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, "\\u003c") }} />;
@@ -24,7 +25,7 @@ export function Faq({ items, title = "Good to know." }: { items: { q: string; a:
           {items.map((f, i) => (
             <details key={f.q} open={i === 0}>
               <summary>{f.q}</summary>
-              <p>{f.a}</p>
+              <p>{withLinks(f.a)}</p>
             </details>
           ))}
         </div>
@@ -33,7 +34,7 @@ export function Faq({ items, title = "Good to know." }: { items: { q: string; a:
         data={{
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          mainEntity: items.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+          mainEntity: items.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1") } })),
         }}
       />
     </section>
