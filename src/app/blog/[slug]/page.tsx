@@ -33,10 +33,12 @@ export async function generateMetadata({ params }: PageProps<"/blog/[slug]">): P
   };
 }
 
+const anchor = (h: string) => h.toLowerCase().replace(/[\u2018\u2019']/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
 function Section({ b }: { b: Block }) {
   return (
     <div style={{ display: "grid", gap: 14 }}>
-      {b.h && <h2>{b.h}</h2>}
+      {b.h && <h2 id={anchor(b.h)}>{b.h}</h2>}
       {b.p?.map((t) => <p key={t}>{withLinks(t)}</p>)}
       {b.list && (
         <ul>
@@ -54,34 +56,63 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
   const post = getPost((await params).slug);
   if (!post) notFound();
   const related = post.related.map(getCategory).filter((c): c is Category => Boolean(c));
+  const toc = [
+    ...post.body.filter((b) => b.h).map((b) => ({ id: anchor(b.h!), h: b.h! })),
+    ...(post.faq ? [{ id: "faq", h: "Frequently asked questions" }] : []),
+    ...(post.outro?.h ? [{ id: anchor(post.outro.h), h: post.outro.h }] : []),
+  ];
   return (
-    <>
-      <section className="page-hero band on-dark">
+    <div className="post-page">
+      <section className={post.image ? "page-hero post-hero has-img band on-dark" : "page-hero post-hero band on-dark"}>
         <div className="wrap">
-          <nav className="crumbs" aria-label="Breadcrumb">
-            <Link href="/">Home</Link> <span>/</span> <Link href="/blog">Blog</Link> <span>/</span> <span>{post.tag}</span>
-          </nav>
-          <h1 style={{ maxWidth: "18em" }}>{post.title}</h1>
-          <p className="lede">{post.description}</p>
-          <p className="post-byline">
-            {post.author ? `By ${post.author}` : site.author.name ? `By ${site.author.name}${site.author.role ? `, ${site.author.role}` : ""}` : "By the Snug Packaging team"} · <time dateTime={post.date}>{new Date(`${post.date}T00:00:00Z`).toLocaleDateString("en-US", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" })}</time> · {post.readMins} min read
-          </p>
-        </div>
-      </section>
-      <article className="block band">
-        <div className="wrap prose">
+          <div className="post-hero-text">
+            <nav className="crumbs" aria-label="Breadcrumb">
+              <Link href="/">Home</Link> <span>/</span> <Link href="/blog">Blog</Link> <span>/</span> <span>{post.tag}</span>
+            </nav>
+            <h1>{post.title}</h1>
+            <p className="lede">{post.description}</p>
+            <p className="post-byline">
+              {post.author ? `By ${post.author}` : site.author.name ? `By ${site.author.name}${site.author.role ? `, ${site.author.role}` : ""}` : "By the Snug Packaging team"} · <time dateTime={post.date}>{new Date(`${post.date}T00:00:00Z`).toLocaleDateString("en-US", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" })}</time> · {post.readMins} min read
+            </p>
+          </div>
           {post.image && (
             <figure className="post-hero-img">
               <picture>
-                <source type="image/webp" srcSet={`${post.image.webpSm} 836w, ${post.image.webp} ${post.image.width}w`} sizes="(max-width: 760px) 100vw, 68ch" />
+                <source type="image/webp" srcSet={`${post.image.webpSm} 836w, ${post.image.webp} ${post.image.width}w`} sizes="(max-width: 960px) 100vw, 560px" />
                 <img src={post.image.src} alt={post.image.alt} title={post.image.title} width={post.image.width} height={post.image.height} fetchPriority="high" decoding="async" />
               </picture>
               <figcaption>{post.image.caption}</figcaption>
             </figure>
           )}
-          {post.body.map((b, i) => (
-            <Section key={i} b={b} />
-          ))}
+        </div>
+      </section>
+      <article className="block band post-body">
+        <div className="wrap post-layout">
+          <div className="prose">
+            {post.body.map((b, i) => (
+              <Section key={i} b={b} />
+            ))}
+          </div>
+          <aside className="post-aside" aria-label="In this guide">
+            {toc.length > 1 && (
+              <nav className="post-toc">
+                <p className="eyebrow">In this guide</p>
+                <ol>
+                  {toc.map((t) => (
+                    <li key={t.id}>
+                      <a href={`#${t.id}`}>{t.h}</a>
+                    </li>
+                  ))}
+                </ol>
+              </nav>
+            )}
+            <div className="post-cta">
+              <p className="post-cta-title">Get a price for your boxes</p>
+              <p>Send your size and quantity. We reply with a free quote, usually within 24 hours on weekdays.</p>
+              <Link className="btn btn-apricot" href="/quote">Get a quote</Link>
+              <Link className="post-cta-link" href="/free-mockup">Or ask for a free mockup →</Link>
+            </div>
+          </aside>
         </div>
       </article>
       {post.faq && <Faq items={post.faq} title="Frequently asked questions." />}
@@ -159,6 +190,6 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
           ],
         }}
       />
-    </>
+    </div>
   );
 }
