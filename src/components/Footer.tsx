@@ -14,8 +14,8 @@ export function Footer() {
         <div className="wrap">
           <div>
             <Link className="logo" href="/">
-              <b>snug</b>
-              <span>packaging</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/snug-logo.svg" alt="Snug Packaging" width={1332} height={402} />
             </Link>
             <p style={{ marginTop: 14, maxWidth: "28em" }}>
               Custom printed boxes, bags and labels for brands in the USA, UK, Australia and Europe.

@@ -98,8 +98,8 @@ export function Header({ phone, email, social = {} }: { phone?: string; email?: 
       </div>
       <div className="wrap">
         <Link className="logo" href="/" aria-label="Snug Packaging home">
-          <b>snug</b>
-          <span>packaging</span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/snug-logo.svg" alt="Snug Packaging" width={1332} height={402} />
         </Link>
         <nav className="nav" aria-label="Main" ref={navRef}>
           {links.map((l) =>
