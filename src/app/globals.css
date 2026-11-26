@@ -164,9 +164,30 @@ section.block { padding-block: 88px; }
 /* process */
 .process { background: var(--surface); border-block: 1px solid var(--line); }
 .steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; }
-.step { padding: 8px 24px 8px 0; border-top: 2px solid var(--line); position: relative; }
-.step .bar { position: absolute; top: -2px; left: 0; height: 2px; width: 100%; background: var(--plum); transform-origin: 0 50%; }
-.step .n { font: 500 12px/1 var(--mono); color: var(--apricot-ink); margin-top: 22px; display: block; }
+.step { padding: 8px 24px 8px 0; position: relative; }
+.step .n { font: 500 12px/1 var(--mono); color: var(--apricot-ink); margin-top: 14px; display: block; }
+/* Delivery road above the steps (markup in sections.tsx, animation in lib/deliveryRoad.ts). */
+.road { --house: 72px; --van: 106px; --y: 70px; position: relative; height: 82px; margin-top: 8px; overflow-x: clip; pointer-events: none; }
+.road-base, .road-fill { position: absolute; left: 0; top: var(--y); height: 2px; }
+.road-base { right: 0; background: var(--line); }
+.road-fill { right: calc(var(--house) + 6px); height: 3px; margin-top: -0.5px; border-radius: 2px; background: var(--plum); transform-origin: 0 50%; }
+.stop { position: absolute; left: calc(var(--i) * 25%); top: calc(var(--y) - 11px); width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--plum); background: var(--surface); display: grid; place-items: center; }
+.stop-fill { position: absolute; inset: -2px; border-radius: 50%; background: var(--apricot); }
+.stop-n { position: relative; font: 600 11px/1 var(--mono); color: #2a1306; }
+.rig { position: absolute; z-index: 2; top: calc(var(--y) - var(--van) * 50 / 92); left: calc(100% - var(--house) - var(--van) - 10px); width: var(--van); }
+.van { display: block; width: 100%; height: auto; overflow: visible; }
+.puffs { position: absolute; left: -4px; bottom: 22%; }
+.puffs i { position: absolute; left: 0; bottom: 0; width: 9px; height: 9px; border-radius: 50%; background: color-mix(in srgb, var(--muted) 35%, transparent); opacity: 0; }
+.house { position: absolute; right: 0; top: calc(var(--y) - var(--house) * 59 / 64); width: var(--house); height: var(--house); }
+.parcel { position: absolute; z-index: 1; width: calc(var(--house) * .3); top: calc(var(--y) - var(--house) * .27); left: calc(100% - var(--house) * .88); }
+.delivered { position: absolute; z-index: 1; right: -4px; top: calc(var(--y) - var(--house) - 6px); width: 22px; height: 22px; border-radius: 50%; background: var(--apricot); color: #2a1306; display: grid; place-items: center; box-shadow: 0 4px 12px rgb(0 0 0 / .15); }
+.delivered svg { width: 14px; height: 14px; }
+.road-live .step > * { opacity: 0; transform: translateY(22px); }
+/* Phones and tablets: smaller scene, and the four stops share the stretch before the van's parking spot. */
+@media (max-width: 860px) {
+  .road { --van: 76px; --house: 58px; --y: 58px; height: 70px; margin-bottom: 4px; }
+  .stop { left: calc((100% - var(--house) - var(--van) - 34px) * var(--i) / 3); }
+}
 .step h3 { font-size: 24px; margin-top: 12px; }
 .step p { color: var(--muted); margin-top: 10px; font-size: 15px; }
 @media (max-width: 860px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 32px; } }

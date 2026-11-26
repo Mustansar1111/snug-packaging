@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { animateDeliveryRoad } from "@/lib/deliveryRoad";
 
 /** Scroll to an element smoothly (native smooth scrolling, set in globals.css). */
 function scrollToEl(el: HTMLElement) {
@@ -82,6 +83,7 @@ export function Motion() {
       const [{ default: gsap }, { ScrollTrigger }] = await Promise.all([import("gsap"), import("gsap/ScrollTrigger")]);
       if (cancelled) return;
       gsap.registerPlugin(ScrollTrigger);
+      let undoRoad: (() => void) | undefined;
       const ctx = gsap.context(() => {
         const reveal = (targets: Element[], trigger: Element, vars: gsap.TweenVars, start = "top 90%") => {
           if (!targets.length || !belowFold(trigger)) return;
@@ -90,8 +92,8 @@ export function Motion() {
         document.querySelectorAll("[data-reveal-group]").forEach((group) =>
           reveal([...group.children], group, { y: 36, rotationX: -8, transformPerspective: 800, duration: 0.8, stagger: 0.06, ease: "power3.out" }),
         );
-        const steps = document.querySelector(".steps");
-        if (steps) reveal([...document.querySelectorAll(".step .bar")], steps, { scaleX: 0, duration: 0.8, stagger: 0.25, ease: "power2.out" }, "top 80%");
+        // "How it works": the van drives along the road and delivers a box at step 4.
+        undoRoad = animateDeliveryRoad(gsap, ScrollTrigger, belowFold);
         // Section headings rise in as they scroll into view.
         document.querySelectorAll(".head").forEach((h) => reveal([...h.children], h, { y: 28, duration: 0.9, stagger: 0.08, ease: "power3.out" }, "top 88%"));
         // Spec table rows slide in one by one.
@@ -104,7 +106,10 @@ export function Motion() {
         if (track) gsap.to(track, { xPercent: -50, duration: 40, ease: "none", repeat: -1 });
       });
       ScrollTrigger.refresh();
-      revert = () => ctx.revert();
+      revert = () => {
+        ctx.revert();
+        undoRoad?.();
+      };
     });
     return () => {
       cancelled = true;
