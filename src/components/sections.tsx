@@ -1,3 +1,4 @@
+import type React from "react";
 import Link from "next/link";
 import { categories } from "@/data/categories";
 import { regions } from "@/data/regions";
@@ -71,10 +72,10 @@ export function Process() {
           </div>
           <p>You never pay for anything you haven&apos;t seen. Every order starts with a free digital proof.</p>
         </div>
+        <DeliveryRoad />
         <div className="steps">
           {steps.map((s, i) => (
             <div className="step" key={s.h}>
-              <span className="bar" />
               <span className="n">Step {i + 1}</span>
               <h3>{s.h}</h3>
               <p>{s.p}</p>
@@ -83,6 +84,74 @@ export function Process() {
         </div>
       </div>
     </section>
+  );
+}
+
+/**
+ * The road above the four steps: a Snug van drives from step 1 to a house at the end and drops a box on
+ * the doorstep. This markup is the finished scene (van parked, box delivered), which is what visitors see
+ * without JavaScript or with reduced motion. Motion.tsx scrubs it with GSAP as the section scrolls by.
+ */
+function DeliveryRoad() {
+  return (
+    <div className="road" aria-hidden="true">
+      <span className="road-base" />
+      <span className="road-fill" />
+      {[1, 2, 3, 4].map((n) => (
+        <span className="stop" key={n} style={{ "--i": n - 1 } as React.CSSProperties}>
+          <span className="stop-fill" />
+          <span className="stop-n">{n}</span>
+        </span>
+      ))}
+      <span className="rig">
+        <span className="puffs">
+          <i />
+          <i />
+          <i />
+        </span>
+        <svg className="van" viewBox="0 0 92 52">
+          <g className="van-body">
+            <rect x="2" y="4" width="58" height="34" rx="5" fill="var(--box)" />
+            <rect x="2" y="30" width="58" height="4" fill="var(--apricot)" />
+            <text x="31" y="24" textAnchor="middle" fill="var(--apricot)" fontSize="14" fontWeight="800" fontFamily="var(--display)" letterSpacing="-0.5">
+              snug
+            </text>
+            <path d="M62 14h14.5c2 0 3.8 1.1 4.8 2.8l6.2 10.6c.6 1 .9 2.1.9 3.2V38H62z" fill="var(--apricot)" />
+            <path d="M66 18h9.5c1 0 1.9.5 2.4 1.4l3.6 6.6H66z" fill="#fbf3f8" opacity=".85" />
+            <rect x="84" y="31" width="4" height="3" rx="1.5" fill="#fff6c8" />
+            <rect x="0" y="36" width="90" height="4" rx="2" fill="var(--box-shade)" />
+          </g>
+          <g className="wheel">
+            <circle cx="20" cy="42" r="8" fill="#1d1422" />
+            <circle cx="20" cy="42" r="3.5" fill="#e9e1ec" />
+            <rect x="19" y="35" width="2" height="5" rx="1" fill="#e9e1ec" />
+          </g>
+          <g className="wheel">
+            <circle cx="74" cy="42" r="8" fill="#1d1422" />
+            <circle cx="74" cy="42" r="3.5" fill="#e9e1ec" />
+            <rect x="73" y="35" width="2" height="5" rx="1" fill="#e9e1ec" />
+          </g>
+        </svg>
+      </span>
+      <svg className="parcel" viewBox="0 0 20 18">
+        <path d="M1 5h18v12H1z" fill="var(--box-inside)" />
+        <path d="M1 5l3-4h12l3 4z" fill="color-mix(in srgb, var(--box-inside) 75%, #000)" />
+        <rect x="8.5" y="1" width="3" height="16" fill="var(--box)" opacity=".55" />
+      </svg>
+      <svg className="house" viewBox="0 0 64 64">
+        <path d="M6 30L32 8l26 22" fill="none" stroke="var(--box)" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M12 28v28h40V28L32 11z" fill="var(--plum-soft)" />
+        <rect x="27" y="38" width="12" height="18" rx="2" fill="var(--box)" />
+        <circle cx="36" cy="47.5" r="1.2" fill="var(--apricot)" />
+        <rect className="house-window" x="42" y="33" width="7" height="7" rx="1.5" fill="var(--apricot)" />
+        <rect x="23" y="56" width="20" height="3" rx="1" fill="var(--box-shade)" />
+      </svg>
+      <span className="delivered">
+        <svg viewBox="0 0 16 16">
+          <path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </span>
+    </div>
   );
 }
 
