@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { CategoryGrid } from "@/components/CategoryCard";
 import { Tabs } from "@/components/Tabs";
@@ -283,6 +284,65 @@ const finishes = [
   { key: "insert", name: "Inserts", note: "Card or foam to hold each item" },
 ];
 
+/**
+ * The moving parts inside each finish swatch. At rest they draw the finish as a still picture
+ * (also what reduced-motion visitors see); src/lib/finishesMotion.ts brings each one to life.
+ */
+function Swatch({ kind }: { kind: string }) {
+  const parts: Record<string, ReactNode> = {
+    matte: <i className="fx-light" />,
+    gloss: (
+      <>
+        <i className="fx-shine" />
+        <i className="fx-streak" />
+      </>
+    ),
+    soft: (
+      <>
+        <i className="fx-nap" />
+        <i className="fx-press" />
+      </>
+    ),
+    foil: (
+      <>
+        <i className="fx-spark" />
+        <i className="fx-spark" />
+        <i className="fx-spark" />
+      </>
+    ),
+    uv: (
+      <>
+        <i className="fx-ring" />
+        <i className="fx-dot">
+          <i className="fx-glint" />
+        </i>
+      </>
+    ),
+    emboss: <i className="fx-letter">S</i>,
+    window: (
+      <i className="fx-pane">
+        <i className="fx-product" />
+        <i className="fx-glare" />
+        <i className="fx-sheen" />
+      </i>
+    ),
+    insert: (
+      <>
+        {[0, 1, 2].map((n) => (
+          <i key={n} className="fx-slot">
+            <i className="fx-item" />
+          </i>
+        ))}
+      </>
+    ),
+  };
+  return (
+    <span className={`sw sw-${kind}`} aria-hidden="true">
+      {parts[kind]}
+    </span>
+  );
+}
+
 /** Finishes strip. Swap each swatch for a close-up photo or 10-second video once they are shot. */
 export function Finishes() {
   return (
@@ -295,10 +355,10 @@ export function Finishes() {
           </div>
           <p>Add any of these to your box. Not sure which? Ask for a free 3D mockup and we&apos;ll show you.</p>
         </div>
-        <ul className="finishes" data-reveal-group>
+        <ul className="finishes" data-reveal-group data-finishes>
           {finishes.map((f) => (
-            <li key={f.key}>
-              <span className={`sw sw-${f.key}`} aria-hidden="true" />
+            <li key={f.key} data-finish={f.key}>
+              <Swatch kind={f.key} />
               <b>{f.name}</b>
               <span>{f.note}</span>
             </li>
