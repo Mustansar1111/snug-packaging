@@ -316,18 +316,50 @@ section.block { padding-block: 88px; }
 .finishes li { display: grid; gap: 6px; align-content: start; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
 .finishes b { font: 600 17px/1.25 var(--display); }
 .finishes li > span:last-child { font-size: 14px; color: var(--muted); }
-.sw { display: block; height: 96px; border-radius: 10px; margin-bottom: 8px; position: relative; overflow: hidden; }
+.sw { display: block; height: 96px; border-radius: 10px; margin-bottom: 8px; position: relative; overflow: hidden; isolation: isolate; clip-path: inset(0 round 10px); }
+/* Each swatch is a still picture of its finish at rest (src/lib/finishesMotion.ts animates the parts). */
+.sw i { position: absolute; display: block; pointer-events: none; }
+.finishes li { transition: translate .45s cubic-bezier(.2,.7,.2,1), box-shadow .45s cubic-bezier(.2,.7,.2,1), border-color .45s; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .finishes li:hover { translate: 0 -4px; box-shadow: 0 14px 30px -18px rgb(59 21 54 / .45); border-color: color-mix(in srgb, var(--plum) 30%, var(--line)); }
+}
+/* Matte: flat colour; light lands softly and spreads without any shine. */
 .sw-matte { background: var(--box); }
-.sw-gloss { background: linear-gradient(120deg, transparent 40%, rgb(255 255 255 / 0.45) 50%, transparent 60%), var(--box); }
+.sw-matte .fx-light { width: 80%; aspect-ratio: 1; left: -15%; top: -55%; border-radius: 50%; background: radial-gradient(circle, rgb(255 255 255 / .13), transparent 68%); opacity: .7; }
+/* Gloss: a crisp reflection, and a bright streak that sweeps across. */
+.sw-gloss { background: linear-gradient(180deg, rgb(255 255 255 / .12), transparent 45%), var(--box); }
+.sw-gloss .fx-shine, .sw-gloss .fx-streak { top: -40%; height: 180%; rotate: 20deg; }
+.sw-gloss .fx-shine { left: 38%; width: 14%; background: linear-gradient(90deg, transparent, rgb(255 255 255 / .42) 50%, transparent); }
+.sw-gloss .fx-streak { left: 0; width: 30%; background: linear-gradient(90deg, transparent, rgb(255 255 255 / .85) 45%, #fff 50%, rgb(255 255 255 / .85) 55%, transparent); translate: -330% 0; }
+/* Soft-touch: velvety, light falls off gently; a fingertip leaves a soft press. */
 .sw-soft { background: radial-gradient(circle at 30% 30%, #8a4a7f, #5a2150); }
-.sw-foil { background: linear-gradient(110deg, #b8892b, #f6e19a 35%, #c79a3a 50%, #e8e8ee 65%, #9aa0a8); }
-.sw-uv { background: radial-gradient(circle, rgb(255 255 255 / 0.5) 0 18px, transparent 19px), radial-gradient(circle, #7a3170 0 22px, transparent 23px), var(--box-shade); }
+.sw-soft .fx-nap { inset: 0; background: linear-gradient(100deg, transparent 20%, rgb(255 255 255 / .14) 45%, transparent 70%); opacity: 0; }
+.sw-soft .fx-press { width: 58px; height: 58px; left: calc(62% - 29px); top: calc(50% - 29px); border-radius: 50%; background: radial-gradient(circle, rgb(30 0 25 / .34), rgb(30 0 25 / .12) 55%, transparent 72%); box-shadow: 0 0 0 1px rgb(255 255 255 / .05); opacity: 0; }
+/* Foil: a metallic gradient that catches the light as it moves, with a few glints. */
+.sw-foil { background: linear-gradient(110deg, #9aa0a8, #e8e8ee 10%, #b8892b 22%, #f6e19a 32%, #c79a3a 42%, #fff3c4 50%, #c79a3a 58%, #e8e8ee 70%, #c8b6e2 78%, #f3d3e6 84%, #9aa0a8) 20% 50% / 260% 100%; }
+.sw-foil .fx-spark { width: 16px; height: 16px; background: #fff; clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%); opacity: 0; filter: drop-shadow(0 0 3px #fff); }
+.sw-foil .fx-spark:nth-child(1) { left: 22%; top: 24%; }
+.sw-foil .fx-spark:nth-child(2) { left: 58%; top: 58%; width: 12px; height: 12px; }
+.sw-foil .fx-spark:nth-child(3) { left: 80%; top: 18%; width: 10px; height: 10px; }
+/* Spot UV: a matte base with one glossy raised dot. */
+.sw-uv { background: var(--box-shade); }
+.sw-uv .fx-dot, .sw-uv .fx-ring { width: 44px; height: 44px; left: calc(50% - 22px); top: calc(50% - 22px); border-radius: 50%; }
+.sw-uv .fx-dot { overflow: hidden; background: radial-gradient(circle at 36% 32%, rgb(255 255 255 / .75), transparent 28%), radial-gradient(circle, rgb(255 255 255 / .42) 0 17px, transparent 18px), #7a3170; box-shadow: 0 1px 2px rgb(0 0 0 / .25); }
+.sw-uv .fx-glint { top: -20%; left: 0; width: 35%; height: 140%; rotate: 25deg; background: linear-gradient(90deg, transparent, rgb(255 255 255 / .9), transparent); translate: -220% 0; }
+.sw-uv .fx-ring { border: 1.5px solid rgb(255 255 255 / .5); opacity: 0; }
+/* Emboss & deboss: the logo rises out of the board, then presses in. */
 .sw-emboss { background: var(--plum-soft); }
-.sw-emboss::after { content: "M"; position: absolute; inset: 0; display: grid; place-items: center; font: 700 46px var(--display); color: var(--plum-soft); text-shadow: -1px -1px 0 #fff, 2px 2px 3px rgb(0 0 0 / 0.22); }
+.sw-emboss .fx-letter { inset: 0; display: grid; place-items: center; font: 700 50px/1 var(--display); font-style: normal; color: var(--plum-soft); text-shadow: -1px -1px 0 rgb(255 255 255 / 1), 2px 2px 3px rgb(0 0 0 / .22); }
+/* Window: a clear cut-out with the product sitting behind it. */
 .sw-window { background: var(--box); }
-.sw-window::after { content: ""; position: absolute; inset: 22% 30%; border-radius: 8px; background: linear-gradient(135deg, rgb(255 255 255 / .75), rgb(255 255 255 / .35)); box-shadow: inset 0 0 0 2px rgb(255 255 255 / .6); }
-.sw-insert { background: var(--box-inside); }
-.sw-insert::after { content: ""; position: absolute; inset: 18% 12%; background: radial-gradient(circle, var(--box-shade) 0 13px, transparent 14px) 0 0 / 33.3% 100%; }
+.sw-window .fx-pane { inset: 20% 30%; border-radius: 8px; overflow: hidden; background: var(--box-inside); box-shadow: inset 0 0 0 2px rgb(255 255 255 / .6), inset 0 6px 10px rgb(0 0 0 / .18); }
+.sw-window .fx-product { width: 30%; height: 72%; left: 35%; bottom: -4%; border-radius: 6px 6px 3px 3px; background: linear-gradient(90deg, rgb(255 255 255 / .35), transparent 40%), var(--apricot); box-shadow: 0 -7px 0 -2px var(--box-shade); }
+.sw-window .fx-glare { inset: 0; background: linear-gradient(135deg, rgb(255 255 255 / .5), rgb(255 255 255 / .12) 45%, rgb(255 255 255 / 0) 60%); }
+.sw-window .fx-sheen { top: -30%; left: 0; width: 40%; height: 160%; rotate: 25deg; background: linear-gradient(90deg, transparent, rgb(255 255 255 / .7), transparent); translate: -200% 0; }
+/* Inserts: each item sits snug in its own slot. */
+.sw-insert { background: var(--box-inside); display: flex; align-items: center; justify-content: space-evenly; padding-inline: 8%; }
+.sw-insert .fx-slot { position: relative; width: 30px; height: 30px; border-radius: 50%; background: color-mix(in srgb, var(--box-inside) 70%, #000); box-shadow: inset 0 3px 5px rgb(0 0 0 / .35); }
+.sw-insert .fx-item { inset: 2px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, rgb(255 255 255 / .35), transparent 45%), var(--box-shade); }
 
 /* closing call to action */
 .cta-band { background: var(--plum); color: var(--hero-ink); }

@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { animateDeliveryRoad } from "@/lib/deliveryRoad";
+import { animateFinishes } from "@/lib/finishesMotion";
 
 /** Scroll to an element smoothly (native smooth scrolling, set in globals.css). */
 function scrollToEl(el: HTMLElement) {
@@ -84,6 +85,7 @@ export function Motion() {
       if (cancelled) return;
       gsap.registerPlugin(ScrollTrigger);
       let undoRoad: (() => void) | undefined;
+      let undoFinishes: (() => void) | undefined;
       const ctx = gsap.context(() => {
         const reveal = (targets: Element[], trigger: Element, vars: gsap.TweenVars, start = "top 90%") => {
           if (!targets.length || !belowFold(trigger)) return;
@@ -94,6 +96,8 @@ export function Motion() {
         );
         // "How it works": the van drives along the road and delivers a box at step 4.
         undoRoad = animateDeliveryRoad(gsap, ScrollTrigger, belowFold);
+        // "Finishes": each swatch acts out its own finish (gloss sweeps, foil glints, emboss rises...).
+        undoFinishes = animateFinishes(gsap, ScrollTrigger);
         // Section headings rise in as they scroll into view.
         document.querySelectorAll(".head").forEach((h) => reveal([...h.children], h, { y: 28, duration: 0.9, stagger: 0.08, ease: "power3.out" }, "top 88%"));
         // Spec table rows slide in one by one.
@@ -109,6 +113,7 @@ export function Motion() {
       revert = () => {
         ctx.revert();
         undoRoad?.();
+        undoFinishes?.();
       };
     });
     return () => {
