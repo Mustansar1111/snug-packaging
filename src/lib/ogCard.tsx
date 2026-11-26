@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { LogoSvg } from "./logo";
 
 export const ogSize = { width: 1200, height: 630 };
 
@@ -19,9 +20,8 @@ export function ogCard({ kicker, title, sub }: { kicker: string; title: string; 
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "baseline", gap: 14 }}>
-          <span style={{ fontSize: 56, fontWeight: 800, letterSpacing: -2 }}>snug</span>
-          <span style={{ fontSize: 22, letterSpacing: 6, opacity: 0.75 }}>PACKAGING</span>
+        <div style={{ display: "flex" }}>
+          <LogoSvg width={300} />
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
           <span style={{ fontSize: 26, letterSpacing: 4, color: "#f2a65a", textTransform: "uppercase" }}>{kicker}</span>
