@@ -11,6 +11,14 @@ export type Industry = {
   defaultStyle: string;
   needs: { h: string; p: string }[];
   faqs: { q: string; a: string }[];
+  /** Optional meta description. Falls back to the intro. */
+  description?: string;
+  /** Optional short answer shown under the hero, written to be quotable on its own. */
+  answer?: { q: string; a: string };
+  /** Optional long-form guide: question headings with short answers. Links use [text](/path). */
+  guide?: { q: string; a: string[] }[];
+  /** Optional blog guides to feature, by post slug. */
+  posts?: string[];
 };
 
 export const industries: Industry[] = [
@@ -73,7 +81,13 @@ export const industries: Industry[] = [
     name: "CBD & candles",
     title: "Custom CBD, hemp and candle boxes.",
     seo: "Custom CBD Boxes & Candle Packaging",
+    description:
+      "Custom CBD boxes, mylar pouches and candle boxes with inserts for glass, printed with room for dosage, batch and warning text. From 100 units.",
     intro: "CBD and pre-roll boxes, mylar pouches and candle boxes with inserts, printed from 100 units.",
+    answer: {
+      q: "Why are CBD and candle packaging grouped together?",
+      a: "CBD products and candles have the same three packaging problems: heavy glass that needs an insert, a lot of required text on a small box, and shoppers who judge quality by the packaging. Many wellness and home fragrance brands also sell both, so one supplier and one design system keeps the range consistent.",
+    },
     styles: ["cbd-boxes", "hemp-boxes", "pre-roll-boxes", "mylar-bags", "candle-boxes", "tube-packaging", "labels-and-stickers", "rigid-boxes"],
     defaultStyle: "CBD Boxes",
     needs: [
@@ -81,10 +95,42 @@ export const industries: Industry[] = [
       { h: "Inserts for glass", p: "Card inserts hold candle jars and tincture bottles in place." },
       { h: "Smell-proof pouches", p: "Mylar pouches with zip closures keep products fresh." },
     ],
+    guide: [
+      {
+        q: "What should a CBD box include?",
+        a: [
+          "Most CBD cartons carry the product name, CBD strength per serving and per pack, ingredients, directions, warnings, a batch number and a QR code to lab results. Rules change between countries and states, so confirm what applies to you before artwork is final. We print the wording you supply and leave room for it on the dieline.",
+          "For tinctures and oils, see [CBD oil boxes](/packaging/cbd-oil-boxes). For gummies and edibles, see [CBD gummies boxes](/packaging/cbd-gummies-boxes).",
+        ],
+      },
+      {
+        q: "How do you keep a candle jar safe in a box?",
+        a: [
+          "Size the box closely to the jar and add a card collar or die-cut insert so the glass can't touch the walls. For posting, use E-flute corrugated or ship the candle box inside a [mailer box](/packaging/mailer-boxes). Our [candle boxes](/packaging/candle-boxes) page covers lids, tins and wax melts.",
+        ],
+      },
+      {
+        q: "Box or pouch for CBD flower, gummies and pre-rolls?",
+        a: [
+          "Pouches are lighter and, when heat-sealed, hold in smell and keep out moisture. A printed [mylar bag](/packaging/mylar-bags) works on its own or inside a carton. Boxes give more space for branding and stack better on a shelf. [Pre-roll boxes](/packaging/pre-roll-boxes) and [tubes](/packaging/tube-packaging) suit single pre-rolls and small packs.",
+        ],
+      },
+      {
+        q: "Which finishes suit CBD and candle brands?",
+        a: [
+          "Earthy brands lean on [kraft](/packaging/kraft-boxes) and [hemp-style boxes](/packaging/hemp-boxes) with one or two inks. Clinical CBD brands use clean white board and simple type. Luxury candles suit soft-touch, foil and a [rigid box](/packaging/rigid-boxes). Our [finishes guide](/blog/packaging-finishes-explained) explains each one.",
+        ],
+      },
+    ],
     faqs: [
       { q: "Can you add child-resistant features?", a: "Ask us in the quote form. Tell us what your market requires and we'll tell you what we can make." },
       { q: "Can candle boxes hold a glass jar safely?", a: "Yes. We add a card insert sized to your jar so it can't move in transit." },
+      { q: "Can I print a lab-results QR code on CBD boxes?", a: "Yes. Send the code or link and we'll place it where it scans easily." },
+      { q: "Are mylar bags smell-proof?", a: "When heat-sealed, mylar is highly smell-resistant. Boxes on their own are not." },
+      { q: "Do you make boxes for candle tins and wax melts?", a: "Yes. Send the size of the tin or clamshell and we'll suggest a box or sleeve." },
+      { q: "Can one order include CBD boxes and candle boxes?", a: "Yes. Each design has its own 100-unit minimum, and you can quote them together." },
     ],
+    posts: ["packaging-finishes-explained", "kraft-vs-white-boxes", "what-is-a-dieline"],
   },
   {
     slug: "subscription-boxes",

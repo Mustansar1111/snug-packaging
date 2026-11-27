@@ -8,7 +8,8 @@ import { getIndustry, industries } from "@/data/industries";
 import { getCategory, metaDescription, site, lowerName, og } from "@/lib/site";
 import type { Category } from "@/data/types";
 import { Guides } from "@/components/Guides";
-import { guidesFor } from "@/data/posts";
+import { getPost, guidesFor, type Post } from "@/data/posts";
+import { withLinks } from "@/lib/withLinks";
 
 export function generateStaticParams() {
   return industries.map((i) => ({ slug: i.slug }));
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: PageProps<"/industries/[slug]
   if (!ind) return { robots: { index: false } };
   return {
     title: ind.seo,
-    description: metaDescription(ind.intro, ["Free design help and a 3D proof before you pay.", "Free design help and proof."]),
+    description: ind.description ? metaDescription(ind.description) : metaDescription(ind.intro, ["Free design help and a 3D proof before you pay.", "Free design help and proof."]),
     alternates: { canonical: `/industries/${ind.slug}` },
     openGraph: og(`/industries/${ind.slug}`),
   };
@@ -29,6 +30,8 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[s
   const ind = getIndustry((await params).slug);
   if (!ind) notFound();
   const cats = ind.styles.map(getCategory).filter((c): c is Category => Boolean(c));
+  const featured = (ind.posts ?? []).map(getPost).filter((p): p is Post => Boolean(p));
+  const posts = featured.length ? featured : cats[0] ? guidesFor(cats[0]) : [];
   return (
     <>
       <section className="page-hero band on-dark">
@@ -79,12 +82,33 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[s
           </ul>
         </div>
       </section>
+      {ind.answer && (
+        <section className="block band" id="guide" style={{ paddingTop: 0 }}>
+          <div className="wrap guide-grid">
+            <div className="guide-side">
+              <p className="eyebrow">Buyer&apos;s guide</p>
+              <h2 className="h2">{ind.answer.q}</h2>
+              <p className="answer" style={{ color: "var(--muted)", marginTop: 14 }}>{ind.answer.a}</p>
+            </div>
+            <div className="guide-body">
+              {(ind.guide ?? []).map((g) => (
+                <article key={g.q}>
+                  <h3>{g.q}</h3>
+                  {g.a.map((t) => (
+                    <p key={t.slice(0, 24)}>{withLinks(t)}</p>
+                  ))}
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
       <Process />
       <QuoteSection defaultStyle={ind.defaultStyle} title={`Get a price for your ${lowerName(ind.name)} packaging.`} />
       <Reviews />
       <MockupBand />
       <Faq items={[...ind.faqs, { q: "What is the minimum order?", a: `You can order from ${site.moq} units for most styles.` }]} title={`${ind.name} packaging questions`} />
-      {cats[0] && <Guides posts={guidesFor(cats[0])} title={`Guides for ${lowerName(ind.name)} brands`} />}
+      <Guides posts={posts} title={`Guides for ${lowerName(ind.name)} brands`} />
       <JsonLd
         data={{
           "@context": "https://schema.org",

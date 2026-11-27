@@ -684,3 +684,16 @@ footer.site-foot .legal { grid-column: 1 / -1; border-top: 1px solid color-mix(i
 /* Scroll-reveal tilts can start a card a few pixels past the screen edge; clip stops the sideways wiggle
    without breaking the sticky header (unlike overflow: hidden). */
 html, body { overflow-x: clip; }
+
+/* long-form product pages: typical sizes beside the buyer questions */
+.deep-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: start; }
+.deep-sizes { position: sticky; top: 96px; padding: 28px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); }
+.deep-sizes h3 { font-size: clamp(22px, 2.4vw, 28px); margin-bottom: 8px; }
+.sizes-table caption { text-align: left; font: 500 12px/1.6 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 6px 0 4px; }
+.sizes-table thead th { width: auto; padding-top: 6px; }
+.sizes-table tbody th { font: inherit; text-transform: none; letter-spacing: 0; color: inherit; width: 46%; }
+.sizes-table td { white-space: nowrap; padding-right: 12px; }
+.deep-sizes .note { color: var(--muted); font-size: 14px; margin-top: 14px; }
+.industry-links { margin-top: 28px; text-align: center; color: var(--muted); }
+.answer { font-size: 18px; }
+@media (max-width: 860px) { .deep-grid { grid-template-columns: 1fr; gap: 24px; } .deep-sizes { position: static; padding: 20px; } .sizes-table td { white-space: normal; } }
