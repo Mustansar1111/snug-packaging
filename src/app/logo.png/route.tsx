@@ -1,6 +1,9 @@
 import { ImageResponse } from "next/og";
 import { LogoSvg, logoColors } from "@/lib/logo";
 
+/** Built once at deploy time (the site is a static export). */
+export const dynamic = "force-static";
+
 /** Square logo for Google (Organization schema needs a PNG of at least 112 px). */
 export function GET() {
   return new ImageResponse(

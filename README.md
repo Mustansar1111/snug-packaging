@@ -8,7 +8,8 @@ Quote-only (no prices on the site). Built with Next.js 16 (App Router), GSAP + S
 ```bash
 npm install
 npm run dev     # http://localhost:3000
-npm run build   # production build
+npm run build   # production build: the whole site as static files in out/
+npm run preview # serve out/ with the form handler, like Cloudflare does (http://localhost:8787)
 ```
 
 ## Where things live
@@ -22,7 +23,8 @@ npm run build   # production build
 | Folding-box hero animation | `src/components/FoldingBox.tsx` |
 | Scroll animations and smooth scrolling | `src/components/Motion.tsx` |
 | Quote and mockup forms | `src/components/QuoteForm.tsx`, `src/components/MockupForm.tsx` |
-| Form sending (Netlify Forms) | `src/lib/submitLead.ts`, `public/__forms.html` |
+| Form sending (emails each request) | `src/lib/submitLead.ts`, `worker/index.ts` |
+| Hosting config, redirects, headers | `wrangler.jsonc`, `public/_redirects`, `public/_headers` |
 | Logos, reviews, stories (placeholders) | `src/data/proof.ts` |
 | Industry pages, blog posts | `src/data/industries.ts`, `src/data/posts.ts` |
 
@@ -32,26 +34,33 @@ To change a category, edit `scripts/build-categories.py` and run `python3 script
 
 ## Environment variables
 
-Copy `.env.example` to `.env.local`, and set the same values in Netlify under Site configuration → Environment variables:
+Copy `.env.example` to `.env.local`, and set the same values in Cloudflare under Workers & Pages → snug-packaging → Settings → Build → Variables (they are read at build time). All of them have working defaults in `src/lib/site.ts`:
 
 - `NEXT_PUBLIC_SITE_URL`: the live URL, used for canonical links and the sitemap.
 - `NEXT_PUBLIC_CONTACT_EMAIL`, `NEXT_PUBLIC_CONTACT_PHONE`: Snug's own contact details.
 - `NEXT_PUBLIC_WHATSAPP`: WhatsApp number, digits only. Leave empty to hide WhatsApp links.
 - `NEXT_PUBLIC_SHOW_PLACEHOLDERS`: `true` only for previews. Keeps example logos and reviews off the live site.
 
-## Hosting (Netlify) and forms
+## Hosting (Cloudflare) and forms
 
-Netlify builds the site from GitHub on every push (`netlify.toml`). Quote and mockup requests go to
-Netlify Forms: turn on form detection under Site configuration → Forms, then add an email
-notification so each request lands in your inbox. Forms only work on a Netlify deploy, not in `npm run dev`.
+Cloudflare builds the site from GitHub on every push to `main` (Workers & Pages, settings in `wrangler.jsonc`):
+build command `npm run build`, deploy command `npx wrangler deploy`. The site is a static export, so pages,
+images and files are served free with no request limits. Only form posts to `/api/lead` run code: `worker/index.ts`
+emails each quote or mockup request (with the artwork attached) to the Gmail inbox that sales@ forwards to,
+with the customer's address as Reply-To. Email goes through Cloudflare Email Routing, so that inbox must stay a
+verified destination address there.
+
+- Old URLs that moved: add a line to `public/_redirects`.
+- Unknown pages get `out/404.html` with a real 404 status.
+- `www` → `snugpackaging.com` is a Redirect Rule in the Cloudflare dashboard, not in the code.
 
 ## Before launch
 
 - [x] Set Snug's email, phone, WhatsApp and office addresses
-- [x] Turn on Netlify form detection and email notifications
+- [ ] Send a test quote after moving to Cloudflare and check it lands in the inbox
 - [ ] Send a test quote and a test mockup request from the live site
 - [ ] Replace the About page text and have the privacy policy reviewed (UK/EU GDPR)
 - [x] Add real product photos per category (still missing: tube packaging, auto parts boxes, wrapping paper)
-- [x] Connect snugpackaging.com in Netlify (DNS stays at Cloudflare) with HTTPS
+- [ ] Move snugpackaging.com from Netlify to Cloudflare (see the setup guide in the pull request)
 - [ ] Submit the sitemap in Google Search Console
 - [ ] Replace example logos, reviews and stories in `src/data/proof.ts`

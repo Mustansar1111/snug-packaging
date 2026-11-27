@@ -1,0 +1,26 @@
+// Cloudflare Workers config for snugpackaging.com.
+// `npm run build` writes the whole site as plain files to out/, and Cloudflare serves them for free.
+// Only form posts to /api/* run the Worker (worker/index.ts), which emails each request to the inbox.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "snug-packaging",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./out",
+    "binding": "ASSETS",
+    // Unknown pages get out/404.html with a real 404 status.
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
+  },
+  // Form emails go to the Gmail inbox that sales@snugpackaging.com forwards to.
+  // It must be a verified destination under Email Routing (it already is, because sales@ forwards there).
+  "send_email": [
+    { "name": "LEADS", "allowed_destination_addresses": ["snugpackaging@gmail.com"] }
+  ],
+  "vars": {
+    "LEADS_TO": "snugpackaging@gmail.com",
+    "LEADS_FROM": "quotes@snugpackaging.com"
+  },
+  "observability": { "enabled": true }
+}

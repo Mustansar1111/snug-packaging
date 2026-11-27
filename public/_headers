@@ -1,0 +1,8 @@
+# Cloudflare headers for static files.
+# Social preview images and icons are built without a file extension, so name their type.
+/opengraph-image
+  Content-Type: image/png
+/*/opengraph-image
+  Content-Type: image/png
+/apple-icon
+  Content-Type: image/png
