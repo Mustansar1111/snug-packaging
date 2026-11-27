@@ -5,6 +5,9 @@ import { posts } from "@/data/posts";
 import { regions } from "@/data/regions";
 import { site } from "@/lib/site";
 
+/** Built once at deploy time (the site is a static export). */
+export const dynamic = "force-static";
+
 /**
  * Date the site's pages last changed in a meaningful way (copy, products, services).
  * Google uses lastmod to decide what to recrawl, so bump this when you edit page content, and only then.

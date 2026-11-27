@@ -62,7 +62,7 @@ function Chips({ options, value, onChange, label }: { options: string[]; value: 
 }
 
 /** Three short steps: product and quantity, size and finish, contact details. */
-/** Netlify Forms accepts uploads up to 8 MB per submission. */
+/** Uploads are capped at 8 MB (checked again in worker/index.ts). */
 const MAX_ARTWORK = 8 * 1024 * 1024;
 
 export function QuoteForm({ styles, defaultStyle, defaultCountry = "United States", defaultUnits = "in" }: Props) {
