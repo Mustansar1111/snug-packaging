@@ -13,7 +13,10 @@ import { areaServed, categoryFaqs, getCategory, joinList, metaDescription, relat
 import { getRichContent, type StyleEntry } from "@/data/categoryContent";
 import { CustomizeTabs, CategoryStats, WhyOrder } from "@/components/CategoryExtras";
 import { Guides } from "@/components/Guides";
-import { guidesFor } from "@/data/posts";
+import { getPost, guidesFor, type Post } from "@/data/posts";
+import { getDeepContent } from "@/data/content/deepContent";
+import { getIndustry, type Industry } from "@/data/industries";
+import { DeepSections } from "@/components/DeepSections";
 
 /** Turn a style entry into a card: a slug becomes a link to that Snug category with its photo. */
 type ResolvedStyle = { name: string; blurb: string; img: string | null; href: string; icon?: IconKey };
@@ -44,9 +47,10 @@ export async function generateMetadata({ params }: PageProps<"/packaging/[slug]"
   const { slug } = await params;
   const cat = getCategory(slug);
   if (!cat) return {};
+  const deep = getDeepContent(cat.slug);
   return {
-    title: `Custom ${cat.name} with Logo`,
-    description: metaDescription(cat.intro, [
+    title: deep?.title ?? `Custom ${cat.name} with Logo`,
+    description: deep ? metaDescription(deep.description) : metaDescription(cat.intro, [
       `Made to your size from ${site.moq} units, with free design help and a 3D proof.`,
       `From ${site.moq} units, with a free 3D proof.`,
     ]),
@@ -63,7 +67,13 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
   const parent = cat.parent ? getCategory(cat.parent) : undefined;
   const children = categories.filter((c) => c.parent === cat.slug);
   const styleList: StyleEntry[] = [...children.map((c) => c.slug).filter((s) => !rich?.styles.includes(s)), ...(rich?.styles ?? [])];
-  const faqs = [...(rich?.faqs ?? []), ...categoryFaqs(cat)];
+  // Pages with their own long-form copy answer their own questions; the generic, fill-in-the-name
+  // FAQs and customize tabs are only used where a page has nothing better yet.
+  const deep = getDeepContent(cat.slug);
+  const faqs = deep ? [...deep.faqs, ...(rich?.faqs ?? [])] : [...(rich?.faqs ?? []), ...categoryFaqs(cat)];
+  const deepPosts = (deep?.posts ?? []).map(getPost).filter((p): p is Post => Boolean(p));
+  const guidePosts = [...new Map([...deepPosts, ...guidesFor(cat)].map((p) => [p.slug, p])).values()].slice(0, 3);
+  const deepIndustries = (deep?.industries ?? []).map(getIndustry).filter((i): i is Industry => Boolean(i));
   const photo = packPhoto(cat.slug);
   const lower = lowerName(cat.name);
 
@@ -125,13 +135,14 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
       <section className="block band" id="quote">
         <div className="wrap detail">
           <div>
-            <p className="eyebrow">At a glance</p>
+            <p className="eyebrow">{deep ? "Quick answer" : "At a glance"}</p>
             <h2 className="h2" style={{ fontSize: "clamp(28px, 3.4vw, 40px)" }}>
-              {cat.name} at a glance
+              {deep ? deep.answer.q : `${cat.name} at a glance`}
             </h2>
-            <p style={{ color: "var(--muted)", marginTop: 14, maxWidth: "62ch" }}>
-              Every order is made to your size and printed with your artwork, from {site.moq} units. You choose the board, print and
-              finish, we send a free 3D mockup to approve, and production takes {site.turnaround}.
+            <p className={deep ? "answer" : undefined} style={{ color: "var(--muted)", marginTop: 14, maxWidth: "62ch" }}>
+              {deep
+                ? deep.answer.a
+                : `Every order is made to your size and printed with your artwork, from ${site.moq} units. You choose the board, print and finish, we send a free 3D mockup to approve, and production takes ${site.turnaround}.`}
             </p>
             <table className="specs" style={{ marginTop: 24 }} data-reveal-rows>
               <tbody>
@@ -143,16 +154,24 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
                 <tr><th scope="row">Sizes</th><td>Made to your inside dimensions, in inches, centimeters or millimeters</td></tr>
               </tbody>
             </table>
-            <h3 style={{ fontSize: 22, marginTop: 36 }}>Brands use them for</h3>
+            <h3 style={{ fontSize: 22, marginTop: 36 }}>{deep ? `Who uses ${lower}?` : "Brands use them for"}</h3>
             <ul className="uses">
               {cat.uses.map((u) => (
                 <li key={u}>{u}</li>
               ))}
             </ul>
-            <p style={{ color: "var(--muted)", marginTop: 20, maxWidth: "62ch" }}>
-              Whether you need {lowerName(cat.name)} for {joinList(cat.uses.slice(0, 2))}, we build each order around your product,
-              print your artwork in full color and send a free proof before anything goes to press.
-            </p>
+            {deep ? (
+              deep.who.map((t) => (
+                <p key={t.slice(0, 24)} style={{ color: "var(--muted)", marginTop: 16, maxWidth: "62ch" }}>
+                  {withLinks(t)}
+                </p>
+              ))
+            ) : (
+              <p style={{ color: "var(--muted)", marginTop: 20, maxWidth: "62ch" }}>
+                Whether you need {lowerName(cat.name)} for {joinList(cat.uses.slice(0, 2))}, we build each order around your product,
+                print your artwork in full color and send a free proof before anything goes to press.
+              </p>
+            )}
             {cat.tip && (
               <div className="tip">
                 <b>Packaging tip</b>
@@ -206,7 +225,7 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
         </section>
       )}
 
-      <CustomizeTabs name={lower} />
+      {deep ? <DeepSections deep={deep} name={lower} /> : <CustomizeTabs name={lower} />}
 
       {rich && (
         <section className="block band" style={{ paddingTop: 0 }}>
@@ -230,7 +249,8 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
         </section>
       )}
 
-      <WhyOrder name={lower} />
+      {/* Long-form pages skip the shared "why Snug" grid: the stats bar and "before you pay" already cover it. */}
+      {!deep && <WhyOrder name={lower} />}
       <Process />
 
       {rich && (
@@ -259,8 +279,8 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
         </section>
       )}
       <Reviews />
-      <Faq items={faqs.slice(0, 8)} title={`${cat.name} questions`} />
-      <Guides posts={guidesFor(cat)} title={`Guides for buying ${lower}`} />
+      <Faq items={faqs.slice(0, deep ? 10 : 8)} title={`${cat.name} questions`} />
+      <Guides posts={guidePosts} title={`Guides for buying ${lower}`} />
 
       <section className="block band" style={{ paddingTop: 0 }}>
         <div className="wrap">
@@ -271,6 +291,17 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
             </div>
           </div>
           <CategoryGrid cats={relatedCategories(cat, 8)} />
+          {deepIndustries.length > 0 && (
+            <p className="industry-links">
+              More for your industry:{" "}
+              {deepIndustries.map((ind, i) => (
+                <span key={ind.slug}>
+                  {i > 0 && " · "}
+                  <Link href={`/industries/${ind.slug}`}>{ind.name} packaging</Link>
+                </span>
+              ))}
+            </p>
+          )}
         </div>
       </section>
 
@@ -280,7 +311,7 @@ export default async function CategoryPage({ params }: PageProps<"/packaging/[sl
           "@type": "Service",
           name: `Custom ${cat.name}`,
           serviceType: "Custom printed packaging",
-          description: cat.intro,
+          description: deep?.answer.a ?? cat.intro,
           url: `${site.url}/packaging/${cat.slug}`,
           // Pages still waiting for a real photo point Google at their generated share image instead.
           image: photo ? `${site.url}${photo.src}` : `${site.url}/packaging/${cat.slug}/opengraph-image`,
